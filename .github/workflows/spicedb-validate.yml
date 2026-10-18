@@ -26,7 +26,7 @@ jobs:
     name: zed validate
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # Pin zed to the same minor as the SpiceDB image we deploy
       # (modules/spicedb/main.tf::spicedb_image_version). Bump both
@@ -60,7 +60,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install zed
         env:
