@@ -1,0 +1,72 @@
+{
+  "name": "@cms/docs-utils",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./global-config": {
+      "import": {
+        "types": "./dist/global-config.d.mts",
+        "default": "./dist/global-config.mjs"
+      },
+      "require": {
+        "types": "./dist/global-config.d.cts",
+        "default": "./dist/global-config.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "typesVersions": {
+    "*": {
+      "global-config": [
+        "./dist/global-config.d.mts"
+      ]
+    }
+  },
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "clean": "git clean -xdf .cache dist",
+    "test": "vitest --passWithNoTests",
+    "typecheck": "tsc --noEmit",
+    "watch": "tsdown --watch"
+  },
+  "dependencies": {
+    "@cms/docs-types": "workspace:*",
+    "@mdx-js/mdx": "^3.1.1",
+    "react-docgen": "^8.0.4",
+    "remark-frontmatter": "^5.0.0",
+    "remark-mdx": "^3.1.1",
+    "remark-parse": "^11.0.0",
+    "remark-stringify": "^11.0.0",
+    "slugify": "^1.6.9",
+    "to-vfile": "^8.0.0",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.1.0",
+    "vfile-matter": "^5.0.1"
+  },
+  "devDependencies": {
+    "@cms/tsconfig": "workspace:*",
+    "@types/node": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:",
+    "vfile": "^6.0.3",
+    "vitest": "^5.0.3"
+  }
+}

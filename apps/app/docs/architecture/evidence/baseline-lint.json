@@ -1,0 +1,3145 @@
+{
+  "summary": {
+    "changed": 0,
+    "unchanged": 301,
+    "matches": 0,
+    "duration": 1040003799,
+    "errors": 164,
+    "warnings": 7,
+    "infos": 0,
+    "skipped": 0,
+    "suggestedFixesSkipped": 0,
+    "diagnosticsNotPrinted": 0,
+    "scannerDuration": 6935555535
+  },
+  "categories": {
+    "suppressions/unused": 7,
+    "format": 1,
+    "assist/source/useSortedPackageJson": 1,
+    "assist/source/organizeImports": 146,
+    "lint/style/useTemplate": 2,
+    "lint/style/useNumericSeparators": 2,
+    "lint/correctness/noUndeclaredVariables": 2,
+    "lint/style/useImportType": 1,
+    "lint/suspicious/noDocumentCookie": 1,
+    "lint/security/noDangerouslySetInnerHtml": 1,
+    "lint/suspicious/useIterableCallbackReturn": 1,
+    "lint/correctness/noInvalidPositionAtImportRule": 1,
+    "lint/style/useNumberNamespace": 5
+  },
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "message": "Suppression comment has no effect. Remove the suppression or make sure you are suppressing the correct rule.",
+      "category": "suppressions/unused",
+      "location": {
+        "path": "apps/app/src/components/site/mobile-nav.tsx",
+        "start": {
+          "line": 41,
+          "column": 3
+        },
+        "end": {
+          "line": 41,
+          "column": 117
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "warning",
+      "message": "Suppression comment has no effect. Remove the suppression or make sure you are suppressing the correct rule.",
+      "category": "suppressions/unused",
+      "location": {
+        "path": "apps/app/src/components/site/toc.tsx",
+        "start": {
+          "line": 16,
+          "column": 3
+        },
+        "end": {
+          "line": 16,
+          "column": 104
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "warning",
+      "message": "Suppression comment has no effect. Remove the suppression or make sure you are suppressing the correct rule.",
+      "category": "suppressions/unused",
+      "location": {
+        "path": "apps/app/src/layouts/project.tsx",
+        "start": {
+          "line": 87,
+          "column": 19
+        },
+        "end": {
+          "line": 87,
+          "column": 131
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "warning",
+      "message": "Suppression comment has no effect. Remove the suppression or make sure you are suppressing the correct rule.",
+      "category": "suppressions/unused",
+      "location": {
+        "path": "apps/app/src/site-theme.css",
+        "start": {
+          "line": 700,
+          "column": 3
+        },
+        "end": {
+          "line": 700,
+          "column": 136
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "warning",
+      "message": "Suppression comment has no effect. Remove the suppression or make sure you are suppressing the correct rule.",
+      "category": "suppressions/unused",
+      "location": {
+        "path": "apps/app/src/site-theme.css",
+        "start": {
+          "line": 702,
+          "column": 3
+        },
+        "end": {
+          "line": 702,
+          "column": 136
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "warning",
+      "message": "Suppression comment has no effect. Remove the suppression or make sure you are suppressing the correct rule.",
+      "category": "suppressions/unused",
+      "location": {
+        "path": "apps/app/src/styles.css",
+        "start": {
+          "line": 769,
+          "column": 3
+        },
+        "end": {
+          "line": 769,
+          "column": 136
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "warning",
+      "message": "Suppression comment has no effect. Remove the suppression or make sure you are suppressing the correct rule.",
+      "category": "suppressions/unused",
+      "location": {
+        "path": "apps/app/src/styles.css",
+        "start": {
+          "line": 771,
+          "column": 3
+        },
+        "end": {
+          "line": 771,
+          "column": 136
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Formatter would have printed the following content:",
+      "category": "format",
+      "location": {
+        "path": "apps/app/docs/architecture/evidence/baseline-inventory.json",
+        "start": {
+          "line": 0,
+          "column": 0
+        },
+        "end": {
+          "line": 0,
+          "column": 0
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "package.json fields can be organized.",
+      "category": "assist/source/useSortedPackageJson",
+      "location": {
+        "path": "apps/app/package.json",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 108,
+          "column": 2
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Some imports or exports are not organized.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/scripts/app.mjs",
+        "start": {
+          "line": 3,
+          "column": 1
+        },
+        "end": {
+          "line": 7,
+          "column": 94
+        }
+      },
+      "advices": [
+        {
+          "start": {
+            "line": 3,
+            "column": 1
+          },
+          "end": {
+            "line": 3,
+            "column": 103
+          },
+          "text": "This statement must be preceded by a blank line. Add a newline before this statement."
+        },
+        {
+          "start": {
+            "line": 6,
+            "column": 1
+          },
+          "end": {
+            "line": 6,
+            "column": 52
+          },
+          "text": "This statement must be preceded by a blank line. Add a newline before this statement."
+        },
+        {
+          "start": {
+            "line": 7,
+            "column": 1
+          },
+          "end": {
+            "line": 7,
+            "column": 94
+          },
+          "text": "Safe fix: Organize imports and exports (Biome)"
+        }
+      ]
+    },
+    {
+      "severity": "error",
+      "message": "Some imports or exports are not organized.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/scripts/audit-port.mjs",
+        "start": {
+          "line": 2,
+          "column": 1
+        },
+        "end": {
+          "line": 4,
+          "column": 48
+        }
+      },
+      "advices": [
+        {
+          "start": {
+            "line": 2,
+            "column": 1
+          },
+          "end": {
+            "line": 2,
+            "column": 73
+          },
+          "text": "Sort the imported names."
+        },
+        {
+          "start": {
+            "line": 3,
+            "column": 1
+          },
+          "end": {
+            "line": 3,
+            "column": 47
+          },
+          "text": "This statement must be preceded by a blank line. Add a newline before this statement."
+        },
+        {
+          "start": {
+            "line": 4,
+            "column": 1
+          },
+          "end": {
+            "line": 4,
+            "column": 48
+          },
+          "text": "Safe fix: Organize imports and exports (Biome)"
+        }
+      ]
+    },
+    {
+      "severity": "error",
+      "message": "Template literals are preferred over string concatenation.",
+      "category": "lint/style/useTemplate",
+      "location": {
+        "path": "apps/app/scripts/audit-port.mjs",
+        "start": {
+          "line": 84,
+          "column": 33
+        },
+        "end": {
+          "line": 84,
+          "column": 73
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "This statement must be preceded by a blank line. Add a newline before this statement.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/scripts/design-fixtures.mjs",
+        "start": {
+          "line": 4,
+          "column": 1
+        },
+        "end": {
+          "line": 4,
+          "column": 42
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Long numeric literal lacks separators.",
+      "category": "lint/style/useNumericSeparators",
+      "location": {
+        "path": "apps/app/scripts/design-fixtures.mjs",
+        "start": {
+          "line": 112,
+          "column": 57
+        },
+        "end": {
+          "line": 112,
+          "column": 62
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "This statement must be preceded by a blank line. Add a newline before this statement.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/scripts/design-preview.mjs",
+        "start": {
+          "line": 7,
+          "column": 1
+        },
+        "end": {
+          "line": 7,
+          "column": 49
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/scripts/prebundle-i18n.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 2,
+          "column": 42
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "The Bun variable is undeclared.",
+      "category": "lint/correctness/noUndeclaredVariables",
+      "location": {
+        "path": "apps/app/scripts/prebundle-i18n.ts",
+        "start": {
+          "line": 24,
+          "column": 22
+        },
+        "end": {
+          "line": 24,
+          "column": 25
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "This statement must be preceded by a blank line. Add a newline before this statement.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/scripts/prebundle-vendor.ts",
+        "start": {
+          "line": 4,
+          "column": 1
+        },
+        "end": {
+          "line": 4,
+          "column": 49
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "The Bun variable is undeclared.",
+      "category": "lint/correctness/noUndeclaredVariables",
+      "location": {
+        "path": "apps/app/scripts/prebundle-vendor.ts",
+        "start": {
+          "line": 16,
+          "column": 22
+        },
+        "end": {
+          "line": 16,
+          "column": 25
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "This statement must be preceded by a blank line. Add a newline before this statement.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/scripts/prepare-i18n.mjs",
+        "start": {
+          "line": 5,
+          "column": 1
+        },
+        "end": {
+          "line": 5,
+          "column": 68
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Some imports or exports are not organized.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/scripts/prepare-shared.mjs",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 7,
+          "column": 2
+        }
+      },
+      "advices": [
+        {
+          "start": {
+            "line": 1,
+            "column": 1
+          },
+          "end": {
+            "line": 2,
+            "column": 51
+          },
+          "text": "This statement must be preceded by a blank line. Add a newline before this statement."
+        },
+        {
+          "start": {
+            "line": 4,
+            "column": 1
+          },
+          "end": {
+            "line": 7,
+            "column": 2
+          },
+          "text": "Safe fix: Organize imports and exports (Biome)"
+        }
+      ]
+    },
+    {
+      "severity": "error",
+      "message": "Sort the imported names.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/client.tsx",
+        "start": {
+          "line": 2,
+          "column": 1
+        },
+        "end": {
+          "line": 2,
+          "column": 53
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/analytics/list-card.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 2,
+          "column": 40
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/analytics/range-tabs.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 3,
+          "column": 51
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/analytics/section-card.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 6,
+          "column": 40
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/analytics/stat-card.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 3,
+          "column": 40
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/analytics/views-area-chart.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 4,
+          "column": 51
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/analytics/views-timeseries-chart.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 6,
+          "column": 73
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/app/app-sidebar.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 18,
+          "column": 63
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/app/command-palette.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 6,
+          "column": 43
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/app/new-project-dialog.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 10,
+          "column": 39
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/app/notifications-popover.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 8,
+          "column": 59
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/app/project-sidebar.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 17,
+          "column": 63
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/app/sidebar-account-footer.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 17,
+          "column": 82
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/app/site-switcher.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 15,
+          "column": 43
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/app/support-access-banner.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 4,
+          "column": 34
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/auth-providers.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 4,
+          "column": 86
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/control-density.test.tsx",
+        "start": {
+          "line": 3,
+          "column": 1
+        },
+        "end": {
+          "line": 7,
+          "column": 52
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/editor/add-language-dialog.test.tsx",
+        "start": {
+          "line": 3,
+          "column": 1
+        },
+        "end": {
+          "line": 4,
+          "column": 53
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/editor/add-language-dialog.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 16,
+          "column": 74
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/editor/ai-assist.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 10,
+          "column": 42
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Long numeric literal lacks separators.",
+      "category": "lint/style/useNumericSeparators",
+      "location": {
+        "path": "apps/app/src/components/editor/ai-assist.tsx",
+        "start": {
+          "line": 33,
+          "column": 81
+        },
+        "end": {
+          "line": 33,
+          "column": 86
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/editor/branch-switcher.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 14,
+          "column": 63
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/editor/comments-panel.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 12,
+          "column": 46
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/editor/extensions/titled-block-view.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 4,
+          "column": 25
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/editor/language-settings-dialog.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 17,
+          "column": 49
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/editor/page-settings-dialog.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 19,
+          "column": 45
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/editor/site-config-panel.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 30,
+          "column": 44
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/editor/slash-command.test.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 4,
+          "column": 47
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/editor/sortable-page-tree.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 22,
+          "column": 45
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/error-page.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 4,
+          "column": 47
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/interface-language-dialog.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 7,
+          "column": 34
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/localized-product-providers.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 7,
+          "column": 51
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/markdown.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 52,
+          "column": 64
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/not-found.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 3,
+          "column": 47
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/addons-section.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 18,
+          "column": 123
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "All these imports are only used as types.",
+      "category": "lint/style/useImportType",
+      "location": {
+        "path": "apps/app/src/components/project-settings/addons-section.tsx",
+        "start": {
+          "line": 14,
+          "column": 8
+        },
+        "end": {
+          "line": 14,
+          "column": 59
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/analytics-section.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 8,
+          "column": 54
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/authentication-section.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 29,
+          "column": 42
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/banner-section.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 11,
+          "column": 87
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/branding-section.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 9,
+          "column": 70
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/danger-section.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 11,
+          "column": 96
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/domain-section.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 18,
+          "column": 53
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/exports-section.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 30,
+          "column": 57
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/footer-section.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 9,
+          "column": 87
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/general-section.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 17,
+          "column": 39
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/languages-section.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 11,
+          "column": 82
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/members-section.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 25,
+          "column": 70
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/navbar-section.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 13,
+          "column": 87
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/openapi-section.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 15,
+          "column": 42
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/redirects-section.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 8,
+          "column": 54
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/search-index-diagnostics.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 11,
+          "column": 95
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/search-section.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 12,
+          "column": 131
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/seo-section.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 12,
+          "column": 103
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/shared.test.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 5,
+          "column": 47
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/shared.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 13,
+          "column": 48
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/styling-section.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 12,
+          "column": 54
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/theme-section.test.tsx",
+        "start": {
+          "line": 3,
+          "column": 1
+        },
+        "end": {
+          "line": 6,
+          "column": 74
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/theme-section.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 32,
+          "column": 77
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/typography-section.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 10,
+          "column": 54
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project-settings/variables-section.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 7,
+          "column": 54
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project/deploy-pipeline.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 10,
+          "column": 68
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project/project-access-boundary.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 6,
+          "column": 63
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/project/publish-modal.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 17,
+          "column": 40
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/settings/account-tab.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 14,
+          "column": 63
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/settings/api-key-alert-dialog.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 3,
+          "column": 45
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/settings/api-keys-tab.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 14,
+          "column": 57
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/settings/appearance-tab.test.tsx",
+        "start": {
+          "line": 3,
+          "column": 1
+        },
+        "end": {
+          "line": 7,
+          "column": 74
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/settings/appearance-tab.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 7,
+          "column": 79
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/settings/git-tab.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 28,
+          "column": 53
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/settings/git-workflow.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 37,
+          "column": 42
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/settings/import-tab.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 16,
+          "column": 63
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/settings/integration-config-values.test.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 2,
+          "column": 47
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/settings/integration-config-values.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 2,
+          "column": 80
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/settings/integrations-tab.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 49,
+          "column": 22
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/settings/notifications-tab.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 7,
+          "column": 80
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/settings/section.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 2,
+          "column": 40
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/site/documentation-theme-provider.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 4,
+          "column": 87
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/site/language-switcher.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 3,
+          "column": 62
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/site/made-with-badge.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 2,
+          "column": 50
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/site/mdx-components.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 31,
+          "column": 65
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/site/mobile-nav.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 5,
+          "column": 54
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/site/site-analytics-consent.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 5,
+          "column": 56
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/site/site-banner.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 3,
+          "column": 45
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/site/site-nav.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 4,
+          "column": 56
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/site/site-page-view.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 10,
+          "column": 66
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/site/site-search.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 10,
+          "column": 72
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/site/toc.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 3,
+          "column": 45
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/components/site/version-switcher.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 3,
+          "column": 62
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/contracts/validators/addons.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 2,
+          "column": 25
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Some imports or exports are not organized.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/contracts/validators/index.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 5,
+          "column": 84
+        }
+      },
+      "advices": [
+        {
+          "start": {
+            "line": 5,
+            "column": 1
+          },
+          "end": {
+            "line": 5,
+            "column": 84
+          },
+          "text": "Sort these imports."
+        },
+        {
+          "start": {
+            "line": 1,
+            "column": 1
+          },
+          "end": {
+            "line": 3,
+            "column": 25
+          },
+          "text": "Safe fix: Organize imports and exports (Biome)"
+        }
+      ]
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/contracts/validators/integrations.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 2,
+          "column": 25
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/contracts/validators/themes.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 12,
+          "column": 25
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/hooks/api/analytics/queries.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 5,
+          "column": 45
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/hooks/api/exports.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 2,
+          "column": 97
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/hooks/api/git-workflow.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 6,
+          "column": 42
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/hooks/api/integrations.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 9,
+          "column": 79
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/hooks/api/mutations.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 32,
+          "column": 42
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/hooks/api/project-search.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 7,
+          "column": 79
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/hooks/api/public.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 4,
+          "column": 44
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/hooks/api/queries.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 6,
+          "column": 42
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/hooks/api/reader-access.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 2,
+          "column": 79
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "This statement must be preceded by a blank line. Add a newline before this statement.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/i18n/runtime.test.ts",
+        "start": {
+          "line": 4,
+          "column": 1
+        },
+        "end": {
+          "line": 7,
+          "column": 4
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Some imports or exports are not organized.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/i18n/runtime.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 2,
+          "column": 68
+        }
+      },
+      "advices": [
+        {
+          "start": {
+            "line": 1,
+            "column": 1
+          },
+          "end": {
+            "line": 1,
+            "column": 79
+          },
+          "text": "This statement must be preceded by a blank line. Add a newline before this statement."
+        },
+        {
+          "start": {
+            "line": 2,
+            "column": 1
+          },
+          "end": {
+            "line": 2,
+            "column": 68
+          },
+          "text": "Safe fix: Organize imports and exports (Biome)"
+        }
+      ]
+    },
+    {
+      "severity": "error",
+      "message": "Direct assigning to document.cookie is not recommended.",
+      "category": "lint/suspicious/noDocumentCookie",
+      "location": {
+        "path": "apps/app/src/i18n/runtime.ts",
+        "start": {
+          "line": 43,
+          "column": 7
+        },
+        "end": {
+          "line": 43,
+          "column": 157
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/i18n/site.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 4,
+          "column": 50
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/i18n/standalone.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 4,
+          "column": 105
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Some imports or exports are not organized.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/i18n/translate.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 13,
+          "column": 56
+        }
+      },
+      "advices": [
+        {
+          "start": {
+            "line": 13,
+            "column": 1
+          },
+          "end": {
+            "line": 13,
+            "column": 56
+          },
+          "text": "Sort these imports."
+        },
+        {
+          "start": {
+            "line": 1,
+            "column": 1
+          },
+          "end": {
+            "line": 4,
+            "column": 46
+          },
+          "text": "Safe fix: Organize imports and exports (Biome)"
+        }
+      ]
+    },
+    {
+      "severity": "error",
+      "message": "Sort the imported names.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/integrations/tanstack-query/root-provider.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 1,
+          "column": 119
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/layouts/auth.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 4,
+          "column": 40
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/layouts/dashboard.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 10,
+          "column": 79
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/layouts/project.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 12,
+          "column": 50
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/providers/analytics-provider.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 2,
+          "column": 86
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/providers/site-analytics-provider.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 2,
+          "column": 100
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/routes/(auth)/forgot-password.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 3,
+          "column": 41
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/routes/(auth)/reset-password.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 3,
+          "column": 41
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/routes/(auth)/sign-in.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 15,
+          "column": 59
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/routes/(auth)/sign-up.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 15,
+          "column": 59
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/routes/(auth)/verify-email.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 12,
+          "column": 59
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort the imported names.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/routes/__root.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 1,
+          "column": 57
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Avoid passing content using the dangerouslySetInnerHTML prop.",
+      "category": "lint/security/noDangerouslySetInnerHtml",
+      "location": {
+        "path": "apps/app/src/routes/__root.tsx",
+        "start": {
+          "line": 43,
+          "column": 31
+        },
+        "end": {
+          "line": 43,
+          "column": 54
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/routes/accept-invite.$invitationId.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 7,
+          "column": 52
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/routes/app/(dashboard)/analytics.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 12,
+          "column": 63
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/routes/app/(dashboard)/index.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 20,
+          "column": 58
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/routes/app/(dashboard)/members.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 14,
+          "column": 53
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/routes/app/(dashboard)/settings.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 9,
+          "column": 70
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/routes/app/(dashboard)/sites.test.tsx",
+        "start": {
+          "line": 3,
+          "column": 1
+        },
+        "end": {
+          "line": 6,
+          "column": 74
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/routes/app/(dashboard)/sites.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 10,
+          "column": 43
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/routes/app/projects/$projectId/analytics.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 11,
+          "column": 61
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/routes/app/projects/$projectId/editor.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 65,
+          "column": 51
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/routes/app/projects/$projectId/index.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 32,
+          "column": 61
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/routes/app/projects/$projectId/preview.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 14,
+          "column": 51
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/routes/app/projects/$projectId/settings.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 43,
+          "column": 42
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/routes/git-preview.$token.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 6,
+          "column": 50
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/routes/sites/$projectId/changelog.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 5,
+          "column": 57
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/routes/sites/$projectId/route.tsx",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 20,
+          "column": 56
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/server.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 26,
+          "column": 36
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/services/auth-client.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 4,
+          "column": 29
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "This statement must be preceded by a blank line. Add a newline before this statement.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/services/transport.test.ts",
+        "start": {
+          "line": 5,
+          "column": 1
+        },
+        "end": {
+          "line": 8,
+          "column": 4
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "This callback passed to forEach() iterable method should not return a value.",
+      "category": "lint/suspicious/useIterableCallbackReturn",
+      "location": {
+        "path": "apps/app/src/services/transport.ts",
+        "start": {
+          "line": 30,
+          "column": 39
+        },
+        "end": {
+          "line": 30,
+          "column": 46
+        }
+      },
+      "advices": [
+        {
+          "start": {
+            "line": 30,
+            "column": 57
+          },
+          "end": {
+            "line": 30,
+            "column": 94
+          },
+          "text": "Either remove this return or remove the returned value."
+        }
+      ]
+    },
+    {
+      "severity": "error",
+      "message": "Sort these imports.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/services/transport.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 2,
+          "column": 29
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "This @import is in the wrong position.",
+      "category": "lint/correctness/noInvalidPositionAtImportRule",
+      "location": {
+        "path": "apps/app/src/styles.css",
+        "start": {
+          "line": 72,
+          "column": 2
+        },
+        "end": {
+          "line": 72,
+          "column": 25
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Some imports or exports are not organized.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/src/test/setup.ts",
+        "start": {
+          "line": 4,
+          "column": 1
+        },
+        "end": {
+          "line": 12,
+          "column": 4
+        }
+      },
+      "advices": [
+        {
+          "start": {
+            "line": 4,
+            "column": 1
+          },
+          "end": {
+            "line": 4,
+            "column": 43
+          },
+          "text": "Sort these imports."
+        },
+        {
+          "start": {
+            "line": 5,
+            "column": 1
+          },
+          "end": {
+            "line": 6,
+            "column": 50
+          },
+          "text": "This statement must be preceded by a blank line. Add a newline before this statement."
+        },
+        {
+          "start": {
+            "line": 7,
+            "column": 1
+          },
+          "end": {
+            "line": 12,
+            "column": 4
+          },
+          "text": "Safe fix: Organize imports and exports (Biome)"
+        }
+      ]
+    },
+    {
+      "severity": "error",
+      "message": "Use Number.parseFloat instead of the equivalent global.",
+      "category": "lint/style/useNumberNamespace",
+      "location": {
+        "path": "apps/app/tests/browser/app.spec.ts",
+        "start": {
+          "line": 107,
+          "column": 46
+        },
+        "end": {
+          "line": 107,
+          "column": 56
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort the imported names.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/tests/browser/app.spec.ts",
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 1,
+          "column": 60
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Use Number.parseFloat instead of the equivalent global.",
+      "category": "lint/style/useNumberNamespace",
+      "location": {
+        "path": "apps/app/tests/browser/app.spec.ts",
+        "start": {
+          "line": 42,
+          "column": 46
+        },
+        "end": {
+          "line": 42,
+          "column": 56
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Use Number.parseInt instead of the equivalent global.",
+      "category": "lint/style/useNumberNamespace",
+      "location": {
+        "path": "apps/app/tests/browser/app.spec.ts",
+        "start": {
+          "line": 108,
+          "column": 46
+        },
+        "end": {
+          "line": 108,
+          "column": 54
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Use Number.parseFloat instead of the equivalent global.",
+      "category": "lint/style/useNumberNamespace",
+      "location": {
+        "path": "apps/app/tests/browser/app.spec.ts",
+        "start": {
+          "line": 48,
+          "column": 52
+        },
+        "end": {
+          "line": 48,
+          "column": 62
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Use Number.parseFloat instead of the equivalent global.",
+      "category": "lint/style/useNumberNamespace",
+      "location": {
+        "path": "apps/app/tests/browser/app.spec.ts",
+        "start": {
+          "line": 106,
+          "column": 28
+        },
+        "end": {
+          "line": 106,
+          "column": 38
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Template literals are preferred over string concatenation.",
+      "category": "lint/style/useTemplate",
+      "location": {
+        "path": "apps/app/vitest.config.ts",
+        "start": {
+          "line": 8,
+          "column": 51
+        },
+        "end": {
+          "line": 8,
+          "column": 98
+        }
+      },
+      "advices": []
+    },
+    {
+      "severity": "error",
+      "message": "Sort the imported names.",
+      "category": "assist/source/organizeImports",
+      "location": {
+        "path": "apps/app/vitest.config.ts",
+        "start": {
+          "line": 3,
+          "column": 1
+        },
+        "end": {
+          "line": 3,
+          "column": 62
+        }
+      },
+      "advices": []
+    }
+  ]
+}

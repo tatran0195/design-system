@@ -1,0 +1,30 @@
+{
+  "method": "No static/dynamic/type/CSS/script/config reference in app; owning @cms/editor/@cms/ui packages retain their own dependencies. Validated by install/types/tests/build.",
+  "removedDirectDeclarations": [
+    "@cms/icons",
+    "@tiptap/extension-character-count",
+    "@tiptap/extension-code-block-lowlight",
+    "@tiptap/extension-drag-handle-react",
+    "@tiptap/extension-highlight",
+    "@tiptap/extension-image",
+    "@tiptap/extension-placeholder",
+    "@tiptap/extension-subscript",
+    "@tiptap/extension-superscript",
+    "@tiptap/extension-table",
+    "@tiptap/extension-table-cell",
+    "@tiptap/extension-table-header",
+    "@tiptap/extension-table-row",
+    "@tiptap/extension-task-item",
+    "@tiptap/extension-task-list",
+    "@tiptap/extension-typography",
+    "@tiptap/pm",
+    "@tiptap/react",
+    "@tiptap/starter-kit",
+    "@tiptap/suggestion",
+    "linkedom",
+    "nanoid",
+    "octokit",
+    "tiptap-markdown",
+    "tldts"
+  ]
+}

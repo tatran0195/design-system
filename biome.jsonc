@@ -1,0 +1,198 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": ["ultracite/biome/core", "ultracite/biome/react"],
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "maxSize": 2097152,
+    "includes": [
+      "!**/dist",
+      "!**/.output",
+      "!**/.nitro",
+      "!**/.turbo",
+      "!**/.cache",
+      "!**/.tanstack",
+      "!**/node_modules",
+      "!**/*.svg",
+      "!**/routeTree.gen.ts",
+      "!**/src/generated",
+      "!**/components/ui",
+      "!**/templates"
+    ]
+  },
+  "overrides": [
+    {
+      "includes": [
+        "**/*.spec.ts",
+        "**/*.spec.tsx",
+        "**/*.test.ts",
+        "**/*.test.tsx",
+        "**/tests/**"
+      ],
+      "javascript": {
+        "globals": [
+          "describe",
+          "it",
+          "expect",
+          "test",
+          "beforeEach",
+          "afterEach",
+          "beforeAll",
+          "afterAll",
+          "vi"
+        ]
+      }
+    },
+    {
+      "includes": ["packages/docs-ui/**"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noArrayIndexKey": "off"
+          },
+          "security": {
+            "noDangerouslySetInnerHtml": "off"
+          },
+          "a11y": {
+            "noNoninteractiveElementInteractions": "off",
+            "noStaticElementInteractions": "off"
+          },
+          "performance": {
+            "noDynamicNamespaceImportAccess": "off"
+          }
+        }
+      }
+    }
+  ],
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "identifierOrder": "natural",
+            "groups": [":NODE:", ":PACKAGE:", ":ALIAS:", ":PATH:", ":STYLE:"]
+          }
+        },
+        "useSortedAttributes": "off",
+        "useSortedInterfaceMembers": "off",
+        "useSortedKeys": "off",
+        "useSortedProperties": "off"
+      }
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "recommended",
+      "suspicious": {
+        "noAlert": "off",
+        "noBitwiseOperators": "off",
+        "noConsole": "off",
+        "noDuplicateDependencies": "off",
+        "noEmptyBlockStatements": "off",
+        "noEqualsToNull": "off",
+        "noEvolvingTypes": "off",
+        "noExplicitAny": "off",
+        "noLeakedRender": "off",
+        "noNonNullAssertedOptionalChain": "off",
+        // Component libraries (@cms/ui and @cms/icons) use React.forwardRef for Radix UI slotting and ref forwarding
+        "noReactForwardRef": "off",
+        "noRedeclare": "off",
+        "noShadow": "off",
+        "noUnknownAttribute": "off",
+        "noUnnecessaryConditions": "off",
+        "useAwait": "off"
+      },
+      "style": {
+        "noEnum": "off",
+        "noExportedImports": "off",
+        "noIncrementDecrement": "off",
+        "noMultiAssign": "off",
+        "noNegationElse": "off",
+        "noNestedTernary": "off",
+        "noNonNullAssertion": "off",
+        "noParameterAssign": "off",
+        "noParameterProperties": "off",
+        "noSubstr": "off",
+        "useAtIndex": "off",
+        "useBlockStatements": "off",
+        "useConsistentArrayType": "off",
+        "useConsistentMethodSignatures": "off",
+        "useConsistentTypeDefinitions": "off",
+        "useDefaultSwitchClause": "off",
+        "useDestructuring": "off",
+        "useErrorCause": "off",
+        "useFilenamingConvention": "off",
+        "useForOf": "off",
+        "useNamingConvention": "off"
+      },
+      "complexity": {
+        "noExcessiveCognitiveComplexity": "off",
+        "noForEach": "off",
+        "noRedundantDefaultExport": "off",
+        "noStaticOnlyClass": "off",
+        "noUselessFragments": "off",
+        "noVoid": "off",
+        "useSimplifiedLogicExpression": "off"
+      },
+
+      "performance": {
+        "noAwaitInLoops": "off",
+        "noBarrelFile": "off",
+        "noDelete": "off",
+        "noImgElement": "off",
+        "noJsxPropsBind": "off",
+        "noNamespaceImport": "off",
+        "useTopLevelRegex": "off"
+      },
+      "a11y": {
+        "noAmbiguousAnchorText": "off",
+        "noLabelWithoutControl": "off",
+        "noSvgWithoutTitle": "off",
+        "useAltText": "off",
+        "useAnchorContent": "off",
+        "useButtonType": "off",
+        "useKeyWithClickEvents": "off",
+        "useKeyWithMouseEvents": "off",
+        "useValidAnchor": "off"
+      },
+      "correctness": {
+        "noInvalidUseBeforeDeclaration": "off",
+        "noUnusedFunctionParameters": "off",
+        "useExhaustiveDependencies": "off",
+        "useHookAtTopLevel": "off",
+        "useImageSize": "off"
+      },
+      "nursery": {
+        "useSortedClasses": "off"
+      }
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "lineEnding": "lf",
+    "lineWidth": 150,
+    "indentStyle": "space",
+    "indentWidth": 2
+  },
+  "javascript": {
+    "formatter": {
+      "trailingCommas": "all",
+      "quoteStyle": "single"
+    }
+  },
+  "json": {
+    "parser": {
+      "allowComments": true
+    }
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  }
+}

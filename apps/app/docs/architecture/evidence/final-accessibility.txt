@@ -1,0 +1,5 @@
+$ node scripts/check-accessibility.mjs
+/app: 0 axe violations (1 checks need manual review).
+/app/projects/design-handbook/editor?page=design-handbook-page-0: 0 axe violations (0 checks need manual review).
+/sites/design-handbook/welcome: 0 axe violations (0 checks need manual review).
+/sign-in: 0 axe violations (0 checks need manual review).

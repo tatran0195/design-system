@@ -1,0 +1,1 @@
+$ node scripts/prepare-shared.mjs && node scripts/prepare-i18n.mjs && tsc --noEmit --checkers 1 --singleThreaded

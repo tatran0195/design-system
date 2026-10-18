@@ -1,0 +1,25 @@
+$ node scripts/app.mjs --build
+transforming...
+✓ 6593 modules transformed.
+rendering chunks...
+computing gzip size...
+.output/public/assets/KaTeX_Size3-Regular-CTq5MqoE.woff             4.42 kB
+.output/public/assets/KaTeX_Size4-Regular-Dl5lxZxV.woff2            4.92 kB
+.output/public/assets/KaTeX_Size2-Regular-Dy4dx90m.woff2            5.20 kB
+.output/public/assets/KaTeX_Size1-Regular-mCD8mA8B.woff2            5.46 kB
+.output/public/assets/KaTeX_Size4-Regular-BF-4gkZK.woff             5.98 kB
+... full build completed ...
+.output/server/_libs/hast-util-from-html+[...].mjs                       293.69 kB │ gzip:    54.85 kB
+.output/server/_libs/@tiptap/extension-collaboration+[...].mjs           380.01 kB │ gzip:    86.51 kB
+.output/server/_libs/katex.mjs                                           496.85 kB │ gzip:   109.65 kB
+.output/server/_libs/react-dom+scheduler.mjs                             535.08 kB │ gzip:   100.89 kB
+.output/server/_libs/recharts+victory-vendor.mjs                         609.65 kB │ gzip:   127.22 kB
+.output/server/_libs/@tiptap/core+[...].mjs                              640.22 kB │ gzip:   158.77 kB
+.output/server/_libs/@tanstack/react-router+[...].mjs                    678.52 kB │ gzip:   142.46 kB
+.output/server/_libs/@base-ui/react+[...].mjs                            822.89 kB │ gzip:   174.21 kB
+.output/server/_ssr/ssr.mjs                                           17,320.85 kB │ gzip: 4,173.10 kB
+
+✓ built in 5.66s
+ℹ Generated .output/nitro.json
+
+[nitro] ✔ You can preview this build using npx vite preview

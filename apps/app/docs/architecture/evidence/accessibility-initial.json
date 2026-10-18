@@ -1,0 +1,194 @@
+[
+  {
+    "url": "/app",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [".\\[\\&_svg\\]\\:text-ui-tag-neutral-icon"],
+            "html": "<span class=\"[&_svg]:text-ui-tag-neutral-icon border-ui-tag-neutral-border inline-flex items-center border box-border txt-compact-xsmall-plus h-5 rounded-md px-1 bg-transparent gap-1 text-emerald-600 dark:text-emerald-400\">",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.5 (foreground color: #009966, background color: #fafafa, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "landmark-main-is-top-level",
+        "impact": "moderate",
+        "help": "Main landmark should not be contained in another landmark",
+        "nodes": [
+          {
+            "target": [".px-6"],
+            "html": "<main class=\"w-full flex-1 px-6 py-8\">",
+            "failureSummary": "Fix any of the following:\n  The main landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-main",
+        "impact": "moderate",
+        "help": "Document should not have more than one main landmark",
+        "nodes": [
+          {
+            "target": [".md\\:peer-data-\\[variant\\=inset\\]\\:m-2"],
+            "html": "<main data-slot=\"sidebar-inset\" class=\"bg-ui-bg-base relati...\">",
+            "failureSummary": "Fix any of the following:\n  Document has more than one main landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-unique",
+        "impact": "moderate",
+        "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+        "nodes": [
+          {
+            "target": [".md\\:peer-data-\\[variant\\=inset\\]\\:m-2"],
+            "html": "<main data-slot=\"sidebar-inset\" class=\"bg-ui-bg-base relati...\">",
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "help": "All page content should be contained by landmarks",
+        "nodes": [
+          {
+            "target": [".transition-\\[margin\\,opacity\\]"],
+            "html": "<div data-slot=\"sidebar-group-label\" data-sidebar=\"group-label\" class=\"txt-compact-xsmall-p...\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": [".active > span"],
+            "html": "<span>Overview</span>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ["a[href$=\"sites\"] > span"],
+            "html": "<span>Sites</span>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ["a[href$=\"analytics\"] > span"],
+            "html": "<span>Analytics</span>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": ["a[href$=\"settings\"] > span"],
+            "html": "<span>Settings</span>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    ],
+    "passes": 40,
+    "incomplete": 1
+  },
+  {
+    "url": "/app/projects/design-handbook/editor?page=design-handbook-page-0",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [".text-\\[12px\\]"],
+            "html": "<p class=\"px-2 py-1 text-[12px] text-muted-foreground/70\">No pages yet</p>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.71 (foreground color: #9b9ba1, background color: #fdfdfd, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "landmark-one-main",
+        "impact": "moderate",
+        "help": "Document should have one main landmark",
+        "nodes": [
+          {
+            "target": ["html"],
+            "html": "<html lang=\"en\" dir=\"ltr\" class=\"light\" style=\"color-scheme: light;\">",
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "help": "All page content should be contained by landmarks",
+        "nodes": [
+          {
+            "target": [".max-w-\\[720px\\]"],
+            "html": "<div class=\"mx-auto max-w-[720px]\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": [".tiptap"],
+            "html": "<div contenteditable=\"true\" role=\"textbox\" aria-label=\"Rich text\" aria-multiline=\"true\" aria-readonly=\"false\" dir=\"ltr\" translate=\"no\" class=\"tiptap ProseMirror focus:outline-none\" tabindex=\"0\">",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "target": [".pointer-events-none"],
+            "html": "<div class=\"pointer-events-none z-10 flex justify-end sticky bottom-3\"><span class=\"rounded-full border border-ui-border-base bg-ui-bg-base/85 px-2.5 py-1 text-[11px] text-ui-fg-muted tabular-nums shadow-sm backdrop-blur\">Words: 45 · Characters: 266</span></div>",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    ],
+    "passes": 38,
+    "incomplete": 0
+  },
+  {
+    "url": "/sites/design-handbook/welcome",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": ["a[href$=\"app\"] > span"],
+            "html": "<span>Made with<!-- --> <span class=\"font-semibold\">CMS</span></span>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.29 (foreground color: #8d8d95, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": ["span > .font-semibold"],
+            "html": "<span class=\"font-semibold\">CMS</span>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.29 (foreground color: #8d8d95, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": ["a[href$=\"mailto:abuse@nibleaf.com\"]"],
+            "html": "<a href=\"mailto:abuse@nibleaf.com\" class=\"transition-colors hover:text-foreground\">Report abuse</a>",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.29 (foreground color: #8d8d95, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "landmark-unique",
+        "impact": "moderate",
+        "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+        "nodes": [
+          {
+            "target": [".gap-5"],
+            "html": "<nav class=\"hidden shrink-0 items-center gap-5 text-sm lg:flex\"></nav>",
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "target": [".top-\\(--site-header-h\\)"],
+            "html": "<aside class=\"sticky top-(--site-header-h) hidden h-[calc(100dvh-var(--site-header-h))] self-start border-(--theme-border) border-e lg:block\" data-theme-region=\"sidebar\">",
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          }
+        ]
+      }
+    ],
+    "passes": 38,
+    "incomplete": 1
+  },
+  {
+    "url": "/sign-in",
+    "violations": [],
+    "passes": 38,
+    "incomplete": 0
+  }
+]

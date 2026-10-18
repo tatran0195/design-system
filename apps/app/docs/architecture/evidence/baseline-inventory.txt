@@ -1,0 +1,41 @@
+files 341 imports 1789 cycles 0
+[]
+Hotspots [
+  [ 'hooks/api/index.ts', 84 ],
+  [ 'i18n/react.ts', 81 ],
+  [ 'components/ui/button.tsx', 55 ],
+  [ 'components/ui/sonner.tsx', 43 ],
+  [ 'i18n/index.ts', 39 ],
+  [ 'components/ui/input.tsx', 38 ],
+  [ 'components/ui/utils.ts', 36 ],
+  [ 'lib/use-payload-form.ts', 33 ],
+  [ 'contracts/validators/index.ts', 32 ],
+  [ 'hooks/api/types.ts', 25 ],
+  [ 'components/ui/label.tsx', 22 ],
+  [ 'components/project-settings/shared.tsx', 22 ],
+  [ 'lib/format.ts', 21 ],
+  [ 'components/ui/select.tsx', 20 ],
+  [ 'lib/use-app-form.tsx', 18 ],
+  [ 'components/ui/skeleton.tsx', 16 ],
+  [ 'hooks/api/client-helpers.ts', 16 ],
+  [ 'components/ui/dialog.tsx', 15 ]
+]
+API declarations
+hooks/api/analytics/index.ts 
+hooks/api/analytics/queries.ts useProjectAnalytics useWorkspaceAnalytics
+hooks/api/analytics/query-keys.ts analyticsQueryKeys
+hooks/api/client-helpers.ts ApiResponseError getData mutateData
+hooks/api/exports.ts ExportFormat ExportStatus ExportArtifact ExportRun ExportSchedule useListExportRuns useListExportSchedules useCreateExport useCancelExport useGetExportDownload useCreateExportSchedule useUpdateExportSchedule useRunExportSchedule
+hooks/api/git-workflow.ts GitConflict GitOperation GitWorkflowStatus useGitWorkflow useResolveGitConflict useAuthorizeGitWorkflow useConnectGitWorkflow useDisconnectGitWorkflow useQueueGitOperation useRotateGitWorkflowWebhookSecret
+hooks/api/index.ts 
+hooks/api/integrations.ts useProjectIntegrations useCreateProjectIntegration useUpdateProjectIntegration useActivateProjectIntegration useDeactivateProjectIntegration useVerifyProjectIntegration useDeleteProjectIntegration
+hooks/api/mutations.ts ProjectThemeImportResult useExportProjectTheme useImportProjectTheme useCreateProject useCreateApiKey useRotateApiKey useRevokeApiKey useUpdateProject useUpdateProjectConfig useDeleteProject useUpsertOpenApi useSyncOpenApi useDeleteOpenApi useCreatePage useUpdatePage useDeletePage useReorderPages usePublish usePublishAnyway useRollback useAddDomain useVerifyDomain useSetPrimaryDomain useDeleteDomain useUploadAsset useInviteMember useUpdateMemberRole useRemoveMember useInviteProjectMember useUpdateProjectMemberRole useTransferProjectOwnership useRemoveProjectMember useCancelProjectInvitation useCreateComment useResolveComment useDeleteComment useAiDraft useCreateLanguage useUpdateLanguage useDeleteLanguage useCreateBranch useMergeBranch useUpdateProjectAddon useActivateProjectAddon useDeactivateProjectAddon useUpdateWorkspaceSettings useImportFromGit useRotateGitWebhookSecret ContentImportSummary useImportFromMintlify useImportFromGhost useMarkNotificationsRead
+hooks/api/project-search.ts useProjectSearchConfiguration useUpdateProjectSearchConfiguration useProjectSearchIndexDiagnostics useCreateProjectSearchReindex
+hooks/api/public.ts useGetPublicMeta useGetInvitationInfo
+hooks/api/queries.ts useProjects useProject useProjectAddons useApiKeys usePages useLanguages useBranches usePage useDeployments usePendingChanges useDomains useOpenApiConfiguration useComments useWorkspaceSettings useMembers useProjectMembers useNotifications useUnreadNotificationCount
+hooks/api/query-keys.ts queryKeys
+hooks/api/reader-access.ts ReaderAccessData useReaderAccess useUpdateReaderAccessMode useCreateReaderAudience useDeleteReaderAudience useInviteReader useRevokeReader useUpdateReaderJwt useTestReaderJwt useEmergencyRevokeReaderAccess
+hooks/api/response-types.ts PublicMeta InvitationInfo Member Invitation MembersResult PendingChanges PresignedUpload GitIdentity GitWebhookSecret ProjectAnalytics WorkspaceAnalytics
+hooks/api/site-events.ts SiteAnalyticsConsent PublicAnalyticsPayload useCreateSiteAnalyticsEvent
+hooks/api/site-search.ts useSiteSearch useAnswerSite
+hooks/api/types.ts AnalyticsRange LanguageConfig PageConfig ProjectConfig Language Project ApiKey ApiKeySecret OpenApiConfiguration PageNode Page Branch DeploymentStatus Deployment PendingChange Domain Asset WorkspaceSettings ProjectAddon Comment ChangelogEntry NotificationItem NotificationList NavNode SiteShell SitePage SiteSearchHit SearchAnswer

@@ -1,0 +1,46 @@
+{
+  "entries": ["client.tsx", "router.tsx", "server.ts"],
+  "publicEntries": [
+    "index.ts",
+    "api.ts",
+    "model.ts",
+    "pages.ts",
+    "links.ts",
+    "appearance.ts",
+    "server.ts"
+  ],
+  "featureDependencies": {
+    "account": ["auth"],
+    "auth": ["reader"],
+    "analytics": [],
+    "api-keys": [],
+    "editor": ["auth", "project-settings", "languages", "publishing", "reader"],
+    "exports": [],
+    "git": ["auth", "publishing", "reader"],
+    "imports": [],
+    "integrations": ["analytics"],
+    "languages": [],
+    "membership": ["auth"],
+    "notifications": ["auth"],
+    "project-settings": [
+      "membership",
+      "auth",
+      "languages",
+      "reader",
+      "reader-access",
+      "exports",
+      "api-keys",
+      "git",
+      "imports",
+      "integrations",
+      "notifications",
+      "analytics"
+    ],
+    "projects": ["analytics", "project-settings", "membership", "publishing"],
+    "publishing": ["reader"],
+    "reader": [],
+    "reader-access": []
+  },
+  "toolingEntries": ["shared/testing/setup.ts"],
+  "entities": ["project", "content", "workspace"]
+}

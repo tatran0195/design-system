@@ -1,0 +1,12 @@
+/* Single-line control chrome only; prose and multiline fields retain their leading.
+   Keep this after tokens.css so compact text utilities cannot restore a 20px line
+   box inside smaller controls. Heights/flex alignment own vertical centering. */
+@layer utilities {
+  .ui-control-text {
+    line-height: var(--ui-control-line-height, 1);
+  }
+
+  .ui-control-text::placeholder {
+    font: inherit;
+  }
+}

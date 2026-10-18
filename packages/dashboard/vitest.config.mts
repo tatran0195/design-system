@@ -1,0 +1,25 @@
+import react from '@vitejs/plugin-react';
+import { resolve } from 'node:path';
+import { defineConfig } from 'vitest/config';
+
+export default defineConfig({
+  resolve: {
+    tsconfigPaths: true,
+    dedupe: ['react', 'react-dom'],
+    alias: {
+      '@': resolve(import.meta.dirname, './src'),
+    },
+  },
+  plugins: [react()],
+  test: {
+    server: {
+      deps: {
+        inline: ['react', 'react-dom', /@base-ui\/react/, 'react-tooltip'],
+      },
+    },
+    environment: 'jsdom',
+    setupFiles: [resolve(import.meta.dirname, './src/__tests__/setup.ts')],
+    maxWorkers: 1,
+    fileParallelism: false,
+  },
+});

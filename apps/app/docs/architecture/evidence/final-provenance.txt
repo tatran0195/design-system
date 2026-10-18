@@ -1,0 +1,2 @@
+$ bun scripts/audit-port.mjs --check-studio
+App port audit passed: 457 upstream records; AGPL, runtime boundaries and excluded routes checked; Studio baseline unchanged.

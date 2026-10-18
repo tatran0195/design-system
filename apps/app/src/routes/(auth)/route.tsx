@@ -1,0 +1,51 @@
+import { createFileRoute, Navigate, Outlet, redirect, useLocation, useRouterState } from '@tanstack/react-router';
+import { QueryProvider } from '@/app/providers/query-provider';
+import { AuthProviders } from '@/features/auth';
+import { useSession } from '@/features/auth/api';
+import { getSessionFn } from '@/features/auth/server';
+
+const FIRST_PUBLISH_SEARCH = { firstPublish: true };
+const EMPTY_APP_SEARCH = {};
+
+export const Route = createFileRoute('/(auth)')({
+  beforeLoad: async ({ location }) => {
+    if (await getSessionFn()) {
+      const firstPublish = location.pathname.endsWith('/sign-up') && new URLSearchParams(location.searchStr).get('intent') === 'first-publish';
+      throw redirect({ to: '/app', search: firstPublish ? { firstPublish: true } : {} });
+    }
+  },
+  // Keep every auth utility page (sign-in/up, forgot/reset password, verify
+  // email) out of search indexes — some carry live tokens in the URL. Children
+  // inherit this; per-page heads only add a title.
+  head: () => ({
+    meta: [{ name: 'robots', content: 'noindex, nofollow' }],
+  }),
+  component: AuthRoute,
+});
+
+/** Reverse guard: an authenticated user can never see sign-in/up — sent to /app. */
+function AuthRoute() {
+  return (
+    <QueryProvider>
+      <AuthProviders>
+        <AuthGuard />
+      </AuthProviders>
+    </QueryProvider>
+  );
+}
+
+function AuthGuard() {
+  const { data: session } = useSession();
+  const location = useLocation();
+  const navigating = useRouterState({ select: (state) => state.isLoading });
+
+  // Do not replace the outlet while better-auth revalidates on window focus.
+  // Unmounting here erased the email/OTP step when users switched to their inbox.
+  // Do not start a competing redirect while the successful OTP handler is
+  // already navigating away. Stable search objects also prevent effect loops.
+  if (session && !navigating) {
+    const firstPublish = location.pathname.endsWith('/sign-up') && new URLSearchParams(location.searchStr).get('intent') === 'first-publish';
+    return <Navigate to="/app" search={firstPublish ? FIRST_PUBLISH_SEARCH : EMPTY_APP_SEARCH} />;
+  }
+  return <Outlet />;
+}

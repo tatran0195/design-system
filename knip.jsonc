@@ -1,0 +1,12 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "ignore": [],
+  "workspaces": {
+    ".": {
+      "entry": ["scripts/graceful-web-service.mjs"]
+    },
+    "packages/tsconfig": {
+      "ignoreDependencies": ["vite"]
+    }
+  }
+}

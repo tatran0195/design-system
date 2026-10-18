@@ -1,0 +1,15 @@
+import { Badge } from '@/components/Badge';
+import { Tooltip } from '@/components/Tooltip';
+
+type BetaBadgeProps = {
+  text?: string;
+  tooltipText?: string;
+};
+
+export const BetaBadge = ({ text = 'Coming soon', tooltipText = 'Coming soon' }: BetaBadgeProps) => (
+  <Tooltip tooltipChildren={tooltipText} className="align-middle text-compact-x-small-plus">
+    <Badge variant="blue" badgeType="shaded" className="cursor-pointer">
+      {text}
+    </Badge>
+  </Tooltip>
+);

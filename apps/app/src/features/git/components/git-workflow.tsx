@@ -1,0 +1,651 @@
+import {
+  AlertTriangle,
+  ArrowLeft,
+  ArrowRight,
+  ArrowUpRight,
+  Check,
+  GitCommit,
+  GitCompare,
+  GitPullRequest,
+  RefreshCw,
+  Settings2,
+  ShieldCheck,
+} from 'lucide-react';
+import { useMemo, useState } from 'react';
+import { z } from 'zod';
+import {
+  type GitConflict as Conflict,
+  useAuthorizeGitWorkflow,
+  useConnectGitWorkflow,
+  useDisconnectGitWorkflow,
+  useGitWorkflow,
+  useQueueGitOperation,
+  useResolveGitConflict,
+  useRotateGitWorkflowWebhookSecret,
+} from '@/features/git/api';
+import type { GitOperationBody } from '@/integrations/nibleaf/contracts/validators/git-workflow';
+import { env } from '@/integrations/nibleaf/env';
+import { usePayloadForm } from '@/shared/forms/use-payload-form';
+import { useLocale } from '@/shared/i18n/react';
+import { localeTag } from '@/shared/lib/format';
+import { Alert, AlertDescription, AlertTitle } from '@/shared/ui/alert';
+import { Badge } from '@/shared/ui/badge';
+import { Button } from '@/shared/ui/button';
+import { Input } from '@/shared/ui/input';
+import { Label } from '@/shared/ui/label';
+import { toast } from '@/shared/ui/sonner';
+import { Textarea } from '@/shared/ui/textarea';
+
+type GitIdentity = { login: string; name: string | null };
+const statusTone = (status: string): 'default' | 'secondary' | 'destructive' | 'outline' =>
+  status === 'FAILED' || status === 'CONFLICT' ? 'destructive' : status === 'SUCCEEDED' || status === 'READY' ? 'default' : 'secondary';
+
+function ConflictCard({ projectId, conflict }: { projectId: string; conflict: Conflict }) {
+  const { t } = useLocale();
+  const conflictForm = usePayloadForm(z.object({ custom: z.string() }), { custom: conflict.oursContent ?? '' });
+  const [custom, setCustom] = conflictForm.field('custom');
+  const resolve = useResolveGitConflict(projectId, conflict.id);
+  const resolveConflict = (resolution: 'OURS' | 'THEIRS' | 'CUSTOM', content?: string | null) =>
+    resolve.mutate(
+      { resolution, ...(resolution === 'CUSTOM' ? { content: content ?? null } : {}) },
+      { onError: (error) => toast.error(error instanceof Error ? error.message : t('settings.git.workflow.conflict.error')) },
+    );
+  return (
+    <section className="rounded-lg border border-amber-500/40 bg-amber-500/5 p-4">
+      <div className="mb-3 flex items-center justify-between">
+        <code className="text-sm">{conflict.path}</code>
+        <Badge variant="destructive">{t('settings.git.workflow.conflict.badge')}</Badge>
+      </div>
+      <div className="grid gap-3 xl:grid-cols-3">
+        {(
+          [
+            [t('settings.git.workflow.conflict.base'), conflict.baseContent],
+            ['Nibleaf', conflict.oursContent],
+            ['Git', conflict.theirsContent],
+          ] as const
+        ).map(([label, value]) => (
+          <div key={label}>
+            <Label>{label}</Label>
+            <pre className="mt-1 max-h-52 overflow-auto whitespace-pre-wrap rounded-md border bg-background p-3 text-xs">
+              {value ?? t('settings.git.workflow.conflict.deleted')}
+            </pre>
+          </div>
+        ))}
+      </div>
+      <Label className="mt-3" htmlFor={`custom-${conflict.id}`}>
+        {t('settings.git.workflow.conflict.custom')}
+      </Label>
+      <Textarea
+        className="mt-1 min-h-32 font-mono text-xs"
+        id={`custom-${conflict.id}`}
+        onChange={(event) => setCustom(event.target.value)}
+        value={custom}
+      />
+      <div className="mt-3 flex flex-wrap gap-2">
+        <Button disabled={resolve.isPending} onClick={() => resolveConflict('OURS')} size="sm">
+          {t('settings.git.workflow.conflict.useNibleaf')}
+        </Button>
+        <Button disabled={resolve.isPending} onClick={() => resolveConflict('THEIRS')} size="sm" variant="outline">
+          {t('settings.git.workflow.conflict.useGit')}
+        </Button>
+        <Button disabled={resolve.isPending} onClick={() => resolveConflict('CUSTOM', custom)} size="sm" variant="secondary">
+          {t('settings.git.workflow.conflict.useCustom')}
+        </Button>
+        <Button disabled={resolve.isPending} onClick={() => resolveConflict('CUSTOM', null)} size="sm" variant="destructive">
+          {t('settings.git.workflow.conflict.delete')}
+        </Button>
+      </div>
+    </section>
+  );
+}
+
+export function GitWorkflow({ projectId }: { projectId: string }) {
+  const { locale, t } = useLocale();
+  const query = useGitWorkflow(projectId);
+  const connection = query.data;
+  const connectionForm = usePayloadForm(
+    z.object({ repository: z.string(), baseBranch: z.string(), headBranch: z.string(), contentPath: z.string() }),
+    {
+      repository: connection?.repository ?? '',
+      baseBranch: connection?.baseBranch ?? 'main',
+      headBranch: connection?.headBranch ?? 'nibleaf/docs',
+      contentPath: connection?.contentPath ?? 'docs',
+    },
+  );
+  const [repository, setRepository] = connectionForm.field('repository');
+  const [baseBranch, setBaseBranch] = connectionForm.field('baseBranch');
+  const [headBranch, setHeadBranch] = connectionForm.field('headBranch');
+  const [contentPath, setContentPath] = connectionForm.field('contentPath');
+  const credentialForm = usePayloadForm(z.object({ token: z.string() }), { token: '' });
+  const [token, setToken] = credentialForm.field('token');
+  const [authorizedAccount, setAuthorizedAccount] = useState<GitIdentity | null>(null);
+  const publicationForm = usePayloadForm(
+    z.object({ message: z.string(), authorName: z.string(), authorEmail: z.string().email(), prTitle: z.string() }),
+    { message: 'Update documentation', authorName: 'Nibleaf author', authorEmail: 'docs@example.com', prTitle: 'Update documentation' },
+  );
+  const [message, setMessage] = publicationForm.field('message');
+  const [authorName, setAuthorName] = publicationForm.field('authorName');
+  const [authorEmail, setAuthorEmail] = publicationForm.field('authorEmail');
+  const [prTitle, setPrTitle] = publicationForm.field('prTitle');
+  const [webhookSecret, setWebhookSecret] = useState<string | null>(null);
+  const [connectStep, setConnectStep] = useState<1 | 2 | 3>(1);
+  const [intent, setIntent] = useState<'overview' | 'sync' | 'publish' | 'connection'>('overview');
+  const authorize = useAuthorizeGitWorkflow(projectId);
+  const connect = useConnectGitWorkflow(projectId);
+  const disconnect = useDisconnectGitWorkflow(projectId);
+  const operation = useQueueGitOperation(projectId);
+  const rotate = useRotateGitWorkflowWebhookSecret(projectId);
+  const connectRepository = connectionForm.submit((submitted) => {
+    const { repository, baseBranch, headBranch, contentPath } = submitted;
+    return connect.mutate(
+      { repository, baseBranch, headBranch, contentPath, token: token || undefined },
+      {
+        onSuccess: (result) => {
+          setWebhookSecret(result.webhookSecret);
+          setToken('');
+          setAuthorizedAccount(null);
+          toast.success(t('settings.git.workflow.connected'));
+        },
+        onError: (error) => toast.error(error instanceof Error ? error.message : t('settings.git.workflow.connectError')),
+      },
+    );
+  });
+  const queueOperation = (body: GitOperationBody) =>
+    operation.mutate(body, {
+      onError: (error) => toast.error(error instanceof Error ? error.message : t('settings.git.workflow.operationError')),
+    });
+  const activeConflicts = useMemo(
+    () => connection?.operations.flatMap((item) => item.conflicts.filter((conflict) => conflict.status === 'OPEN')) ?? [],
+    [connection],
+  );
+  const webhookUrl = new URL(`/api/public/git/webhook/${projectId}`, env.VITE_APP_URL).toString();
+
+  if (query.isPending)
+    return (
+      <div aria-live="polite" className="rounded-xl border p-5 text-muted-foreground text-sm">
+        {t('settings.git.workflow.loading')}
+      </div>
+    );
+  if (query.isError) {
+    return (
+      <Alert variant="destructive">
+        <AlertTriangle />
+        <AlertTitle>{t('settings.git.workflow.loadError')}</AlertTitle>
+        <AlertDescription className="flex flex-wrap items-center justify-between gap-3">
+          <span>{query.error instanceof Error ? query.error.message : t('settings.git.workflow.loadErrorHint')}</span>
+          <Button onClick={() => query.refetch()} size="sm" variant="outline">
+            {t('common.retry')}
+          </Button>
+        </AlertDescription>
+      </Alert>
+    );
+  }
+  if (!connection) {
+    return (
+      <section className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+        <header className="border-border border-b bg-muted/20 px-5 py-5 sm:px-6">
+          <div className="flex items-start gap-3">
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-primary/20 bg-primary/10">
+              <ShieldCheck className="size-5 text-primary" />
+            </span>
+            <div className="space-y-1">
+              <h2 className="font-semibold text-base">{t('settings.git.workflow.connectTitle')}</h2>
+              <p className="max-w-2xl text-muted-foreground text-sm leading-6">{t('settings.git.workflow.connectDescription')}</p>
+            </div>
+          </div>
+        </header>
+
+        <div className="space-y-6 p-5 sm:p-6">
+          <ol aria-label={t('settings.git.workflow.progress')} className="grid gap-3 sm:grid-cols-3">
+            {(
+              [
+                [t('settings.git.workflow.step.authorize'), t('settings.git.workflow.step.authorizeDesc')],
+                [t('settings.git.workflow.step.repository'), t('settings.git.workflow.step.repositoryDesc')],
+                [t('settings.git.workflow.step.review'), t('settings.git.workflow.step.reviewDesc')],
+              ] as const
+            ).map(([label, description], index) => {
+              const step = (index + 1) as 1 | 2 | 3;
+              const isActive = connectStep === step;
+              const isComplete = connectStep > step;
+              return (
+                <li
+                  aria-current={isActive ? 'step' : undefined}
+                  className={`flex min-h-16 items-center gap-3 rounded-xl border p-3 ${
+                    isActive
+                      ? 'border-primary/50 bg-primary/5 text-foreground shadow-sm'
+                      : isComplete
+                        ? 'border-border bg-muted/30 text-foreground'
+                        : 'border-border/80 bg-muted/10 text-muted-foreground'
+                  }`}
+                  key={label}
+                >
+                  <span
+                    className={`flex size-7 shrink-0 items-center justify-center rounded-full font-semibold text-xs ${
+                      isActive || isComplete ? 'bg-primary text-primary-foreground' : 'border border-border bg-background'
+                    }`}
+                  >
+                    {isComplete ? <Check aria-hidden="true" className="size-4" /> : step}
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block font-medium text-sm leading-5">{label}</span>
+                    <span className="block text-muted-foreground text-xs leading-4">{description}</span>
+                  </span>
+                </li>
+              );
+            })}
+          </ol>
+
+          <div className="rounded-xl border border-border bg-background p-5 shadow-sm sm:p-6">
+            {connectStep === 1 ? (
+              <div className="max-w-2xl space-y-5">
+                <div className="space-y-1.5">
+                  <h3 className="font-medium text-sm">{t('settings.git.workflow.authorizeTitle')}</h3>
+                  <p className="text-muted-foreground text-sm leading-6">{t('settings.git.workflow.authorizeDescription')}</p>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="git2-token">{t('settings.git.workflow.token')}</Label>
+                  <Input
+                    autoComplete="off"
+                    id="git2-token"
+                    onChange={(e) => {
+                      setToken(e.target.value);
+                      setAuthorizedAccount(null);
+                    }}
+                    placeholder="github_pat_…"
+                    type="password"
+                    value={token}
+                  />
+                </div>
+                {authorize.isError ? (
+                  <p aria-live="polite" className="rounded-lg border border-destructive/30 bg-destructive/5 px-3 py-2 text-destructive text-sm">
+                    {authorize.error instanceof Error ? authorize.error.message : t('settings.git.workflow.authorizeError')}
+                  </p>
+                ) : null}
+              </div>
+            ) : null}
+            {connectStep === 2 ? (
+              <div className="space-y-5">
+                <div className="space-y-1.5">
+                  <h3 className="font-medium text-sm">{t('settings.git.workflow.chooseTitle')}</h3>
+                  <p className="text-muted-foreground text-sm leading-6">{t('settings.git.workflow.chooseDescription')}</p>
+                </div>
+                <div className="grid gap-5 md:grid-cols-2">
+                  <div className="space-y-2">
+                    <Label htmlFor="git2-repo">{t('settings.git.repository.title')}</Label>
+                    <Input id="git2-repo" onChange={(e) => setRepository(e.target.value)} placeholder="owner/docs" value={repository} />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="git2-base">{t('settings.git.workflow.baseBranch')}</Label>
+                    <Input id="git2-base" onChange={(e) => setBaseBranch(e.target.value)} value={baseBranch} />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="git2-head">{t('settings.git.workflow.headBranch')}</Label>
+                    <Input id="git2-head" onChange={(e) => setHeadBranch(e.target.value)} value={headBranch} />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="git2-path">{t('settings.git.contentPath')}</Label>
+                    <Input id="git2-path" onChange={(e) => setContentPath(e.target.value)} value={contentPath} />
+                  </div>
+                </div>
+              </div>
+            ) : null}
+            {connectStep === 3 ? (
+              <div className="space-y-5">
+                <div className="space-y-1.5">
+                  <h3 className="font-medium text-sm">{t('settings.git.workflow.reviewTitle')}</h3>
+                  <p className="text-muted-foreground text-sm leading-6">{t('settings.git.workflow.reviewDescription')}</p>
+                </div>
+                {authorizedAccount ? (
+                  <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-primary/30 bg-primary/5 px-4 py-3 text-sm">
+                    <span>
+                      {t('settings.git.workflow.authorizedAs')} <strong>@{authorizedAccount.login}</strong>
+                      {authorizedAccount.name ? <span className="text-muted-foreground"> · {authorizedAccount.name}</span> : null}
+                    </span>
+                    <Badge variant="outline">{t('settings.git.workflow.verified')}</Badge>
+                  </div>
+                ) : null}
+                <dl className="grid gap-3 text-sm sm:grid-cols-2">
+                  {(
+                    [
+                      [t('settings.git.repository.title'), repository],
+                      [t('settings.git.workflow.docsPath'), contentPath || '/'],
+                      [t('settings.git.workflow.importFrom'), baseBranch],
+                      [t('settings.git.workflow.writeTo'), headBranch],
+                    ] as const
+                  ).map(([label, value]) => (
+                    <div className="rounded-lg border border-border bg-muted/20 p-3" key={label}>
+                      <dt className="text-muted-foreground text-xs">{label}</dt>
+                      <dd className="mt-1 break-all font-mono">{value}</dd>
+                    </div>
+                  ))}
+                </dl>
+                <p className="text-muted-foreground text-xs leading-5">{t('settings.git.workflow.reviewHint')}</p>
+              </div>
+            ) : null}
+          </div>
+
+          <div className="flex flex-col-reverse gap-3 border-border border-t pt-5 sm:flex-row sm:items-center sm:justify-between">
+            <Button
+              className="w-full sm:w-auto"
+              disabled={connectStep === 1}
+              onClick={() => setConnectStep((step) => Math.max(1, step - 1) as 1 | 2 | 3)}
+              variant="outline"
+            >
+              <ArrowLeft className="size-4 rtl:-scale-x-100" /> {t('common.back')}
+            </Button>
+            {connectStep < 3 ? (
+              connectStep === 1 ? (
+                <Button
+                  className="w-full sm:w-auto"
+                  disabled={authorize.isPending || token.trim().length < 20}
+                  onClick={credentialForm.submit((submitted) => {
+                    const { token } = submitted;
+                    return authorize.mutate(token, {
+                      onSuccess: (identity) => {
+                        setAuthorizedAccount(identity);
+                        setConnectStep(2);
+                      },
+                    });
+                  })}
+                >
+                  {authorize.isPending ? t('settings.git.workflow.authorizing') : t('settings.git.workflow.authorize')}{' '}
+                  <ArrowRight className="size-4 rtl:-scale-x-100" />
+                </Button>
+              ) : (
+                <Button
+                  className="w-full sm:w-auto"
+                  disabled={!authorizedAccount || !repository.trim() || !baseBranch.trim() || !headBranch.trim()}
+                  onClick={() => setConnectStep(3)}
+                >
+                  {t('settings.git.workflow.review')} <ArrowRight className="size-4 rtl:-scale-x-100" />
+                </Button>
+              )
+            ) : (
+              <Button
+                className="w-full sm:w-auto"
+                disabled={connect.isPending || !authorizedAccount || !repository || !token}
+                onClick={connectRepository}
+              >
+                {connect.isPending ? t('settings.git.workflow.verifying') : t('settings.git.workflow.connect')}
+              </Button>
+            )}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <div className="flex flex-col gap-6">
+      <section className="rounded-xl border border-primary/20 bg-primary/5 p-5">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <div className="flex items-center gap-2">
+              <GitCompare className="size-5 text-primary" />
+              <h2 className="font-semibold">{t('settings.git.workflow.title')}</h2>
+              <Badge variant={statusTone(connection.lastSyncStatus)}>{connection.lastSyncStatus}</Badge>
+            </div>
+            <p className="mt-1 font-mono text-sm">
+              {connection.repository}: {connection.headBranch} → {connection.baseBranch}
+            </p>
+          </div>
+          <Button onClick={() => query.refetch()} size="sm" variant="outline">
+            <RefreshCw className="size-4" /> {t('common.refresh')}
+          </Button>
+        </div>
+        {connection.lastSyncError ? (
+          <Alert className="mt-4" variant="destructive">
+            <AlertTriangle />
+            <AlertTitle>{t('settings.git.workflow.lastSyncFailed')}</AlertTitle>
+            <AlertDescription>{connection.lastSyncError}</AlertDescription>
+          </Alert>
+        ) : null}
+      </section>
+
+      <nav aria-label={t('settings.git.workflow.actions')} className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+        {(
+          [
+            ['overview', t('settings.git.workflow.nav.overview'), t('settings.git.workflow.nav.overviewDesc')],
+            ['sync', t('settings.git.workflow.nav.sync'), t('settings.git.workflow.nav.syncDesc')],
+            ['publish', t('settings.git.workflow.nav.publish'), t('settings.git.workflow.nav.publishDesc')],
+            ['connection', t('settings.git.workflow.nav.connection'), t('settings.git.workflow.nav.connectionDesc')],
+          ] as const
+        ).map(([value, label, description]) => (
+          <button
+            aria-pressed={intent === value}
+            className={`rounded-lg border p-3 text-start transition-colors ${intent === value ? 'border-primary bg-primary/5' : 'hover:bg-muted/50'}`}
+            key={value}
+            onClick={() => setIntent(value)}
+            type="button"
+          >
+            <span className="block font-medium text-sm">{label}</span>
+            <span className="mt-1 block text-muted-foreground text-xs">{description}</span>
+          </button>
+        ))}
+      </nav>
+
+      {activeConflicts.length > 0 ? (
+        <section className="space-y-3">
+          <div>
+            <h3 className="font-semibold">{t('settings.git.workflow.conflict.title')}</h3>
+            <p className="text-muted-foreground text-sm">{t('settings.git.workflow.conflict.description')}</p>
+          </div>
+          {activeConflicts.map((conflict) => (
+            <ConflictCard conflict={conflict} key={conflict.id} projectId={projectId} />
+          ))}
+        </section>
+      ) : null}
+
+      {intent === 'sync' ? (
+        <section className="rounded-xl border p-5">
+          <div className="flex items-center gap-2">
+            <RefreshCw className="size-5" />
+            <h3 className="font-semibold">{t('settings.git.workflow.syncTitle')}</h3>
+          </div>
+          <p className="mt-1 text-muted-foreground text-sm">
+            {t('settings.git.workflow.syncDescriptionBefore')} <code>{connection.baseBranch}</code> {t('settings.git.workflow.syncDescriptionAfter')}
+          </p>
+          <Button
+            className="mt-4"
+            disabled={operation.isPending || activeConflicts.length > 0}
+            onClick={() => queueOperation({ idempotencyKey: crypto.randomUUID(), kind: 'PULL', sourceRef: connection.baseBranch })}
+          >
+            <RefreshCw className={`size-4 ${operation.isPending ? 'animate-spin' : ''}`} />{' '}
+            {connection.lastSyncedAt ? t('settings.git.workflow.syncLatest') : t('settings.git.workflow.importExisting')}
+          </Button>
+          {activeConflicts.length > 0 ? (
+            <p className="mt-2 text-amber-700 text-xs dark:text-amber-300">{t('settings.git.workflow.resolveFirst')}</p>
+          ) : null}
+        </section>
+      ) : null}
+
+      {intent === 'publish' ? (
+        <section className="rounded-xl border p-5">
+          <div className="flex items-center gap-2">
+            <GitCommit className="size-5" />
+            <h3 className="font-semibold">{t('settings.git.workflow.publishTitle')}</h3>
+          </div>
+          <div className="mt-4 grid gap-4 md:grid-cols-2">
+            <div className="md:col-span-2">
+              <Label htmlFor="git2-message">{t('settings.git.workflow.commitMessage')}</Label>
+              <Input id="git2-message" onChange={(e) => setMessage(e.target.value)} value={message} />
+            </div>
+            <div>
+              <Label htmlFor="git2-author">{t('settings.git.workflow.authorName')}</Label>
+              <Input id="git2-author" onChange={(e) => setAuthorName(e.target.value)} value={authorName} />
+            </div>
+            <div>
+              <Label htmlFor="git2-email">{t('settings.git.workflow.authorEmail')}</Label>
+              <Input id="git2-email" onChange={(e) => setAuthorEmail(e.target.value)} type="email" value={authorEmail} />
+            </div>
+            <div className="md:col-span-2">
+              <Label htmlFor="git2-title">{t('settings.git.workflow.prTitle')}</Label>
+              <Input id="git2-title" onChange={(e) => setPrTitle(e.target.value)} value={prTitle} />
+            </div>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-2">
+            <Button
+              disabled={operation.isPending}
+              onClick={() =>
+                queueOperation({
+                  idempotencyKey: crypto.randomUUID(),
+                  kind: 'PUSH',
+                  commitMessage: message,
+                  authorName,
+                  authorEmail,
+                  createPullRequest: true,
+                  pullRequestTitle: prTitle,
+                })
+              }
+            >
+              <GitPullRequest className="size-4" /> {t('settings.git.workflow.updatePr')}
+            </Button>
+          </div>
+        </section>
+      ) : null}
+
+      {intent === 'overview' || intent === 'publish' ? (
+        <section className="rounded-xl border p-5">
+          <h3 className="font-semibold">{t('settings.git.workflow.previewsTitle')}</h3>
+          <div className="mt-3 space-y-2">
+            {connection.pullRequests.length ? (
+              connection.pullRequests.map((pull) => {
+                const preview = pull.previews[0];
+                return (
+                  <div className="flex flex-wrap items-center gap-3 rounded-lg border p-3" key={pull.id}>
+                    <Badge variant={pull.draft ? 'secondary' : 'outline'}>{pull.draft ? t('settings.git.workflow.draft') : pull.state}</Badge>
+                    <a className="font-medium text-sm underline" href={pull.url} rel="noreferrer" target="_blank">
+                      #{pull.number} {pull.title} <ArrowUpRight className="inline size-3" />
+                    </a>
+                    <span className="ms-auto text-muted-foreground text-xs">
+                      {t('settings.git.workflow.preview')}: {preview?.status ?? t('settings.git.workflow.pending')}
+                    </span>
+                    {preview?.url ? (
+                      <a className="text-sm underline" href={preview.url} target="_blank" rel="noreferrer">
+                        {t('settings.git.workflow.openPreview')}
+                      </a>
+                    ) : null}
+                  </div>
+                );
+              })
+            ) : (
+              <p className="text-muted-foreground text-sm">{t('settings.git.workflow.noPr')}</p>
+            )}
+          </div>
+        </section>
+      ) : null}
+
+      {intent === 'connection' ? (
+        <>
+          <section className="rounded-xl border p-5">
+            <h3 className="font-semibold">{t('settings.git.webhook.title')}</h3>
+            <p className="text-muted-foreground text-sm">{t('settings.git.workflow.webhookDescription')}</p>
+            <Label className="mt-3" htmlFor="git2-webhook">
+              {t('settings.git.webhook.url')}
+            </Label>
+            <Input className="font-mono text-xs" id="git2-webhook" readOnly value={webhookUrl} />
+            {webhookSecret ? (
+              <Alert className="mt-3">
+                <ShieldCheck />
+                <AlertTitle>{t('settings.git.workflow.copySecret')}</AlertTitle>
+                <AlertDescription className="break-all font-mono text-xs">{webhookSecret}</AlertDescription>
+              </Alert>
+            ) : null}
+            <Button
+              className="mt-3"
+              disabled={rotate.isPending}
+              onClick={() =>
+                rotate.mutate(undefined, {
+                  onSuccess: (result) => setWebhookSecret(result.webhookSecret),
+                  onError: (error) => toast.error(error instanceof Error ? error.message : t('settings.git.workflow.rotateError')),
+                })
+              }
+              size="sm"
+              variant="outline"
+            >
+              {t('settings.git.workflow.rotateSecret')}
+            </Button>
+          </section>
+
+          <section className="rounded-xl border p-5">
+            <div className="flex items-center gap-2">
+              <Settings2 className="size-5" />
+              <h3 className="font-semibold">{t('settings.git.workflow.configuration')}</h3>
+            </div>
+            <p className="text-muted-foreground text-sm">{t('settings.git.workflow.configurationDescription')}</p>
+            <div className="mt-4 grid gap-4 md:grid-cols-2">
+              <div>
+                <Label htmlFor="git2-update-repo">{t('settings.git.repository.title')}</Label>
+                <Input id="git2-update-repo" onChange={(e) => setRepository(e.target.value)} value={repository} />
+              </div>
+              <div>
+                <Label htmlFor="git2-update-token">{t('settings.git.workflow.rotateToken')}</Label>
+                <Input autoComplete="off" id="git2-update-token" onChange={(e) => setToken(e.target.value)} type="password" value={token} />
+              </div>
+              <div>
+                <Label htmlFor="git2-update-base">{t('settings.git.workflow.baseBranch')}</Label>
+                <Input id="git2-update-base" onChange={(e) => setBaseBranch(e.target.value)} value={baseBranch} />
+              </div>
+              <div>
+                <Label htmlFor="git2-update-head">{t('settings.git.workflow.headBranch')}</Label>
+                <Input id="git2-update-head" onChange={(e) => setHeadBranch(e.target.value)} value={headBranch} />
+              </div>
+              <div>
+                <Label htmlFor="git2-update-path">{t('settings.git.contentPath')}</Label>
+                <Input id="git2-update-path" onChange={(e) => setContentPath(e.target.value)} value={contentPath} />
+              </div>
+            </div>
+            <div className="mt-4 flex flex-wrap justify-between gap-2">
+              <Button
+                disabled={disconnect.isPending}
+                onClick={() => {
+                  if (window.confirm(t('settings.git.workflow.disconnectConfirm'))) {
+                    disconnect.mutate(undefined, {
+                      onSuccess: () => toast.success(t('settings.git.workflow.disconnected')),
+                      onError: (error) => toast.error(error instanceof Error ? error.message : t('settings.git.workflow.disconnectError')),
+                    });
+                  }
+                }}
+                variant="destructive"
+              >
+                {t('settings.git.disconnect')}
+              </Button>
+              <Button disabled={connect.isPending} onClick={connectRepository} variant="outline">
+                {connect.isPending ? t('common.saving') : t('settings.git.workflow.saveConnection')}
+              </Button>
+            </div>
+          </section>
+        </>
+      ) : null}
+
+      {intent === 'overview' || intent === 'sync' ? (
+        <section className="rounded-xl border p-5">
+          <h3 className="font-semibold">{t('settings.git.workflow.recentOperations')}</h3>
+          <div className="mt-3 space-y-2">
+            {connection.operations.map((item) => (
+              <div className="rounded-lg border p-3" key={item.id}>
+                <div className="flex items-center gap-2">
+                  <Badge variant={statusTone(item.status)}>{item.status}</Badge>
+                  <span className="text-sm">
+                    {item.kind} {item.commitMessage}
+                  </span>
+                  <span className="ms-auto text-muted-foreground text-xs">{new Date(item.createdAt).toLocaleString(localeTag(locale))}</span>
+                </div>
+                {item.changedFiles?.length ? (
+                  <ul className="mt-2 text-muted-foreground text-xs">
+                    {item.changedFiles.map((file) => (
+                      <li key={file.path}>
+                        {file.status}: <code>{file.path}</code>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+                {item.error ? <p className="mt-2 text-destructive text-xs">{item.error}</p> : null}
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
+    </div>
+  );
+}

@@ -1,0 +1,122 @@
+'use client';
+
+import { Star, StarSolid } from '@cms/icons';
+import clsx from 'clsx';
+import type React from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { Button } from '@/components/Button';
+import { Label } from '@/components/Label';
+import { TextArea } from '@/components/TextArea';
+import { useAnalytics } from '@/providers/Analytics';
+import { useNotifications } from '@/providers/Notification';
+
+export type RatingProps = {
+  event?: string;
+  className?: string;
+  onRating?: (rating?: number) => void;
+  additionalQuestion?: string;
+  parentNotificationId?: string;
+} & React.HTMLAttributes<HTMLDivElement>;
+
+export const Rating: React.FC<RatingProps> = ({
+  event = 'rating',
+  className = '',
+  onRating,
+  additionalQuestion = 'What should we improve?',
+  parentNotificationId,
+}) => {
+  const [rating, setRating] = useState(0);
+  const [additionalFeedback, setAdditionalFeedback] = useState('');
+  const [hoverRating, setHoverRating] = useState(0);
+  const starElms = useRef<HTMLElement[]>([]);
+  const starArr = Array.from(new Array(5).keys());
+  const { track } = useAnalytics();
+  const { updateNotification } = useNotifications(true) || {};
+
+  const submitTracking = useCallback(
+    (selectedRating?: number, feedback?: string) => {
+      track({
+        event: {
+          event,
+          options: {
+            rating: selectedRating || rating,
+            additionalFeedback: feedback || additionalFeedback,
+          },
+          callback: () => onRating?.(selectedRating || rating),
+        },
+      });
+    },
+    [rating, additionalFeedback, onRating, track, event],
+  );
+
+  const handleRating = (selectedRating: number) => {
+    if (rating) {
+      return;
+    }
+    setHoverRating(0);
+    setRating(selectedRating);
+    if (selectedRating >= 4) {
+      for (let i = 0; i < selectedRating; i++) {
+        starElms.current[i].classList.add('animate-tada');
+      }
+      submitTracking(selectedRating);
+    }
+  };
+
+  useEffect(() => {
+    if (rating > 0 && rating < 4 && parentNotificationId && updateNotification) {
+      // update parent notification ID
+      updateNotification(parentNotificationId, {
+        closeButtonText: 'Submit',
+        onClose: () => submitTracking(rating, additionalFeedback),
+      });
+    }
+  }, [additionalFeedback, rating, parentNotificationId, updateNotification, submitTracking]);
+
+  return (
+    <div className={clsx('flex flex-col gap-docs_1')}>
+      <div className={clsx('flex gap-docs_0.5', className)}>
+        {starArr.map((i) => {
+          const isSelected = (rating !== 0 && rating - 1 >= i) || (hoverRating !== 0 && hoverRating - 1 >= i);
+          return (
+            <Button
+              variant="transparent"
+              buttonRef={(element) => {
+                if (starElms.current.length - 1 < i) {
+                  starElms.current.push(element as HTMLElement);
+                }
+              }}
+              key={i}
+              onMouseOver={() => {
+                if (!rating) {
+                  setHoverRating(i + 1);
+                }
+              }}
+              onMouseLeave={() => {
+                if (!rating) {
+                  setHoverRating(0);
+                }
+              }}
+              onClick={() => handleRating(i + 1)}
+            >
+              {!isSelected && <Star />}
+              {isSelected && <StarSolid className="text-cms-tag-orange-icon" />}
+            </Button>
+          );
+        })}
+      </div>
+      {rating !== 0 && rating < 4 && (
+        <div className={clsx('text-cms-fg-subtle', 'flex flex-col gap-docs_0.5')}>
+          <Label>{additionalQuestion}</Label>
+          <TextArea
+            placeholder="I didn't like..."
+            rows={4}
+            onChange={(e) => setAdditionalFeedback(e.target.value)}
+            value={additionalFeedback}
+            className="w-full"
+          />
+        </div>
+      )}
+    </div>
+  );
+};

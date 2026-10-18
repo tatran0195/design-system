@@ -1,0 +1,11 @@
+{
+  "extends": "@cms/tsconfig/react.json",
+  "compilerOptions": {
+    "types": ["vitest/globals", "@testing-library/jest-dom/vitest"],
+    "paths": {
+      "@cms/icons": ["./src/index.ts"]
+    }
+  },
+  "include": ["src", "setup-test.ts"],
+  "exclude": ["node_modules", "dist", ".cache", ".turbo"]
+}

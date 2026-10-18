@@ -1,0 +1,56 @@
+[
+  {
+    "url": "/app",
+    "violations": [],
+    "passes": 41,
+    "incomplete": 1,
+    "manualReview": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "targets": [
+          [".bg-gradient-to-br"],
+          ["tspan[x=\"35\"][dy=\"0.71em\"]"],
+          ["tspan[x=\"112.61538461538461\"][dy=\"0.71em\"]"],
+          ["tspan[x=\"190.23076923076923\"][dy=\"0.71em\"]"],
+          ["tspan[x=\"267.8461538461538\"][dy=\"0.71em\"]"],
+          ["tspan[x=\"345.46153846153845\"][dy=\"0.71em\"]"],
+          ["tspan[x=\"423.0769230769231\"][dy=\"0.71em\"]"],
+          ["tspan[x=\"500.6923076923077\"][dy=\"0.71em\"]"],
+          ["tspan[x=\"578.3076923076923\"][dy=\"0.71em\"]"],
+          ["tspan[x=\"655.9230769230769\"][dy=\"0.71em\"]"],
+          ["tspan[x=\"733.5384615384615\"][dy=\"0.71em\"]"],
+          ["tspan[x=\"811.1538461538462\"][dy=\"0.71em\"]"],
+          ["tspan[x=\"888.7692307692307\"][dy=\"0.71em\"]"],
+          ["tspan[x=\"1028.078125\"][dy=\"0.71em\"]"],
+          ["text[y=\"210\"] > tspan[dy=\"0.355em\"][x=\"27\"]"],
+          ["text[y=\"159.5\"] > tspan[dy=\"0.355em\"][x=\"27\"]"],
+          ["text[y=\"109\"] > tspan[dy=\"0.355em\"][x=\"27\"]"],
+          ["text[y=\"58.5\"] > tspan[dy=\"0.355em\"][x=\"27\"]"],
+          ["text[y=\"9\"] > tspan[dy=\"0.355em\"][x=\"27\"]"]
+        ]
+      }
+    ]
+  },
+  {
+    "url": "/app/projects/design-handbook/editor?page=design-handbook-page-0",
+    "violations": [],
+    "passes": 40,
+    "incomplete": 0,
+    "manualReview": []
+  },
+  {
+    "url": "/sites/design-handbook/welcome",
+    "violations": [],
+    "passes": 38,
+    "incomplete": 0,
+    "manualReview": []
+  },
+  {
+    "url": "/sign-in",
+    "violations": [],
+    "passes": 38,
+    "incomplete": 0,
+    "manualReview": []
+  }
+]

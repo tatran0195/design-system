@@ -1,0 +1,25 @@
+import clsx from 'clsx';
+import type React from 'react';
+
+export type TextAreaProps = {
+  className?: string;
+} & React.DetailedHTMLProps<React.TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>;
+
+export const TextArea = (props: TextAreaProps) => (
+  <textarea
+    {...props}
+    className={clsx(
+      'bg-cms-bg-field shadow-border-base dark:shadow-border-base-dark',
+      'rounded-docs_sm',
+      'py-[6px] px-docs_0.5 text-medium font-base',
+      'hover:bg-cms-bg-field-hover',
+      'focus:shadow-cms-border-interactive-with-focus',
+      'active:shadow-cms-border-interactive-with-focus',
+      'disabled:bg-cms-bg-disabled',
+      'disabled:border-cms-border-base disabled:border disabled:shadow-none',
+      'placeholder:text-cms-fg-muted',
+      'disabled:placeholder:text-cms-fg-disabled',
+      props.className,
+    )}
+  />
+);

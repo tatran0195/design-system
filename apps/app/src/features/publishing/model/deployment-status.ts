@@ -1,0 +1,23 @@
+import type { DeploymentStatus } from '@/features/publishing/api';
+import type { MessageKey } from '@/shared/i18n';
+
+type Translate = (key: MessageKey) => string;
+
+const STATUS_KEY: Record<DeploymentStatus, MessageKey> = {
+  PENDING: 'deployment.status.pending',
+  BUILDING: 'deployment.status.building',
+  READY: 'deployment.status.ready',
+  FAILED: 'deployment.status.failed',
+};
+
+/** The localized, human label for a deployment status enum ("READY" → "Live"). */
+export const deploymentStatusLabel = (status: DeploymentStatus, t: Translate): string => t(STATUS_KEY[status]);
+
+/** The design-system Badge variant for a status: failures read as destructive,
+ *  the live snapshot as primary, and in-flight states stay muted. */
+export const deploymentStatusVariant = (status: DeploymentStatus): 'default' | 'destructive' | 'secondary' => {
+  if (status === 'FAILED') {
+    return 'destructive';
+  }
+  return status === 'READY' ? 'default' : 'secondary';
+};

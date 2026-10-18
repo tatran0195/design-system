@@ -1,0 +1,2532 @@
+[
+  {
+    "before": "server.test.ts",
+    "beforeSha256": "ad4b0e5f5776d5b0745773e17853b8d300b8304d8f01a5147e9fa4fb56fdc647",
+    "after": ["app/server/handler.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "client.tsx",
+    "beforeSha256": "c2027460231182a50ace742b36c203233d43bfb4a1608078a4444bee29750a1d",
+    "after": ["app/bootstrap/client.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "env.ts",
+    "beforeSha256": "2a696bf0999f6645f6ada1bf1d072cb1723fb19a12093e3b452bb47c8cbb1fa0",
+    "after": ["integrations/nibleaf/env.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "server.ts",
+    "beforeSha256": "687d22d67da324ac403afb1527a8d0e85e4e6239b327367730126c44d203cdb9",
+    "after": ["app/server/handler.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "site-theme.css",
+    "beforeSha256": "3639251532c4d079b3a7ea36d02d4195d9b2ed678acd58c102118f3c1d547ba7",
+    "after": ["styles/site-theme.css"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "router.tsx",
+    "beforeSha256": "9dfba2a2f88806c1e4890092b6e151fca26d8d8cfbe81a06988484c6c9698040",
+    "after": ["app/router/router.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "typeset.css",
+    "beforeSha256": "22bb0ad27f896a8d3df5375f96148367894b0186aae31a7fb69d676476489d2a",
+    "after": ["styles/typeset.css"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routeTree.gen.ts",
+    "beforeSha256": "25bdd5a4dd74f4ad287661b22fb470b757dd8691775b1732dc921772c5941df1",
+    "after": ["routeTree.gen.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "env.server.ts",
+    "beforeSha256": "49c7777e7c331648d772ec216a924ed6a9a40d71e061b43b8c807873e10bad9e",
+    "after": ["integrations/nibleaf/env.server.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "styles.css",
+    "beforeSha256": "6c924a798a257aadd3a6b562d398772cef253da9214f65a58f3a8e2d0ce0e0e9",
+    "after": ["styles/styles.css"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "providers/analytics-provider.tsx",
+    "beforeSha256": "bdff5d557a8aa9eeaed334ec7178133922f5ca525c8f593ff1a2c04b5598dfc3",
+    "after": ["features/analytics/model/analytics-provider.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "providers/site-analytics-provider.tsx",
+    "beforeSha256": "49e561a141403bab6e1b68e4b1366d47014edd49025fde2ea2a30e057d81c2cf",
+    "after": ["features/reader/analytics/site-analytics-provider.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "providers/analytics-provider.test.tsx",
+    "beforeSha256": "5ceb2d2b7b3ad4815c3d39c9292d59134c9afabad7e21553afae555503693bb1",
+    "after": ["features/analytics/model/analytics-provider.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "stores/active-project.tsx",
+    "beforeSha256": "9e5d38b427f0363ffeb1d6f62234ea21627477e973052e6e8a2b6ea3997cd956",
+    "after": ["entities/project/model/active-project.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/shortcut.ts",
+    "beforeSha256": "ea7aeb33da3f051f628f03f5ccbbce5da6429b52abebb45af8933ae76bd9f57a",
+    "after": ["shared/lib/shortcut.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/languages.ts",
+    "beforeSha256": "466db5b547a9f01f5012b12c9331979e52f7ad013af1f6bd7b4654d38d94c026",
+    "after": ["entities/content/model/languages.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/theme-provider.test.tsx",
+    "beforeSha256": "de8bb79857527868b77e7bb1f3d51f5812163e6a9fb95f29191cc7861de7bf8a",
+    "after": ["shared/lib/theme-provider.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/public-route-manifest.ts",
+    "beforeSha256": "a01300b6aa6dabb2d75b5c1855f3f9d275f218f9bc31b85094fa9d10d102ee32",
+    "after": ["app/server/public-route-manifest.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/typography.ts",
+    "beforeSha256": "f37193f4d04a17656497041302b89773f143af043623389d55527cc7e0b8aa27",
+    "after": ["features/reader/lib/typography.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/site-redirects.ts",
+    "beforeSha256": "d825675d373ac910760e8f2a665570dad7108bfe2df8f95f794558ca7c818453",
+    "after": ["features/reader/lib/site-redirects.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/use-app-form.test.tsx",
+    "beforeSha256": "21bc5b17531a99a440e72086182ff6c0e5c72805dddffaf7cf4a8dbf9437ccba",
+    "after": ["shared/forms/use-field-form.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/draft-preview.test.ts",
+    "beforeSha256": "472d84da056b1dfe1bcae8cd34e5046a1b81c747de18b0203ab9b4e8d63ed193",
+    "after": ["features/reader/lib/draft-preview.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/auth-errors.test.ts",
+    "beforeSha256": "84afc661c880388265c69422e10bdb218c481da0cfd45562a53042bac934af03",
+    "after": ["features/auth/model/auth-errors.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/site-language-path.ts",
+    "beforeSha256": "59fc9b6fc320862f105ed681cf2281b6db4bc9f4ffd843aea97007a9ca00f61a",
+    "after": ["features/reader/lib/site-language-path.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/site-redirect-href.ts",
+    "beforeSha256": "40959ef06e07d95566532ffaea6d2025caf7d68fd778e89fdb860cda1b2c4a0d",
+    "after": ["features/reader/lib/site-redirect-href.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/content-security-policy.test.ts",
+    "beforeSha256": "4ff56ad8cc6c966c1c7597ddb5335a1b70f72cd07e844c4e8d63aadb1be488c9",
+    "after": ["app/server/content-security-policy.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/content-security-policy.ts",
+    "beforeSha256": "ec60818b08986ece71e2f52a629cff280ee9e5b08fada8dcf361956bf20c645b",
+    "after": ["app/server/content-security-policy.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/use-payload-form.test.tsx",
+    "beforeSha256": "f10e0182d6118e48ad76db11e8a5a5917939c10795fca0f363f0903fbe248b70",
+    "after": ["shared/forms/use-payload-form.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/draft-preview.ts",
+    "beforeSha256": "425ee20dc3d2bd918ed1e964bf86e928ae0e6b0c94b6c70beaa7c3100ad32191",
+    "after": ["features/reader/lib/draft-preview.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/request-negotiation.ts",
+    "beforeSha256": "005ec94254c66cc8ebe611f2c8e25e0072d8ea35b3f238b51dc9e4202f2d74de",
+    "after": ["app/server/request-negotiation.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/site-redirect-href.test.ts",
+    "beforeSha256": "ab0631d6cc8d03cd87e13d26f345eff2654fd62739ba59be922605daecca87e4",
+    "after": ["features/reader/lib/site-redirect-href.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/form.ts",
+    "beforeSha256": "a3656e96f809c84d743618888c9f8bc4ad72853d9654b16ce3f3c6e9c3f68f4a",
+    "after": ["shared/forms/form.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/site-origin.ts",
+    "beforeSha256": "cca487e6e4ec92dad19ddf79dbe675cc2fc267c3b2ef9450162d45ad0e3dec9f",
+    "after": ["features/reader/lib/site-origin.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/site-paths.test.ts",
+    "beforeSha256": "12d0c89113d2a6e490b9c93862479c1d6dcfeb4364d1859aa67700749249015e",
+    "after": ["features/reader/lib/site-paths.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/site-seo.ts",
+    "beforeSha256": "3fbe833dbf969c2068a610e969a6484ff15b7d0cb148d44b8ccb1df5625aa011",
+    "after": ["features/reader/lib/site-seo.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/public-route-manifest.test.ts",
+    "beforeSha256": "ae58d27e9013043c82df7ff4e81e58722d5ce978188c4c7f71db67c50917f156",
+    "after": ["app/server/public-route-manifest.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/site-theme.ts",
+    "beforeSha256": "264c68a6010c2edf4b9acccbc2c464e9159b612ef736b37ac751a082aace67b7",
+    "after": ["features/reader/lib/site-theme.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/site-i18n.test.ts",
+    "beforeSha256": "a9562d17e092fa5c9d9d563dc8543dfe09973f2bbdbf0653b9e8c366187dd512",
+    "after": ["features/reader/lib/site-i18n.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/openapi-reference.ts",
+    "beforeSha256": "58227ae09af6525f33b3c14b5d37f3661b5cd8dce16d4aa038d0824def3b9174",
+    "after": ["features/reader/lib/openapi-reference.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/request-negotiation.test.ts",
+    "beforeSha256": "668b6e4769ff593687c26276d54150e71f3082066e99230437428cbfef2f21ad",
+    "after": ["app/server/request-negotiation.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/use-payload-form.ts",
+    "beforeSha256": "fd765d64f0061fa692bd17d56561e74155c38ba4828dd69a3bb87fd1cda8d880",
+    "after": ["shared/forms/use-payload-form.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/site-paths.ts",
+    "beforeSha256": "b55969c80447878eaaa3be996197dcb9349049a3d77842619f2acbe090c502dd",
+    "after": ["features/reader/lib/site-paths.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/shortcut.test.ts",
+    "beforeSha256": "5fe9aebaa9fc96e126cb37b3b44afd290d951d7b49c7dc56cab167f3ec24932e",
+    "after": ["shared/lib/shortcut.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/auth-errors.ts",
+    "beforeSha256": "c4a315998e719db68106562bf9fc9353feb740e977825b72521504c0257e525a",
+    "after": ["features/auth/model/auth-errors.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/links.ts",
+    "beforeSha256": "f2a54b80bf435daf8b9613b0855860ab26e4bc883c3e45b3fd0ca578ef9348a8",
+    "after": ["features/reader/lib/links.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/site-branding.ts",
+    "beforeSha256": "00ef93037c574f754587acd77ed0752bfab244c73866cf46d9b3e35f4b9c7ba2",
+    "after": ["features/reader/lib/site-branding.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/ssr-nonce.ts",
+    "beforeSha256": "b1cd64e4aef8aa357135995378b8c7fcbfd1452f011a44671dd8d9608270f203",
+    "after": ["app/bootstrap/ssr-nonce.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/format.ts",
+    "beforeSha256": "23c18f71e19788a4340717af04bc3c27c11575be6066da61e41d803b7db508a4",
+    "after": ["shared/lib/format.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/request-nonce.server.ts",
+    "beforeSha256": "ce1fb4deae35e97360e4eb771a63f5f2d8970c2f995e7acba991785dd2816a03",
+    "after": ["app/bootstrap/request-nonce.server.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/use-app-form.tsx",
+    "beforeSha256": "d9a9802bceccee644e4a110c7d219cd588174fbf1aa7c13eb6e06da8f039e06f",
+    "after": ["shared/forms/use-field-form.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/deployment-status.test.ts",
+    "beforeSha256": "f17143b167065e9ef62bee713fa68812cedce291c1b93f41ff94b471c3c1679b",
+    "after": ["features/publishing/model/deployment-status.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/format.test.ts",
+    "beforeSha256": "445d03cfb7341530cf7c7c86f6ee788f47f8d34170e430bb2f6e04e810a9f01e",
+    "after": ["shared/lib/format.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/deployment-status.ts",
+    "beforeSha256": "059bf72cce516d1a7f155657752239f79f525dcd11a8c9347cf4cc11b1361e89",
+    "after": ["features/publishing/model/deployment-status.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/auth-document-title.ts",
+    "beforeSha256": "fd61bed917144e529141e7b15e91e0fa09ef617f11b068ebcb7b7c2eb86af45d",
+    "after": ["features/auth/model/auth-document-title.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/custom-domain-rewrite.ts",
+    "beforeSha256": "a938ffeaed3e8544affde379414afc14777a82bc02c92cbadf101b93350ad891",
+    "after": ["features/reader/lib/custom-domain-rewrite.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/site-theme.test.tsx",
+    "beforeSha256": "63b10ee1b4d6efd30790e65167b16ca371e6d8d1113812859ed0d9d5b2e9bd24",
+    "after": ["features/reader/lib/site-theme.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/custom-domain-rewrite.test.ts",
+    "beforeSha256": "0c09d03967edddd92ace99f1e12a2102480a2d49da66f501976fede8189c93a9",
+    "after": ["features/reader/lib/custom-domain-rewrite.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/site-branding.test.ts",
+    "beforeSha256": "899b88c0a31691662125efd6d83e0378b72ad5cbd3d7104fc6bf2163d181d289",
+    "after": ["features/reader/lib/site-branding.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/site-language-path.test.ts",
+    "beforeSha256": "1eb3445d12ae32238d8587cda920bc380fec75889966c87f312ad72812b7f875",
+    "after": ["features/reader/lib/site-language-path.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/openapi-reference.test.ts",
+    "beforeSha256": "7b08fb892aba2319992fc4f8f2b94c7ea59efa62ab2fdbb36dc9be0a2bf821cb",
+    "after": ["features/reader/lib/openapi-reference.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/blog-components.ts",
+    "beforeSha256": "d994fc60146623ddf36a032a37f8a2558ddce3e91317122a05f37116c9ae216c",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/site-seo.test.ts",
+    "beforeSha256": "90809bdfddf9d66705561a23880128a9b274d0c6b535ee8b9f67f3763f471f2d",
+    "after": ["features/reader/lib/site-seo.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "lib/invitations.ts",
+    "beforeSha256": "96e1880c14809360939f3f2cbc27ba523348c07e38bc167b51f9085ff7765c72",
+    "after": ["features/auth/model/invitations.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "test/setup.ts",
+    "beforeSha256": "498ba8c8ce1cd38184d47dbb2d398a6211a3daa3dd90bacb470dde9df8fe80c3",
+    "after": ["shared/testing/setup.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "functions/site.ts",
+    "beforeSha256": "065134d2699558eda7dee981728a97a2d147e4234bb7e2815d816e53e348277c",
+    "after": ["features/reader/server/site.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "functions/session.ts",
+    "beforeSha256": "dd49dd904df7b1b221e96635383f9d74ffdff0d8ca1916f0d1b1d41d2094da80",
+    "after": ["features/auth/server/session.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "functions/site-search.ts",
+    "beforeSha256": "3cfa05308a4d0e5344b5a329ab9fba6fc75914b90fb7a52778e1d68b3d1dc26e",
+    "after": ["features/reader/server/site-search.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "types/turndown-plugin-gfm.d.ts",
+    "beforeSha256": "6b99a2a40eb379e218823fa31343a092d4c7abc50f8215767ce2afda9b566545",
+    "after": ["shared/types/turndown-plugin-gfm.d.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/accept-invite.$invitationId.tsx",
+    "beforeSha256": "0adff31bb9682521aff2eb6bd732660552553615592e286fcc3162387703b067",
+    "after": [
+      "routes/accept-invite.$invitationId.tsx",
+      "features/auth/pages/invitation.tsx"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/index.tsx",
+    "beforeSha256": "7e997b7684f0948e97d732934b1038765995839fa16ee61c0321bd47f9c62b18",
+    "after": ["routes/index.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/git-preview.$token.tsx",
+    "beforeSha256": "3c8680301cbb8529a09db80a0a2e6508c6d72395b3f919ddb32179aea7fc6226",
+    "after": ["routes/git-preview.$token.tsx", "features/git/pages/review.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/__root.tsx",
+    "beforeSha256": "989199116c3aee686b3e99040d14037eba04a51f58c06851b649482b2d512bf8",
+    "after": ["routes/__root.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "services/api.ts",
+    "beforeSha256": "def1f805a5d1e6b442e09bad21265771f90d62c5c04dcc08b09d3aaf53dabff8",
+    "after": ["integrations/nibleaf/endpoints.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "services/transport.test.ts",
+    "beforeSha256": "c9b4e0423de84a52f8956d961c5ffecda584830ca48cdd640b9c45bd22de5292",
+    "after": ["integrations/nibleaf/transport.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "services/transport.ts",
+    "beforeSha256": "d387ca6ccd5197ee7f5151c1e0074ee465850ee475bf82d2f5e47e2ced07c741",
+    "after": ["integrations/nibleaf/transport.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "services/auth-client.ts",
+    "beforeSha256": "e7414fabc5e29f041bb2545e98b21c41d04cb07c7ded558b00be998272cdc08d",
+    "after": ["features/auth/api/auth-client.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/markdown-rich.tsx",
+    "beforeSha256": "3e2cc00f7eeb6579f7619f92459ff3e7cf925beda9604e595d70ce9d2c73a842",
+    "after": ["features/reader/components/markdown-rich.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/markdown.test.ts",
+    "beforeSha256": "e21c3833d2a44863145cc7aad241a2be73a49512bbd4ed32427ee6e85a5fc660",
+    "after": ["features/reader/components/markdown.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/interface-language-dialog.tsx",
+    "beforeSha256": "cb37ce38221c154c7ace2ba7987ca8976a9b53c6aae3d54805266ca07b690bb0",
+    "after": ["shared/ui/interface-language-dialog.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/auth-providers.tsx",
+    "beforeSha256": "42c0863cf5b819555c6371eeb3acafc4ff1ead560fe379abd4d4c206b515d7ad",
+    "after": ["features/auth/components/auth-providers.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/app-providers.tsx",
+    "beforeSha256": "0549feedf76821e72f28cd5cf63c449eb840148e9f467268ea882b67d9506e1e",
+    "after": ["app/providers/product.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/markdown-rich.test.ts",
+    "beforeSha256": "5a81b6ad7488706ac16d01d62a0531b13984cf98aff904a5c029d9b58905a289",
+    "after": ["features/reader/components/markdown-rich.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/page-loader.tsx",
+    "beforeSha256": "7c74d6bd499955d4fd87f41e9fbbda38ba368bbead2874e86cf5ce17c6263ee5",
+    "after": ["shared/ui/page-loader.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/auth-providers.test.ts",
+    "beforeSha256": "02c8d8d8198b9764d3e38c3ea27fb8f3fa71c81e0b83d826563d89fbe2eac9f3",
+    "after": ["features/auth/model/auth-document-title.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/control-density.test.tsx",
+    "beforeSha256": "b9cd009e00d7a9cc410267d4ec877fda56924245e5e313700f2525a0c86ea3ee",
+    "after": ["shared/ui/control-density.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/localized-product-providers.tsx",
+    "beforeSha256": "7c96c77e989fece78e3c9e38aad2bdd6090d584ab4ea09eecf60e7803b881cbe",
+    "after": ["shared/ui/localized-product-providers.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/not-found.tsx",
+    "beforeSha256": "4281d310f2d5652d160c89ed9c7078c7def8da17b6543832c02a432ad577de67",
+    "after": ["shared/ui/not-found.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/error-page.tsx",
+    "beforeSha256": "fc8dca32013f62e924b944219462a207261a75bba42645300862fe2db65f933b",
+    "after": ["shared/ui/error-page.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/markdown.tsx",
+    "beforeSha256": "42327d2c60f2000f2bef822b7974d5d65442ae1cbf532ce6898d07d8e5765968",
+    "after": ["features/reader/components/markdown.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/brand.tsx",
+    "beforeSha256": "2daf13cb90ac588b46895d7819b6a864362f445630f3a765743ef02453599e20",
+    "after": ["shared/ui/brand.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/api-routes.json",
+    "beforeSha256": "cfe580386ca6cbab989e057789551e29f3ed1e0f96c200380fa9a96709a0cb14",
+    "after": ["integrations/nibleaf/contracts/api-routes.json"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "i18n/runtime.ts",
+    "beforeSha256": "93f9bb5c00df250e02d7ad6dfff718435035f8480c5da9a848056e3c69e4954c",
+    "after": ["shared/i18n/runtime.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "i18n/runtime.test.ts",
+    "beforeSha256": "958c6e6109b94f4299e0bab9e89423ff2df7f022e8f29521de920e31cf2fc852",
+    "after": ["shared/i18n/runtime.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "i18n/translate.ts",
+    "beforeSha256": "a5b7eae437a40d20a4453a5eda650c869e755b38485029e3668b00b679b887a9",
+    "after": ["shared/i18n/translate.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "i18n/standalone.ts",
+    "beforeSha256": "4695015bcebbac24227d9ba15407b9ee3e35db1ab49ff640151a66816e426cc9",
+    "after": ["shared/i18n/standalone.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "i18n/site.ts",
+    "beforeSha256": "ed7bdfa09f9c0594ac6cb9d370d4cad0d3ff51f2d3028a3edcc5e5ae93241c37",
+    "after": ["shared/i18n/site.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "i18n/react.ts",
+    "beforeSha256": "379df7c2d4295c7a5ec3cdcc8d4533490b06c63748ad6fabaea114d817c2fb8a",
+    "after": ["shared/i18n/react.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "i18n/locales.ts",
+    "beforeSha256": "c7d5d85d955d5c4fe1166b1f285741753220a2e98fa27c30265dfa16eb823ca8",
+    "after": ["shared/i18n/locales.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "i18n/index.ts",
+    "beforeSha256": "52878c3c98bdbbec88484b2a6ef3628da78f9daa4728fd5c97fc27a3d2c96cdb",
+    "after": ["shared/i18n/index.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "i18n/message-types.ts",
+    "beforeSha256": "557b96c360ca47655d349cc101da8a4627681bfb365c686f63544ff3c58d7c1f",
+    "after": ["shared/i18n/message-types.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "i18n/message-ids.ts",
+    "beforeSha256": "ba0b80ea4734591aae49cfe89a3996d07b61b8130114642b5e05c7b68fc97fed",
+    "after": ["shared/i18n/message-ids.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "layouts/project.tsx",
+    "beforeSha256": "341ab1e14c59e394cb13417dd9ed31c486e3d6668630bacb3bfe11991fc65d03",
+    "after": ["app/layouts/project.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "layouts/auth.tsx",
+    "beforeSha256": "0d8a8d991f254b4709e4eebedd561a2176e6fc413ff0c4412bee12409828f386",
+    "after": ["features/auth/components/auth-layout.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "layouts/dashboard.tsx",
+    "beforeSha256": "dab0a3128c8d04239fd136d054bd1209b6072055aa723d279f5f54205ba78dca",
+    "after": ["app/layouts/dashboard.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/validators/redirects.ts",
+    "beforeSha256": "5a14bbf8113f8f4c3571a04a03a91741e67bb5e12f7d64b58e9dd3a4fccf6666",
+    "after": ["integrations/nibleaf/contracts/validators/redirects.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/validators/addons.ts",
+    "beforeSha256": "50ba393af36a3b790f8ee3374e35bb431e7b976970567c25f3b0280e34f052af",
+    "after": ["integrations/nibleaf/contracts/validators/addons.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/validators/integrations.ts",
+    "beforeSha256": "79de850e15f83261d65d653e67635d4cbea72b0b2ca1a4766ad1a6d271ab7248",
+    "after": ["integrations/nibleaf/contracts/validators/integrations.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/validators/assets.ts",
+    "beforeSha256": "a2e3cdab551015a35678c5bf0ad1bfc576d0fbdcce3d7c4e0636461eed73015d",
+    "after": ["integrations/nibleaf/contracts/validators/assets.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/validators/index.ts",
+    "beforeSha256": "b4dca8303d9b05e427c42b07ee2a921e6b29d36ec9b0aae09186ca699d9b7645",
+    "after": [
+      "integrations/nibleaf/contracts/validators/project-config.ts",
+      "integrations/nibleaf/contracts/validators/redirects.ts",
+      "integrations/nibleaf/contracts/validators/languages.ts",
+      "integrations/nibleaf/contracts/validators/addons.ts",
+      "integrations/nibleaf/contracts/validators/projects.ts",
+      "integrations/nibleaf/contracts/validators/analytics.ts",
+      "integrations/nibleaf/contracts/validators/content.ts",
+      "integrations/nibleaf/contracts/validators/common.ts",
+      "integrations/nibleaf/contracts/validators/openapi.ts",
+      "integrations/nibleaf/contracts/validators/api-keys.ts",
+      "integrations/nibleaf/contracts/validators/integrations.ts",
+      "integrations/nibleaf/contracts/validators/domains.ts",
+      "integrations/nibleaf/contracts/validators/language-config.ts",
+      "integrations/nibleaf/contracts/validators/comments.ts",
+      "integrations/nibleaf/contracts/validators/assets.ts",
+      "integrations/nibleaf/contracts/validators/membership.ts",
+      "integrations/nibleaf/contracts/validators/publishing.ts",
+      "integrations/nibleaf/contracts/validators/search.ts",
+      "integrations/nibleaf/contracts/validators/page-config.ts",
+      "integrations/nibleaf/contracts/validators/exports.ts",
+      "integrations/nibleaf/contracts/validators/git-workflow.ts",
+      "integrations/nibleaf/contracts/validators/themes.ts",
+      "integrations/nibleaf/contracts/validators/git-config.ts",
+      "integrations/nibleaf/contracts/validators/reader-access.ts"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/validators/themes.ts",
+    "beforeSha256": "442777d0da73be0a0ea908f6552b336d3d4d908ad7e7806fb8f66d9f5dbe420b",
+    "after": ["integrations/nibleaf/contracts/validators/themes.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/public-markdown-content.ts",
+    "beforeSha256": "88f55d912171524311e538de8de9451ab96d0661d4c670831d8a87b1cc757129",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/redirects.ts",
+    "beforeSha256": "1d2b6a32ab95b0126db54d64eccd38a01fd358361e46a8feb0f2721eee9ee097",
+    "after": ["integrations/nibleaf/contracts/shared/redirects.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/addons.ts",
+    "beforeSha256": "60dec238dbb929e201aed8897f6a72d1b108e603f9e851e869606bc13765a979",
+    "after": ["integrations/nibleaf/contracts/shared/addons.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/theme-repository.ts",
+    "beforeSha256": "888783dc241b5559aef713364dc104232771bc32a840a4ca41f17299457ebec2",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/public-markdown.ts",
+    "beforeSha256": "9c5b1614e15078d900612e0bbee72814c7edb7de1e22cd2e84ad16b7ebb2dd05",
+    "after": ["integrations/nibleaf/contracts/shared/public-markdown.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/constants.ts",
+    "beforeSha256": "517ae2c92005333a2f5f3bec54568316ecf3d85431a09859618315b75f9a35f2",
+    "after": ["integrations/nibleaf/contracts/shared/constants.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/utils.ts",
+    "beforeSha256": "aafaf76fe722664dbd91cbba722ac68abf4fa962c43a242b5d276cbff6d0538e",
+    "after": ["integrations/nibleaf/contracts/shared/utils.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/integrations.ts",
+    "beforeSha256": "3baaa8eb288aead470ace1d613cbf8f32c3eaf84f2f4505cf8aa3ee3ee6cad75",
+    "after": ["integrations/nibleaf/contracts/shared/integrations.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/site.ts",
+    "beforeSha256": "2437732439bbfd4d90daf5942dfc1bc1833a9952d967136fe5c2ae1b6e5942a8",
+    "after": ["integrations/nibleaf/contracts/shared/site.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/crypto.ts",
+    "beforeSha256": "fc2955c4701579f4ca822f1bc29f49837cbafd2c5034eebb15380b669b25b8bd",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/markdown-code.ts",
+    "beforeSha256": "d1905e43b805fcd3be34ed9cf9ec1d0c766bc7dfde2177b750ccef31949bd519",
+    "after": ["integrations/nibleaf/contracts/shared/markdown-code.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/ids.ts",
+    "beforeSha256": "46ef2706002f83fe8517c6520a6ba0abe4080a37a15232153867661d3e88d2ab",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/mcp.ts",
+    "beforeSha256": "34e66ae6997fb98ec20020c470576ac5680b2d942daedc86a6fefe8260817bed",
+    "after": ["integrations/nibleaf/contracts/shared/mcp.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/index.ts",
+    "beforeSha256": "7f5709fb84417e957ea17a98ee274994922c32d23762c3ce21fb1aca4530a558",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/export-schedule.ts",
+    "beforeSha256": "28954621ac59178fbf9deea7e0cbf7593ca40f1a6fe71cc59668a47998ad2ef1",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/documentation-components.ts",
+    "beforeSha256": "84913cbe60799e7220221490f9f2f3a04a73edc76c8c29729c3b8137d67e303c",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/themes.ts",
+    "beforeSha256": "617ce7f8c88b154337b835f6ca8de780bc885812af15399f672f1c28cb9eb9e2",
+    "after": ["integrations/nibleaf/contracts/shared/themes.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/rbac.ts",
+    "beforeSha256": "b0abd430050f64c4ce43a6c386a7f8e0ce27a2894424a68d445a20c05055ed4d",
+    "after": ["integrations/nibleaf/contracts/shared/rbac.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/markdown-discovery.ts",
+    "beforeSha256": "eea711ec34ecd06a89d42d25cef0c26077584066e232b74861790c1127c970d2",
+    "after": ["integrations/nibleaf/contracts/shared/markdown-discovery.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/theme-repository-templates/styles.ts",
+    "beforeSha256": "aa99e63828600faf2464556dd7c306820fe2518fbb86b09170844b4163e73025",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/theme-repository-templates/layouts.ts",
+    "beforeSha256": "06d44417693e0ffac52b58419573db2007094cccc3f066601110cfeca9e94c46",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/theme-repository-templates/markdown.ts",
+    "beforeSha256": "7bd1aaaa31f06ab1f1d75db92a4bab7f98a15a2c59f52ab85776055210a22077",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/theme-repository-templates/types.ts",
+    "beforeSha256": "91f4eebb328f7422742582277c4b499f7cb58c94195586a4a57b9b91a6770570",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/theme-repository-templates/tooling.ts",
+    "beforeSha256": "4703276b1b3c404934e1adb0ec3e10cf24204f87d565698ecb198051f2d46587",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/theme-repository-templates/chrome.ts",
+    "beforeSha256": "6630a78cc08535ca7908a51d622d41f00a2fa5a82c356cef2bf95bbc3779e942",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/theme-repository-templates/routes.ts",
+    "beforeSha256": "3e50b5b385d69ceb174e353f80ae264e1c5cf53da9489ad3192ca66a5ab2843e",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/theme-repository-templates/messages.ts",
+    "beforeSha256": "238517ef61a54b2d8bd8ada3431bdd86d5b6f6b028a5fc68e5554dd5ad11bf31",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/theme-repository-templates/package-json.ts",
+    "beforeSha256": "00bf5c3478b82d6ebcce1649be3a4313fd16145d836da8d2d4ac365e5c850543",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/theme-repository-templates/index.ts",
+    "beforeSha256": "8fd7aefda05184b7c2b4ee8fe4755609adfe2702ba404a105d929d977148d184",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/theme-repository-templates/mdx-components.ts",
+    "beforeSha256": "aaeb51439602b735d3edf14e802c5e76dadb9ba548933e1262e8f235b35db21c",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/theme-repository-templates/site-lib.ts",
+    "beforeSha256": "746f01554dd2897b38d452e0762c18114cea319e9ebb1a2dcb7dedd22fe21a77",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "contracts/shared/theme-repository-templates/readme.ts",
+    "beforeSha256": "4ed202d2faf3c775d3ba3e4a315398428499def3bb8b938ef2d02e133cde1087",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/editor/tiptap.css",
+    "beforeSha256": "8cf817da99951e26722a79a6916d7793838d6338d3afc7dfd362aacc91efc6a1",
+    "after": ["features/editor/components/tiptap.css"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/editor/slash-command.test.ts",
+    "beforeSha256": "30f827e637ee02aa6d9a21ac27c0ea8180111243524febc321cc7d54c545772f",
+    "after": ["features/editor/components/slash-command.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/editor/unsupported-mdx.ts",
+    "beforeSha256": "d419f68ffeba08589ab8c46a3262e28c2002844f67483f345ac404b6a7e049f2",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": "@cms/editor"
+  },
+  {
+    "before": "components/editor/link-utils.ts",
+    "beforeSha256": "d419f68ffeba08589ab8c46a3262e28c2002844f67483f345ac404b6a7e049f2",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": "@cms/editor"
+  },
+  {
+    "before": "components/editor/page-settings-dialog.tsx",
+    "beforeSha256": "9f183c4e1d7171f9d3f6a4fcacd5093ec4ed3202efd0b25fec2721606e12b41e",
+    "after": ["features/editor/components/page-settings-dialog.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/editor/link-utils.test.ts",
+    "beforeSha256": "451397ffe3027afb72be46b21ebe1d66b72248f8761c0f870a03907d409bd8cd",
+    "after": ["features/editor/components/link-utils.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/editor/markdown-roundtrip.test.ts",
+    "beforeSha256": "e72d3a6b3f11f857989a957cf380c478de4a47c589295bb9b013a0f8acfbc662",
+    "after": ["features/editor/components/markdown-roundtrip.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/editor/editor-draft.test.ts",
+    "beforeSha256": "e373b7835eb40c36f07055b45a7f8f886aa14488d715023c7abf61a9d5e69e8e",
+    "after": ["features/editor/components/editor-draft.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/editor/site-config-panel.tsx",
+    "beforeSha256": "254eb90a71417c1d3c238368abe2ea673ed2efd77d57bc8c5025de15bdc6d6fb",
+    "after": ["features/editor/components/site-config-panel.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/editor/add-language-dialog.tsx",
+    "beforeSha256": "ac7b281708cec90e316e83621e906b52133fdad8d942542cf6af05a2fedf02e4",
+    "after": ["features/languages/components/add-language-dialog.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/editor/editor-bubble-menu.tsx",
+    "beforeSha256": "d419f68ffeba08589ab8c46a3262e28c2002844f67483f345ac404b6a7e049f2",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": "@cms/editor"
+  },
+  {
+    "before": "components/editor/markdown-source-editor.tsx",
+    "beforeSha256": "d419f68ffeba08589ab8c46a3262e28c2002844f67483f345ac404b6a7e049f2",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": "@cms/editor"
+  },
+  {
+    "before": "components/editor/code-block-menu.tsx",
+    "beforeSha256": "d419f68ffeba08589ab8c46a3262e28c2002844f67483f345ac404b6a7e049f2",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": "@cms/editor"
+  },
+  {
+    "before": "components/editor/language-settings-dialog.tsx",
+    "beforeSha256": "8ae80e361839213d7b917e37cf57f316abc35af0e99db726e83bc77e9719f231",
+    "after": ["features/languages/components/language-settings-dialog.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/editor/editor-layout.test.ts",
+    "beforeSha256": "6084f7c41ad63fa9fc18d3f0dc8d5856b63ea3451f63d44388fc2c866d2470c1",
+    "after": ["features/editor/components/editor-layout.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/editor/editor-layout.ts",
+    "beforeSha256": "d419f68ffeba08589ab8c46a3262e28c2002844f67483f345ac404b6a7e049f2",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": "@cms/editor"
+  },
+  {
+    "before": "components/editor/unsupported-mdx.test.ts",
+    "beforeSha256": "0359acb176c811aad7adb2d45917055648d372aa3bfa6ab09b5cf8c239178cbf",
+    "after": ["features/editor/components/unsupported-mdx.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/editor/markdown-source-editor.test.tsx",
+    "beforeSha256": "ffe245119d661516f690d160390cdb31cdb9ce9ea49778a0748302913cacfa89",
+    "after": ["features/editor/components/markdown-source-editor.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/editor/tiptap-editor.tsx",
+    "beforeSha256": "d419f68ffeba08589ab8c46a3262e28c2002844f67483f345ac404b6a7e049f2",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": "@cms/editor"
+  },
+  {
+    "before": "components/editor/sortable-page-tree.tsx",
+    "beforeSha256": "83b376cc81b587e8c243cc1e2783a428c39879eff31de7793dd413ec7cf71a5c",
+    "after": ["features/editor/components/sortable-page-tree.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/editor/editor-draft.ts",
+    "beforeSha256": "d419f68ffeba08589ab8c46a3262e28c2002844f67483f345ac404b6a7e049f2",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": "@cms/editor"
+  },
+  {
+    "before": "components/editor/add-language-dialog.test.tsx",
+    "beforeSha256": "0273351a5487006f7391233babf628774ddd2bc29e36d46c49b1ba974c4f1508",
+    "after": ["features/languages/components/add-language-dialog.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/editor/branch-switcher.tsx",
+    "beforeSha256": "1b0094bc587512d4bc37e2f2b9a1b04527efd88e1b131cb40dce36b48b18db2a",
+    "after": ["features/editor/components/branch-switcher.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/editor/ai-assist.tsx",
+    "beforeSha256": "0f08f445fa2bf4171a1364dea78060982ac09c4bcf546e9e968c2453ae38341e",
+    "after": ["features/editor/components/ai-assist.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/editor/tiptap-editor.test.tsx",
+    "beforeSha256": "a8b5c10fc5976c1bee7b48c5d9bde5bc2a0a159609be3e46eaed7c39f9f34852",
+    "after": ["features/editor/components/tiptap-editor.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/editor/table-menu.tsx",
+    "beforeSha256": "d419f68ffeba08589ab8c46a3262e28c2002844f67483f345ac404b6a7e049f2",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": "@cms/editor"
+  },
+  {
+    "before": "components/editor/mdx-roundtrip.test.ts",
+    "beforeSha256": "7eb7a70c4315cae898afc6ebdcd1f0032454fcd43404501780230cc030468802",
+    "after": ["features/editor/components/mdx-roundtrip.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/editor/comments-panel.tsx",
+    "beforeSha256": "b5f289fce51fddfe6f747d4f14cbf3c8a252e4b2ae00eb163be648d548edec5a",
+    "after": ["features/editor/components/comments-panel.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/settings/section.tsx",
+    "beforeSha256": "aa4100c16916e46a3efeac3614178185d07410d319f0b636a2441ad472e814c2",
+    "after": ["shared/ui/settings-section.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/settings/integrations-tab.tsx",
+    "beforeSha256": "33803d231db0a2641c09c918c87929b715ddbc76ae43b1b24ea1ac324909c59b",
+    "after": ["features/integrations/components/integrations-tab.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/settings/appearance-tab.test.tsx",
+    "beforeSha256": "afbc64bb298a6992c359a6279b48e6579caaf41c6371e4175e4d47791bb90b6f",
+    "after": ["features/account/components/appearance-tab.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/settings/integration-config-values.ts",
+    "beforeSha256": "bd10fe044ce41c502bd9e94a402c1106f9c1d86b23348143677bbee1fbdf522e",
+    "after": ["features/integrations/components/integration-config-values.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/settings/import-tab.tsx",
+    "beforeSha256": "332bcc09cc5efab3c193115667cc9bead38f645d47e93440a6abd90b2f69158e",
+    "after": ["features/imports/components/import-tab.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/settings/api-keys-tab.tsx",
+    "beforeSha256": "775575e62aae27322c55abb8fe04d2bad4412df3e07847a472907fd199ac24e8",
+    "after": ["features/api-keys/components/api-keys-tab.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/settings/notifications-tab.tsx",
+    "beforeSha256": "a7ee535e7a9d58ffd14abbebb33471f4d2236184a0f71c64358abad67151cc6f",
+    "after": ["features/notifications/components/notifications-tab.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/settings/account-tab.tsx",
+    "beforeSha256": "f7573ea324d0b4863bce594ff03951aaae66c053ce0d426ffff82fba59983733",
+    "after": ["features/account/components/account-tab.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/settings/api-key-alert-dialog.tsx",
+    "beforeSha256": "57d45ab02ee7b55aa5e23f438187fc2f3629d829446c4151b5dcfaaa8224f27e",
+    "after": ["features/api-keys/components/api-key-alert-dialog.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/settings/integration-config-values.test.ts",
+    "beforeSha256": "6f54d92c69f390da9fb6aa12af065d85faa9421c22ab5200cbcfe6c6302817e2",
+    "after": [
+      "features/integrations/components/integration-config-values.test.ts"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/settings/git-tab.tsx",
+    "beforeSha256": "c916ebffb638da0bada60a9b8977aa318a25d8fac75e7b7b5afbdc43e13bc0ea",
+    "after": ["features/git/components/git-tab.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/settings/git-workflow.tsx",
+    "beforeSha256": "fb1658849128f2dec837425cd86f4f3a7dfda0504edc81a684c9db9197ac99e7",
+    "after": ["features/git/components/git-workflow.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/settings/appearance-tab.tsx",
+    "beforeSha256": "2baf929dc30207f6ba25a650b4beeb3db188174c408834f8221f831f9c99a26d",
+    "after": ["features/account/components/appearance-tab.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/settings/api-key-alert-dialog.test.tsx",
+    "beforeSha256": "bb3a14397c33605dde75ea0484ccd37a2bf1f2c683f9fa0b08497cbcc7642991",
+    "after": ["features/api-keys/components/api-key-alert-dialog.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/settings/api-keys-tab.test.tsx",
+    "beforeSha256": "384a6b3b93906bef4d877b9599d3842dbefdcb81f347153f6fa34280a8852ca3",
+    "after": ["features/api-keys/components/api-keys-tab.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/settings/notifications-tab.test.tsx",
+    "beforeSha256": "6876f66d8fa82ca731a5aeebe5b22a8cefac224ad3a0c86611d958391328f1f8",
+    "after": ["features/notifications/components/notifications-tab.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/site/toc.tsx",
+    "beforeSha256": "274bb1e12c8b7123e437246056923ef2c6849078d4421d861fa179b43affcf1b",
+    "after": ["features/reader/components/toc.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/site/site-banner.tsx",
+    "beforeSha256": "7d7941e480d7a4edf9f8ae41a9aa5fb019bce603bd6b8c31b7d897a78f033eee",
+    "after": ["features/reader/components/site-banner.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/site/page-alternates-context.tsx",
+    "beforeSha256": "ad453d341651dfe8e5a948b046121068425d5b4a2212c537d4684cde8c543cb2",
+    "after": ["features/reader/components/page-alternates-context.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/site/site-page-view.test.tsx",
+    "beforeSha256": "e98aa0745305393eae41883787eaacb506eb1ee4bcbf7df98e25e62a8ac54f33",
+    "after": ["features/reader/components/site-page-view.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/site/site-nav.tsx",
+    "beforeSha256": "30144a7b06c81b87e0a268c9314cbab1e0893b0e84614fdfda11f54b865b60b0",
+    "after": ["features/reader/components/site-nav.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/site/documentation-theme-provider.tsx",
+    "beforeSha256": "bb10dd7bcd0e65566f2b4eeb98d17a40707907fb8b9fd345876f2e8242a48280",
+    "after": ["features/reader/components/documentation-theme-provider.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/site/mdx-components.tsx",
+    "beforeSha256": "c6f59c52517d3135103ef7f9016867610553213ca57fdc334aff991da50c9b47",
+    "after": ["features/reader/components/mdx-components.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/site/page-icon.tsx",
+    "beforeSha256": "c300ace3fd6a32ce834b25fefa62efb9ac28e4784acad5e8e8bfed4133fd418f",
+    "after": ["shared/ui/page-icon.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/site/site-page-view.tsx",
+    "beforeSha256": "7d1de20ff3cab17bc51bfe419f9755f21a4d1d131c82d420d4ca5a6473f747df",
+    "after": ["features/reader/components/site-page-view.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/site/site-nav.test.ts",
+    "beforeSha256": "27489f4b7e673f99b37c0fc96357be48c81546be4e42fa2afa614b9dfc919676",
+    "after": ["features/reader/components/site-nav.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/site/mdx-config.test.ts",
+    "beforeSha256": "ef4f8dcc2f7ecae36f890beca39d82ab02937abfaaa94c0b4f7a768935f44a01",
+    "after": ["features/reader/components/mdx-config.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/site/mdx-components.test.tsx",
+    "beforeSha256": "4e362ea9a972f6c3111b6b9793f53c5d7da0be6138f8475f40ebc41c0bb35711",
+    "after": ["features/reader/components/mdx-components.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/site/version-switcher.tsx",
+    "beforeSha256": "f2a1b4547c2c015072889890a725d8ab788a6cd4712fa3986381596229de7d6f",
+    "after": ["features/reader/components/version-switcher.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/site/site-search.tsx",
+    "beforeSha256": "754623c6678ed77fbad64317e6b93b3fb74fe4bca5712522d1e80c059cc799bc",
+    "after": ["features/reader/components/site-search.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/site/mdx-config.ts",
+    "beforeSha256": "b87fd7bc55fc38e7be38860937187f33e59a9685f391245c49f8e63587e6ad37",
+    "after": ["features/reader/components/mdx-config.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/site/site-analytics-consent.test.ts",
+    "beforeSha256": "abfc2216bac4beca2bb0c7793cd7385bffb551c5c3970b060832f12e64a7bc82",
+    "after": ["features/reader/components/site-analytics-consent.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/site/language-switcher.tsx",
+    "beforeSha256": "aa11ae5390f30a2b47c446bf8719c8bace196944f017077a29a03e259102cbe5",
+    "after": ["features/reader/components/language-switcher.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/site/openapi-reference-view.tsx",
+    "beforeSha256": "1324371a5e61a752b4804cc82fe5061f2e770ae168970c3831f817571fe5472a",
+    "after": ["features/reader/components/openapi-reference-view.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/site/mobile-nav.tsx",
+    "beforeSha256": "1fdefeb10bff20e2e8c3aaadff3e0b95ae4fb9fffcf0c1ac5a051a512c12053b",
+    "after": ["features/reader/components/mobile-nav.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/site/made-with-badge.tsx",
+    "beforeSha256": "06a7a79b9ee320f9683c710b09ef4b4aad5dd4e0d6f2a2f2d4b1378aac63b4ca",
+    "after": ["features/reader/components/made-with-badge.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/site/mermaid-block.tsx",
+    "beforeSha256": "4b91ab7e86fd619ae6a2bfb9b132263cacb0824fc228cab070ae04084ccce6e8",
+    "after": ["features/reader/components/mermaid-block.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/site/site-analytics-consent.tsx",
+    "beforeSha256": "f2760448fa2e2959fbd0c8550eee99a57c1b1c222b5d08a08ecbea5c3d452427",
+    "after": ["features/reader/components/site-analytics-consent.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/icons/brand.tsx",
+    "beforeSha256": "af366353b73c9a6e7b8cd38563da9aff2b4a5309d9a8af6810f948335accac17",
+    "after": ["shared/ui/icons/brand.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/app/sidebar-account-footer.tsx",
+    "beforeSha256": "f7d1b650e61c1f93342dd9cb0ebdf404fdff4335cf58c50382d9fa95b016c452",
+    "after": ["widgets/navigation/sidebar-account-footer.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/app/new-project-dialog.tsx",
+    "beforeSha256": "d9ff3e3585d237e273938323437b1175c4958900f79d3a6f9776e5a111542e55",
+    "after": ["features/projects/components/new-project-dialog.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/app/site-switcher.tsx",
+    "beforeSha256": "0339ad509434eafc0d863bd4a8a12c81a6cabba950dd5b6c0eff9a47986cd9e1",
+    "after": ["widgets/navigation/site-switcher.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/app/app-sidebar.tsx",
+    "beforeSha256": "3ad4e638cef688813cd6e9fe5c37a1452f3af20397e5b67de8355eb9ead21586",
+    "after": ["widgets/navigation/app-sidebar.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/app/notifications-popover.tsx",
+    "beforeSha256": "c456b8da0ae519cc5e3d39e9cf45e5b7b6027724b8dbf12ac67b590519578ec8",
+    "after": ["features/notifications/components/notifications-popover.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/app/support-access-banner.test.tsx",
+    "beforeSha256": "97e5cc605c23914fea0456fce9726fa594b64dfced4d7c18fc8aa646a5c6145f",
+    "after": ["features/auth/components/support-access-banner.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/app/support-access-banner.tsx",
+    "beforeSha256": "e4e318d7813d8c8163c10344e2ff57b34996af70c91bb4290d7926834bb1bd5d",
+    "after": ["features/auth/components/support-access-banner.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/app/project-sidebar.tsx",
+    "beforeSha256": "5418b81664fb4146e674ed20556f13fe5b83ef303c1865ea41a75c4ecf75f160",
+    "after": ["widgets/navigation/project-sidebar.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/app/command-palette.test.tsx",
+    "beforeSha256": "63843f4b17e403878ed9d2e18fc9773accd4e9c61fcae33c3243c825176030fb",
+    "after": ["widgets/navigation/command-palette.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/app/command-palette.tsx",
+    "beforeSha256": "7be5f2e91ef22cbd92b09128b2dcdc004c059189040d69fd40d52d4d65849139",
+    "after": ["widgets/navigation/command-palette.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project/project-access-boundary.tsx",
+    "beforeSha256": "a6d78f1b557bbdb6a035ab08a77b6cbd07c4904eb597209bafeaa10a376da06a",
+    "after": ["features/membership/components/project-access-boundary.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project/deploy-pipeline.tsx",
+    "beforeSha256": "cf728f5073a3b362a23e2aeaa013aa0dafca6ec4620a97ba02f62d2a4b77eff3",
+    "after": ["features/publishing/components/deploy-pipeline.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project/project-access-boundary.test.tsx",
+    "beforeSha256": "303fbffd37b2363afba81b2d6ff64fab6cd0c1ca5097266d5994edcf849d7502",
+    "after": [
+      "features/membership/components/project-access-boundary.test.tsx"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project/publish-modal.tsx",
+    "beforeSha256": "03cd5e8ab7f91d610e3cb578f41ccd410c35598c10ccfed871afbdc883bcb620",
+    "after": ["features/publishing/components/publish-modal.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/analytics/stat-card.tsx",
+    "beforeSha256": "09d07b0063b1875cfb4f2c723be9a00282cdc9133a068b65bdf4534712e7d399",
+    "after": ["features/analytics/components/stat-card.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/analytics/bar-row.tsx",
+    "beforeSha256": "0502e3406d4c9cc833351df44cef916ecfcc21975d5d41fe25e71e881bfd4c7c",
+    "after": ["features/analytics/components/bar-row.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/analytics/range-tabs.test.tsx",
+    "beforeSha256": "904dff95a46d8c34b4577760119ba19300fe9ae39c97cf48c05af47c7c30f136",
+    "after": ["features/analytics/components/range-tabs.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/analytics/chart-format.ts",
+    "beforeSha256": "fda8e025cfe1a755db44d68558f1853d763e2a821d53a5ea70ee936e1bfad1e0",
+    "after": ["features/analytics/components/chart-format.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/analytics/chart-format.test.ts",
+    "beforeSha256": "4b0e842e2bb05c8f6cc73fba098a3867174b982f1374754903fbd017e03c6c69",
+    "after": ["features/analytics/components/chart-format.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/analytics/views-area-chart.tsx",
+    "beforeSha256": "40f10df8d380ca49c50eb4490f4c538775173b323a8427e37b72275c9e15ffb1",
+    "after": ["features/analytics/components/views-area-chart.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/analytics/views-timeseries-chart.tsx",
+    "beforeSha256": "fae80b71d60b94cebdeaeeba2e88cf1aa9b21f74dbcb28c06ba54b25a3a1c67f",
+    "after": ["features/analytics/components/views-timeseries-chart.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/analytics/list-card.tsx",
+    "beforeSha256": "5b71a56587a7f7b2f190421fc26ae1c7ff1034aeb5786372a10ac091711890c8",
+    "after": ["features/analytics/components/list-card.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/analytics/range-tabs.tsx",
+    "beforeSha256": "2dd5ed601ceb6511dc5890392cd23d6cb10c2e55fb1aaa56e7e853c2b65c9842",
+    "after": ["features/analytics/components/range-tabs.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/analytics/section-card.tsx",
+    "beforeSha256": "c63ad965776eb3bcb76add1696419723a1298e3609ca5d57c32294c0038c7945",
+    "after": ["features/analytics/components/section-card.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/theme-section.tsx",
+    "beforeSha256": "7b21c74dbbfd296828bd128ebfe591656111317696e6f59ecb2ae44f692c5daf",
+    "after": ["features/project-settings/components/theme-section.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/typography-section.tsx",
+    "beforeSha256": "7e3d855cdbd36c0d39ffbb401be5c25ed471452af2bd8336ba0b47edc118ef01",
+    "after": ["features/project-settings/components/typography-section.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/general-section.tsx",
+    "beforeSha256": "26b31e148ad82e956de2500ff9c5e1933d077a28dbba09de807afbc911f998e9",
+    "after": ["features/project-settings/components/general-section.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/openapi-section.tsx",
+    "beforeSha256": "7636610ba787f0e8e3fd70427524db9d533a184af1cb491640004f5bb37de97e",
+    "after": ["features/project-settings/components/openapi-section.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/languages-section.tsx",
+    "beforeSha256": "41652619bc04c4c0f12e6e03317065a80a89a1a32b70a1deac5d04b92b349df8",
+    "after": ["features/project-settings/components/languages-section.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/seo-section.tsx",
+    "beforeSha256": "2801b482df588ab90b3b6a0988a98632b4238cf38f3b4f422de65d37ebbae398",
+    "after": ["features/project-settings/components/seo-section.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/search-index-diagnostics.tsx",
+    "beforeSha256": "3eb25b15e81d5cd5c0bddf14bc26e5404ad37738a08434bf971f13ddcf74dcbb",
+    "after": [
+      "features/project-settings/components/search-index-diagnostics.tsx"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/banner-section.tsx",
+    "beforeSha256": "6ff8b5f82f0f2d3097c928c88fbdf89a005ed96287184c648777f677e590206d",
+    "after": ["features/project-settings/components/banner-section.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/shared.test.tsx",
+    "beforeSha256": "bc25c9016e2c9d09bd57674e18518a910a1eed826c9bac94f5b6c049f5dcb9b6",
+    "after": ["features/project-settings/components/shared.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/styling-section.tsx",
+    "beforeSha256": "91a8bf92b3a6efba6fc3b80391bed7b7ccdcd252ec3699b10e74604d78482176",
+    "after": ["features/project-settings/components/styling-section.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/danger-section.tsx",
+    "beforeSha256": "1c3f002ba2e959548d7994e59e617744e6b2f39c553073e58c08b6713685fbd7",
+    "after": ["features/project-settings/components/danger-section.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/variables-section.tsx",
+    "beforeSha256": "b42ca1ddf9683625a4ec8dabdc93716981b82491199e8e2d03ee8fca6f192eff",
+    "after": ["features/project-settings/components/variables-section.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/shared.tsx",
+    "beforeSha256": "cf02596ef10e41484b170748f4d9b61a5e5bfb4a3bc68215780f7d4830f470a3",
+    "after": ["features/project-settings/components/shared.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/redirects-section.tsx",
+    "beforeSha256": "81db92ab41d0a28bee650a416f82f0c9be1308ff986a1ca1f041f574bc03bbb6",
+    "after": ["features/project-settings/components/redirects-section.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/members-section.test.tsx",
+    "beforeSha256": "2d2cf77969a62efe4c0b5c2cafb5acd59b498637ff60ca59ad4d65ea465989f3",
+    "after": ["features/membership/components/members-section.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/analytics-section.tsx",
+    "beforeSha256": "4463c8e1345ddb55de40fdb39095cf6225134a3fb81e31af01e193c438258b8f",
+    "after": ["features/analytics/components/analytics-section.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/domain-section.tsx",
+    "beforeSha256": "a3033e3dd1ed2f3ba289b1b9e96aa330543b9138cd8dce09feffbd127ea51fd0",
+    "after": ["features/project-settings/components/domain-section.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/members-section.tsx",
+    "beforeSha256": "56543776f370f58b9419301be512d459e79c77aa85edd6e4fd4897ecef24e078",
+    "after": ["features/membership/components/members-section.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/exports-section.tsx",
+    "beforeSha256": "1a0f51a460bcffa129c0649edd95de8ac141848e4f84ffc7003b0a439b544fc9",
+    "after": ["features/exports/components/exports-section.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/footer-section.tsx",
+    "beforeSha256": "cdb3873d88b55a50221c619fc90acfbda5414f12ea8bc49f6e99bc121c6d927a",
+    "after": ["features/project-settings/components/footer-section.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/branding-section.tsx",
+    "beforeSha256": "578b04f7c9d91e7b7ac48a54f07da49ad123a938ce1c335eb85323d73f5bc70a",
+    "after": ["features/project-settings/components/branding-section.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/search-section.tsx",
+    "beforeSha256": "8906a8abf5e2901f3a17af71d79076ca1bdba81b26c065fe97b5d2bf58a3e803",
+    "after": ["features/project-settings/components/search-section.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/theme-section.test.tsx",
+    "beforeSha256": "fd2acd860a9cf7999cf07a14caaa154d1a826b74265826be7ae193049030d540",
+    "after": ["features/project-settings/components/theme-section.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/navbar-section.tsx",
+    "beforeSha256": "7b7427349fded95679226887d3f1603172ec6cc87ca2099707ee1328295a0734",
+    "after": ["features/project-settings/components/navbar-section.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/authentication-section.tsx",
+    "beforeSha256": "56dd779be7c6be832cc01380e997f81578102d0a749910075bc5acfeba47bfb4",
+    "after": ["features/reader-access/components/authentication-section.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/addons-section.test.ts",
+    "beforeSha256": "7e776f6de3a5394c48a3b5970d4de80b8ead6ba98d8d555bc5fe47e0a7b8c617",
+    "after": ["features/project-settings/components/addons-section.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/project-settings/addons-section.tsx",
+    "beforeSha256": "29cc1f75cdec3998fd724de83aa83b8f754810618a14ce0a576a77974023de2d",
+    "after": ["features/project-settings/components/addons-section.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/segmented-control.tsx",
+    "beforeSha256": "5e9ebb8fb9d3305753c20c4abee4ba1999a7ae2cd4cc12d5b052770def889e0a",
+    "after": ["shared/ui/segmented-control.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/select.tsx",
+    "beforeSha256": "2b2de9a0ff0a25d7d09ef9d7757ff732e45a12e5eca83fc8c459c8ff31d3de6c",
+    "after": ["shared/ui/select.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/accordion.tsx",
+    "beforeSha256": "ba6b8a60599d6e564ea4e47113b62ffc5a4ecc963ebb0d14ec5c4443a345ffbf",
+    "after": ["shared/ui/accordion.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/breadcrumb.tsx",
+    "beforeSha256": "25bee8caaae0eb84abade7e2ac641e87d519449f7a5d234fc3fe743dca7a7ffd",
+    "after": ["shared/ui/breadcrumb.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/tabs.tsx",
+    "beforeSha256": "0848be51caa8a8bad14d2bf9e6d9c5e60641999cc1486b2276213bc5baf3036a",
+    "after": ["shared/ui/tabs.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/slider.tsx",
+    "beforeSha256": "d965224a72112050232e81c2fdb8e19e0615cf49d2f8e6f8324a351d0e1aef9c",
+    "after": ["shared/ui/slider.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/dropdown-menu.tsx",
+    "beforeSha256": "1c15ee86301a772cdf62ce857606afa0c2372b9e3060a96bf625c5918e7da760",
+    "after": ["shared/ui/dropdown-menu.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/tooltip.tsx",
+    "beforeSha256": "a3c718bb3f1ca39c0857557b64cfdffbfca77798c09c8fb5621f19ae4e530b58",
+    "after": ["shared/ui/tooltip.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/switch.tsx",
+    "beforeSha256": "b0fd42dd08f4cfac19192d6e1a129b6c51991df8825d372be445978b440b3471",
+    "after": ["shared/ui/switch.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/sidebar.tsx",
+    "beforeSha256": "b97359dd21ce2043375efdfdf6ea91b3123a773bf35aa782871d0920409bc0e3",
+    "after": ["shared/ui/sidebar.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/confirm.tsx",
+    "beforeSha256": "e0118597e02085ed6d5a2f2d845005d98bb4048f8bacdfe6b7565c4a3bb9872e",
+    "after": ["shared/ui/confirm.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/label.tsx",
+    "beforeSha256": "a70fd737af02524d0460f286cec6160c863edd2f6403728587d3501f96eaea72",
+    "after": ["shared/ui/label.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/textarea.tsx",
+    "beforeSha256": "9d0186998f4cb7d26101f336bbbb0c891360ed3c035164304f9ac900926d8a90",
+    "after": ["shared/ui/textarea.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/chart.tsx",
+    "beforeSha256": "2d10feae9304c318f6db28939a6e5c0d73dea1de0c984e87e417ac20c7375e57",
+    "after": ["shared/ui/chart.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/popover.tsx",
+    "beforeSha256": "d8c48b163bf7aa51b4e9617dbe9d84db82da321e4aa0535db12673d55633f4d5",
+    "after": ["shared/ui/popover.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/utils.ts",
+    "beforeSha256": "3735c13bd2b6afb60e4d0934fbf2af3c357a8b068fa6689d82e180311ad94e39",
+    "after": ["shared/ui/utils.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/card.tsx",
+    "beforeSha256": "e40346f5c8281971b4ba90ff5b91e9703e9eff0fd5f734d2cbe203d90b726fc1",
+    "after": ["shared/ui/card.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/input.tsx",
+    "beforeSha256": "339e95b241f2957f7d6c0de7eed3aa381ca352a9b2e7417c6c51ef7ce10d00fe",
+    "after": ["shared/ui/input.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/sheet.tsx",
+    "beforeSha256": "d02be0c46f66bd9598c525e4672e57566e8abb5f600ef789943c9f18fb2e2289",
+    "after": ["shared/ui/sheet.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/button.tsx",
+    "beforeSha256": "7ad118f0a55db76d72a5b9e288c78eeebf7ff8ec2803488140c99564ea5dd68b",
+    "after": ["shared/ui/button.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/command.tsx",
+    "beforeSha256": "dc4d8d357757c1cb6ab92aea9507a540cf0d8e8752a9fc6ad114d4057ee97b01",
+    "after": ["shared/ui/command.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/scroll-area.tsx",
+    "beforeSha256": "42abc2e9b40c50ce3303fc182a735fdf8ef1cdbf05603b40d06b7eeeacba23db",
+    "after": ["shared/ui/scroll-area.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/input-otp.tsx",
+    "beforeSha256": "18dbb8fb2d254fc64c8091a8d537ad3e23dd023ffd3fdb22493462dacb942557",
+    "after": ["shared/ui/input-otp.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/dialog.tsx",
+    "beforeSha256": "8d58174481f2ab8fd78051b7fc200325955799331da607d6f2be582381401d89",
+    "after": ["shared/ui/dialog.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/badge.tsx",
+    "beforeSha256": "88e29b601d261dbeb4d622ade3434ef668e5a77800db212d1c1cab7ec6b6bbcb",
+    "after": ["shared/ui/badge.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/alert.tsx",
+    "beforeSha256": "0c4573d7a777c45ea27e3c86a7775ac4844db8fa24a9871728bb2d585faf7ff4",
+    "after": ["shared/ui/alert.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/avatar.tsx",
+    "beforeSha256": "179667dfa7fec0e209133715f8bcc97899ddef4b166a47e9897f6f568993ecfd",
+    "after": ["shared/ui/avatar.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/table.tsx",
+    "beforeSha256": "68a27de0eb55a2f38fd28e0625f7e50814655aa144f1121ae3f9d19ed37099e1",
+    "after": ["shared/ui/table.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/collapsible.tsx",
+    "beforeSha256": "6691e9214f5a1a2b7a8813cb1a6748b435268a73a967ed2def1a91d2bb0c977c",
+    "after": ["shared/ui/collapsible.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/direction.tsx",
+    "beforeSha256": "ed4ce82d817f9955e661da1a7da75b905acb4bbc5e3a172537795d78061e9494",
+    "after": ["shared/ui/direction.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/native-adapters.test.tsx",
+    "beforeSha256": "a4cfaee185c05d107c31a0b06cb33f28f39dbbba24e6eda266778c6fce511787",
+    "after": ["shared/ui/native-adapters.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/sonner.tsx",
+    "beforeSha256": "f39d37b7a68b5db9c4f509ed78ad7c50e3dbb01501ede74ced61c498d85d1ebb",
+    "after": ["shared/ui/sonner.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/skeleton.tsx",
+    "beforeSha256": "8db773bd9f48c0487f08ec6561980bfa1552ac1e219188ecaf1aa0687f23d44e",
+    "after": ["shared/ui/skeleton.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/ui/form-field.tsx",
+    "beforeSha256": "ed6968e4a3fba875cc6a1b139386a9f3e460e3104fbeed9d33b0a49a43d060b5",
+    "after": ["shared/ui/form-field.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "components/editor/extensions/mdx-roundtrip.ts",
+    "beforeSha256": "d419f68ffeba08589ab8c46a3262e28c2002844f67483f345ac404b6a7e049f2",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": "@cms/editor"
+  },
+  {
+    "before": "components/editor/extensions/comment-decorations.ts",
+    "beforeSha256": "d419f68ffeba08589ab8c46a3262e28c2002844f67483f345ac404b6a7e049f2",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": "@cms/editor"
+  },
+  {
+    "before": "components/editor/extensions/mdx-nodes.ts",
+    "beforeSha256": "d419f68ffeba08589ab8c46a3262e28c2002844f67483f345ac404b6a7e049f2",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": "@cms/editor"
+  },
+  {
+    "before": "components/editor/extensions/titled-block-view.tsx",
+    "beforeSha256": "d95c4ced5b2a0bf8587267cfa9a9004e8bbd1c1b3884fc25372409520f581a9b",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": "@cms/editor"
+  },
+  {
+    "before": "components/editor/extensions/callout.ts",
+    "beforeSha256": "d419f68ffeba08589ab8c46a3262e28c2002844f67483f345ac404b6a7e049f2",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": "@cms/editor"
+  },
+  {
+    "before": "components/editor/extensions/slash-command.tsx",
+    "beforeSha256": "d419f68ffeba08589ab8c46a3262e28c2002844f67483f345ac404b6a7e049f2",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": "@cms/editor"
+  },
+  {
+    "before": "integrations/tanstack-query/root-provider.tsx",
+    "beforeSha256": "0a68b0a50ca3d0d11ae67b84224711442bd8b108b70d8eb7b8ecde844e93c86f",
+    "after": ["app/providers/query-provider.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "hooks/api/site-events.ts",
+    "beforeSha256": "9f06ea3fc9c5779420ccd5c3de90fd82d266c775c7cffb1cc185f8df0c532ba1",
+    "after": ["features/reader/api/site-events.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "hooks/api/queries.ts",
+    "beforeSha256": "d1bea9af79bcaf247863cef0f4f0a16fcc4a03b43d347fd9a4d3621dc84dcce0",
+    "after": [
+      "features/editor/api/queries.ts",
+      "features/membership/api/queries.ts",
+      "features/api-keys/api/queries.ts",
+      "features/publishing/api/queries.ts",
+      "features/notifications/api/queries.ts",
+      "features/analytics/api/queries.ts",
+      "features/project-settings/api/queries.ts",
+      "entities/content/api/queries.ts",
+      "entities/workspace/api/queries.ts",
+      "entities/project/api/queries.ts"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "hooks/api/types.ts",
+    "beforeSha256": "ffa75a4388ede862a3b30ddbc21b8b36773eb3dd938d7f2ef3769577d2fd8e9f",
+    "after": ["integrations/nibleaf/contracts/types.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "hooks/api/integrations.ts",
+    "beforeSha256": "63d5120840624fb9897a49b3d520ffe2de429794795e718d3cfa6e854bb159d6",
+    "after": ["features/integrations/api/integrations.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "hooks/api/public.ts",
+    "beforeSha256": "4ba0e8f93ff26d0c07532c185fd1cc4f3a58b7c605d5e8063998f85fa0ead007",
+    "after": ["features/auth/api/public.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "hooks/api/site-search.ts",
+    "beforeSha256": "97e82451b0889160f2239caa0e022fb091c79123d78a8aec5e83b94e4e055aad",
+    "after": ["features/reader/api/site-search.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "hooks/api/client-helpers.ts",
+    "beforeSha256": "3aeaa8f95f79568a7dd749ed65690387da83bf2bcd61bf3232a452fa0c02e332",
+    "after": ["shared/api/response.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "hooks/api/query-keys.ts",
+    "beforeSha256": "cd00b07f0c85bcefef18c06926763f5152a4c3ce2f2d84bb31fcdb613d912111",
+    "after": ["integrations/nibleaf/cache-keys.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "hooks/api/exports.ts",
+    "beforeSha256": "968b2f9804ce67eb90961b3d5c1b8e9fed3db651318f309f2a8aa41af6ae68ef",
+    "after": ["features/exports/api/exports.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "hooks/api/mutations.ts",
+    "beforeSha256": "b0125355d0c7ecfdb7b12b3cb68d7034db9fad864c98d8c06d9ea836994bffa2",
+    "after": [
+      "features/editor/api/mutations.ts",
+      "features/git/api/mutations.ts",
+      "features/membership/api/mutations.ts",
+      "features/api-keys/api/mutations.ts",
+      "features/publishing/api/mutations.ts",
+      "features/notifications/api/mutations.ts",
+      "features/imports/api/mutations.ts",
+      "features/project-settings/api/mutations.ts",
+      "entities/content/api/mutations.ts",
+      "entities/workspace/api/mutations.ts",
+      "entities/project/api/mutations.ts"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "hooks/api/index.ts",
+    "beforeSha256": "7e59add5aafa25969f9041d5c08f197bd9a5e6f57d979204e755ee486d5f7fff",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "hooks/api/integrations.test.ts",
+    "beforeSha256": "87f9ac07e8cc1a54b03d2f4a95e8f9ec51c81097dbda6f1b97e8e5a6c53b5a4b",
+    "after": ["features/integrations/api/integrations.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "hooks/api/git-workflow.ts",
+    "beforeSha256": "61284c6cf3ca91899417337fe4208910ad36250829ece83e5d1f35f4385e8b8d",
+    "after": ["features/git/api/git-workflow.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "hooks/api/response-types.ts",
+    "beforeSha256": "34e99a78d493192bbae34db879df87be0cdf96cb8c0f3972ac2a7e207d77b7f6",
+    "after": ["integrations/nibleaf/contracts/response-types.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "hooks/api/mutations.addons.test.ts",
+    "beforeSha256": "f31213d1b91f6a94cf6cd60008f33f25a627f1fdd5a1629e84d42793157b6b5d",
+    "after": ["features/project-settings/api/addons.test.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "hooks/api/reader-access.ts",
+    "beforeSha256": "3568c94d979ad72543cbc1d219429aecff7992d6bfaa9949cf42df1045338508",
+    "after": ["features/reader-access/api/reader-access.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "hooks/api/project-search.ts",
+    "beforeSha256": "6f215083a6f0def04ff0106eca0106ff96520840aab30cf15467142630632e6d",
+    "after": ["features/project-settings/api/project-search.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "hooks/ui/use-otp-resend-countdown.ts",
+    "beforeSha256": "97b93ce338277c0655e894492d330cf2343e85641bd04673989030180395788b",
+    "after": ["shared/hooks/use-otp-resend-countdown.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "hooks/api/analytics/queries.ts",
+    "beforeSha256": "99de82fed9db85151dde9e7519a47596839827b9421f4dd5b5ec01f996dbb41c",
+    "after": ["features/analytics/api/queries.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "hooks/api/analytics/query-keys.ts",
+    "beforeSha256": "744a58878bad80236799c1dcdaf6d45930570e9cfa075295e87447ad58a6f1f1",
+    "after": ["features/analytics/api/query-keys.ts"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "hooks/api/analytics/index.ts",
+    "beforeSha256": "7fad817f49d6fdcda349738fc029b2d855e966ff8d691b15ffcb92b38c94df50",
+    "after": [],
+    "status": "consolidated-or-graph-proven-unreachable",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/app/route.tsx",
+    "beforeSha256": "abac14a143daa755865573265ebbb8fc1c254a40c30c67fff6f1f6bf7b994540",
+    "after": ["routes/app/route.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/(auth)/sign-in.tsx",
+    "beforeSha256": "765e952e5dd70d3a07192f0bba271bbb5f45d7e9d56f4c2824fba619fdd647fd",
+    "after": ["routes/(auth)/sign-in.tsx", "features/auth/pages/sign-in.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/(auth)/verify-email.tsx",
+    "beforeSha256": "420f6ee95b32ab6367e1a71bf8537cf62fafc28793a166f8d7eb09d68a3ef711",
+    "after": [
+      "routes/(auth)/verify-email.tsx",
+      "features/auth/pages/verify-email.tsx"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/(auth)/sign-up.tsx",
+    "beforeSha256": "bee0249d170e508a1c1faeb53e8082d48d5e8743e05c64b7167789ac6d844735",
+    "after": ["routes/(auth)/sign-up.tsx", "features/auth/pages/sign-up.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/(auth)/route.tsx",
+    "beforeSha256": "0a7318900fa22138a54aa47f258b19ac8595d2f99a08db9f0323fdaea7d8bda6",
+    "after": ["routes/(auth)/route.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/(auth)/reset-password.tsx",
+    "beforeSha256": "1009a1b529604f2f1a2d90e465f05d93c70896a99e7633bd7ff680177f8e5e13",
+    "after": [
+      "routes/(auth)/reset-password.tsx",
+      "features/auth/pages/reset-password.tsx"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/(auth)/forgot-password.tsx",
+    "beforeSha256": "2e82f8685859eff0faa330c0905b5071d003eb08ec151318bb7cd2b23a1fd045",
+    "after": [
+      "routes/(auth)/forgot-password.tsx",
+      "features/auth/pages/forgot-password.tsx"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/app/(dashboard)/sites.test.tsx",
+    "beforeSha256": "a676688dafe16c2f83e2fc58308346b8378a164acb258b174b25ca2d45105835",
+    "after": ["routes/app/(dashboard)/sites.test.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/app/(dashboard)/analytics.tsx",
+    "beforeSha256": "20138c91813549247353bc6c3f8cce213c4849c2a56ac13edde8febe7def5b6b",
+    "after": [
+      "routes/app/(dashboard)/analytics.tsx",
+      "features/analytics/pages/workspace-analytics.tsx"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/app/(dashboard)/index.tsx",
+    "beforeSha256": "8d133112690ef0ae23499c5b1c70a914d4ff6703387c705887cfdca8737acb02",
+    "after": [
+      "routes/app/(dashboard)/index.tsx",
+      "features/projects/pages/workspace-overview.tsx"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/app/(dashboard)/route.tsx",
+    "beforeSha256": "5876f6beb83cb987d8268f85a52bafdbc551097369183ab9b8ba513a44e683a3",
+    "after": ["routes/app/(dashboard)/route.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/app/(dashboard)/sites.tsx",
+    "beforeSha256": "97ade9f92fe1dd47d79724b37d86697850d73e7a7a77ba2d032a553ae4eefeea",
+    "after": [
+      "routes/app/(dashboard)/sites.tsx",
+      "features/projects/pages/sites.tsx"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/app/(dashboard)/members.tsx",
+    "beforeSha256": "3350aaf7776d00694f85b78368c8e0bcd7f48f4682f2390a66eca448d4a3d480",
+    "after": [
+      "routes/app/(dashboard)/members.tsx",
+      "features/membership/pages/workspace-members.tsx"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/app/(dashboard)/settings.tsx",
+    "beforeSha256": "a6dac7fe09f0c79d502e843141f9515a1b4669d14f4e4e1734a0e73296715afe",
+    "after": [
+      "routes/app/(dashboard)/settings.tsx",
+      "features/account/pages/settings.tsx"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/app/projects/$projectId/analytics.tsx",
+    "beforeSha256": "7996d53f586976fd14aa34d389e540419bdfeb73534655bffbc093354f2622c4",
+    "after": [
+      "routes/app/projects/$projectId/analytics.tsx",
+      "features/analytics/pages/project-analytics.tsx"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/app/projects/$projectId/index.tsx",
+    "beforeSha256": "8aca106fec6dce19bdf3816d61fc576795308d43a94693ef1ac1f822307cb1a1",
+    "after": [
+      "routes/app/projects/$projectId/index.tsx",
+      "features/projects/pages/project-overview.tsx"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/app/projects/$projectId/route.tsx",
+    "beforeSha256": "41099d27f498b8bb88bd8c6e8a02d8a03a43f8b9371e4184a610baf7ccbf8f29",
+    "after": ["routes/app/projects/$projectId/route.tsx"],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/app/projects/$projectId/editor.tsx",
+    "beforeSha256": "9ef4dd6020199d9ba9a879af9cee37bbc7b0fcaefd3f54c2cd8b2f2c746e862c",
+    "after": [
+      "routes/app/projects/$projectId/editor.tsx",
+      "features/editor/pages/editor.tsx"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/app/projects/$projectId/preview.tsx",
+    "beforeSha256": "a378aa64ec6808deeb29a7db642ddf7bb9ab6872855933941241cc4805ab1801",
+    "after": [
+      "routes/app/projects/$projectId/preview.tsx",
+      "features/reader/pages/draft-preview.tsx"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/app/projects/$projectId/settings.tsx",
+    "beforeSha256": "f344f254d465c4201b6766a857158bd94e6c9642eec6fcbc5873cc8420d9f4d5",
+    "after": [
+      "routes/app/projects/$projectId/settings.tsx",
+      "features/project-settings/pages/settings.tsx"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/sites/$projectId/changelog.tsx",
+    "beforeSha256": "65c9be6f7c30c4ab53bfcec0b67799b6f46536fa24b7787b961a9667486d4bfa",
+    "after": [
+      "routes/sites/$projectId/changelog.tsx",
+      "features/reader/pages/changelog.tsx"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/sites/$projectId/index.tsx",
+    "beforeSha256": "ef2324a81da96eed70f1dc5c84323349607f103fef5f02ed3f0ff98e7afc5cbf",
+    "after": [
+      "routes/sites/$projectId/index.tsx",
+      "features/reader/pages/reader-index.tsx"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/sites/$projectId/$.tsx",
+    "beforeSha256": "4055bb6660c59ea84e32934dadea7d0c0b5591afa271a276a58eaa2f473a2208",
+    "after": [
+      "routes/sites/$projectId/$.tsx",
+      "features/reader/pages/reader-page.tsx"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  },
+  {
+    "before": "routes/sites/$projectId/route.tsx",
+    "beforeSha256": "5a6d8d3f8e20d4eb64f6a074e112c49392c9de6182660508fa787623c461b148",
+    "after": [
+      "routes/sites/$projectId/route.tsx",
+      "features/reader/pages/reader-layout.tsx"
+    ],
+    "status": "owned-and-adapted",
+    "packageSuccessor": null
+  }
+]

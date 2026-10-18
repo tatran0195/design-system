@@ -1,0 +1,75 @@
+{
+  "name": "cms",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "vp run -r build",
+    "dev:app": "bun --filter @cms/app dev",
+    "dev:storybook": "bun --filter @cms/ui storybook",
+    "dev:studio": "bun --filter @cms/studio dev",
+    "fix": "ultracite fix",
+    "format": "biome format --write biome.jsonc bunfig.toml knip.jsonc package.json playwright.ui.config.ts tsconfig.base.json vitest.setup.ts apps packages/client packages/docs-utils packages/editor packages/i18n packages/icons packages/remark-rehype-plugins packages/tsconfig packages/docs-types packages/ui",
+    "format:dashboard": "bun --filter @cms/dashboard format",
+    "format:docs-kit": "bun --filter @cms/docs-kit format",
+    "format:md": "markdownlint-cli2 --fix \"**/*.md\" \"!**/node_modules/**\"",
+    "knip": "knip",
+    "lint": "ultracite check",
+    "lint:md": "markdownlint-cli2 \"**/*.md\" \"!**/node_modules/**\"",
+    "test": "vp run -r test",
+    "test:ui-browser": "playwright test --config playwright.ui.config.ts",
+    "typecheck": "vp run -r typecheck"
+  },
+  "overrides": {
+    "vite": "catalog:"
+  },
+  "dependencies": {
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@biomejs/biome": "^2.5.15",
+    "@playwright/test": "^1.64.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@vitejs/plugin-react": "^6.1.2",
+    "autoprefixer": "^10.6.1",
+    "css.escape": "^1.5.1",
+    "indent-string": "^5.0.0",
+    "is-potential-custom-element-name": "^1.0.1",
+    "knip": "^6.41.0",
+    "markdownlint-cli2": "^0.23.3",
+    "min-indent": "^1.0.1",
+    "picocolors": "^1.1.1",
+    "react-doctor": "^0.9.17",
+    "strip-indent": "^4.1.1",
+    "tsdown": "^0.23.1",
+    "typescript": "^7.0.2",
+    "ultracite": "^7.12.4",
+    "unrun": "^0.3.1"
+  },
+  "packageManager": "bun@1.4.2",
+  "engines": {
+    "bun": ">=1.0.0",
+    "node": ">=24.0.0"
+  },
+  "catalog": {
+    "tsdown": "^0.23.1",
+    "typescript": "^7.0.2",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tailwindcss": "^4.3.3",
+    "vite": "npm:@voidzero-dev/vite-plus-core@1.1.0",
+    "vite-plus": "^1.1.0"
+  },
+  "trustedDependencies": [
+    "@parcel/watcher",
+    "esbuild",
+    "msw"
+  ]
+}

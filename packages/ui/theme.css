@@ -1,0 +1,582 @@
+@import "tailwindcss";
+@import "./layers.css";
+@import "./tokens.css";
+@import "./src/control-text.css";
+
+@theme inline {
+  /* ========================================================================
+     Docs / CMS Color Tokens
+     ======================================================================== */
+  --color-cms-bg-subtle: var(--docs-bg-subtle);
+  --color-cms-bg-subtle-hover: var(--docs-bg-subtle-hover);
+  --color-cms-bg-subtle-pressed: var(--docs-bg-subtle-pressed);
+
+  --color-cms-bg-base: var(--docs-bg-base);
+  --color-cms-bg-base-hover: var(--docs-bg-base-hover);
+  --color-cms-bg-base-pressed: var(--docs-bg-base-pressed);
+
+  --color-cms-bg-component: var(--docs-bg-component);
+  --color-cms-bg-component-hover: var(--docs-bg-component-hover);
+  --color-cms-bg-component-pressed: var(--docs-bg-component-pressed);
+
+  --color-cms-bg-switch-off: var(--docs-bg-switch-off);
+  --color-cms-bg-switch-off-hover: var(--docs-bg-switch-off-hover);
+
+  --color-cms-bg-interactive: var(--docs-bg-interactive);
+  --color-cms-bg-overlay: var(--docs-bg-overlay);
+  --color-cms-bg-disabled: var(--docs-bg-disabled);
+
+  --color-cms-bg-highlight: var(--docs-bg-highlight);
+  --color-cms-bg-highlight-hover: var(--docs-bg-highlight-hover);
+
+  --color-cms-bg-field: var(--docs-bg-field);
+  --color-cms-bg-field-hover: var(--docs-bg-field-hover);
+  --color-cms-bg-field-component: var(--docs-bg-field-component);
+  --color-cms-bg-field-component-hover: var(--docs-bg-field-component-hover);
+
+  /* Foregrounds */
+  --color-cms-fg-base: var(--docs-fg-base);
+  --color-cms-fg-subtle: var(--docs-fg-subtle);
+  --color-cms-fg-muted: var(--docs-fg-muted);
+  --color-cms-fg-disabled: var(--docs-fg-disabled);
+  --color-cms-fg-on-color: var(--docs-fg-on-color);
+  --color-cms-fg-on-inverted: var(--docs-fg-on-inverted);
+  --color-cms-fg-interactive: var(--docs-fg-interactive);
+  --color-cms-fg-interactive-hover: var(--docs-fg-interactive-hover);
+  --color-cms-fg-error: var(--docs-fg-error);
+
+  /* Borders */
+  --color-cms-border-base: var(--docs-border-base);
+  --color-cms-border-strong: var(--docs-border-strong);
+  --color-cms-border-interactive: var(--docs-border-interactive);
+  --color-cms-border-error: var(--docs-border-error);
+  --color-cms-border-danger: var(--docs-border-danger);
+  --color-cms-border-transparent: var(--docs-border-transparent);
+  --color-cms-border-menu-top: var(--docs-border-menu-top);
+  --color-cms-border-menu-bot: var(--docs-border-menu-bot);
+
+  /* Buttons */
+  --color-cms-button-inverted: var(--docs-button-inverted);
+  --color-cms-button-inverted-hover: var(--docs-button-inverted-hover);
+  --color-cms-button-inverted-pressed: var(--docs-button-inverted-pressed);
+
+  --color-cms-button-neutral: var(--docs-button-neutral);
+  --color-cms-button-neutral-hover: var(--docs-button-neutral-hover);
+  --color-cms-button-neutral-pressed: var(--docs-button-neutral-pressed);
+
+  --color-cms-button-danger: var(--docs-button-danger);
+  --color-cms-button-danger-hover: var(--docs-button-danger-hover);
+  --color-cms-button-danger-pressed: var(--docs-button-danger-pressed);
+
+  --color-cms-button-transparent: var(--docs-button-transparent);
+  --color-cms-button-transparent-hover: var(--docs-button-transparent-hover);
+  --color-cms-button-transparent-pressed: var(
+    --docs-button-transparent-pressed
+  );
+
+  /* Tag Colors */
+  --color-cms-tag-neutral-bg: var(--docs-tags-neutral-bg);
+  --color-cms-tag-neutral-bg-hover: var(--docs-tags-neutral-bg-hover);
+  --color-cms-tag-neutral-text: var(--docs-tags-neutral-text);
+  --color-cms-tag-neutral-icon: var(--docs-tags-neutral-icon);
+  --color-cms-tag-neutral-border: var(--docs-tags-neutral-border);
+
+  --color-cms-tag-purple-bg: var(--docs-tags-purple-bg);
+  --color-cms-tag-purple-bg-hover: var(--docs-tags-purple-bg-hover);
+  --color-cms-tag-purple-text: var(--docs-tags-purple-text);
+  --color-cms-tag-purple-icon: var(--docs-tags-purple-icon);
+  --color-cms-tag-purple-border: var(--docs-tags-purple-border);
+
+  --color-cms-tag-blue-bg: var(--docs-tags-blue-bg);
+  --color-cms-tag-blue-bg-hover: var(--docs-tags-blue-bg-hover);
+  --color-cms-tag-blue-text: var(--docs-tags-blue-text);
+  --color-cms-tag-blue-icon: var(--docs-tags-blue-icon);
+  --color-cms-tag-blue-border: var(--docs-tags-blue-border);
+
+  --color-cms-tag-green-bg: var(--docs-tags-green-bg);
+  --color-cms-tag-green-bg-hover: var(--docs-tags-green-bg-hover);
+  --color-cms-tag-green-text: var(--docs-tags-green-text);
+  --color-cms-tag-green-icon: var(--docs-tags-green-icon);
+  --color-cms-tag-green-border: var(--docs-tags-green-border);
+
+  --color-cms-tag-orange-bg: var(--docs-tags-orange-bg);
+  --color-cms-tag-orange-bg-hover: var(--docs-tags-orange-bg-hover);
+  --color-cms-tag-orange-text: var(--docs-tags-orange-text);
+  --color-cms-tag-orange-icon: var(--docs-tags-orange-icon);
+  --color-cms-tag-orange-border: var(--docs-tags-orange-border);
+
+  --color-cms-tag-red-bg: var(--docs-tags-red-bg);
+  --color-cms-tag-red-bg-hover: var(--docs-tags-red-bg-hover);
+  --color-cms-tag-red-text: var(--docs-tags-red-text);
+  --color-cms-tag-red-icon: var(--docs-tags-red-icon);
+  --color-cms-tag-red-border: var(--docs-tags-red-border);
+
+  /* Contrast & Code Colors */
+  --color-cms-contrast-bg-base: var(--docs-contrast-bg-base);
+  --color-cms-contrast-bg-base-pressed: var(--docs-contrast-bg-base-pressed);
+  --color-cms-contrast-bg-base-hover: var(--docs-contrast-bg-base-hover);
+  --color-cms-contrast-bg-subtle: var(--docs-contrast-bg-subtle);
+  --color-cms-contrast-bg-highlight: var(--docs-contrast-bg-highlight);
+  --color-cms-contrast-bg-alpha: var(--docs-contrast-bg-alpha);
+  --color-cms-contrast-fg-primary: var(--docs-contrast-fg-primary);
+  --color-cms-contrast-fg-secondary: var(--docs-contrast-fg-secondary);
+  --color-cms-contrast-border-base: var(--docs-contrast-border-base);
+  --color-cms-contrast-border-top: var(--docs-contrast-border-top);
+  --color-cms-contrast-border-bot: var(--docs-contrast-border-bot);
+
+  --color-cms-code-bg-base: var(--docs-code-bg-base);
+  --color-cms-code-bg-header: var(--docs-code-bg-header);
+  --color-cms-code-border: var(--docs-code-border);
+  --color-cms-code-subtle-highlight-bg: var(--docs-code-subtle-highlight-bg);
+  --color-cms-code-subtle-highlight-text: var(
+    --docs-code-subtle-highlight-text
+  );
+
+  /* ========================================================================
+     Docs Spacing Tokens
+     ======================================================================== */
+  --spacing-docs_0: 0px;
+  --spacing-docs_0\.125: 0.125rem;
+  --spacing-docs_0\.25: 0.25rem;
+  --spacing-docs_0\.5: 0.5rem;
+  --spacing-docs_0\.75: 0.75rem;
+  --spacing-docs_1: 1rem;
+  --spacing-docs_1\.25: 1.25rem;
+  --spacing-docs_1\.5: 1.5rem;
+  --spacing-docs_1\.75: 1.75rem;
+  --spacing-docs_2: 2rem;
+  --spacing-docs_2\.25: 2.25rem;
+  --spacing-docs_2\.5: 2.5rem;
+  --spacing-docs_3: 3rem;
+  --spacing-docs_3\.5: 3.5rem;
+  --spacing-docs_4: 4rem;
+  --spacing-docs_5: 5rem;
+  --spacing-docs_6: 6rem;
+  --spacing-docs_7: 7rem;
+  --spacing-docs_8: 8rem;
+  --spacing-docs_9: 9rem;
+  --spacing-docs_10: 10rem;
+  --spacing-docs_12: 12rem;
+  --spacing-docs_14: 14rem;
+  --spacing-docs_16: 16rem;
+
+  /* ========================================================================
+     Docs Border Radius
+     ======================================================================== */
+  --radius-docs_xxs: 2px;
+  --radius-docs_xs: 4px;
+  --radius-docs_sm: 6px;
+  --radius-docs_DEFAULT: 8px;
+  --radius-docs_md: 8px;
+  --radius-docs_lg: 12px;
+  --radius-docs_xl: 16px;
+  --radius-docs_2xl: 20px;
+  --radius-docs_3xl: 24px;
+  --radius-docs_full: 9999px;
+
+  /* ========================================================================
+     Elevation Shadows
+     ======================================================================== */
+  --shadow-elevation-card-rest:
+    0px 0px 0px 1px rgba(0, 0, 0, 0.08), 0px 1px 2px -1px rgba(0, 0, 0, 0.08), 0px 2px 4px 0px rgba(
+      0,
+      0,
+      0,
+      0.04
+    );
+  --shadow-elevation-card-rest-dark:
+    0px -1px 0px 0px rgba(255, 255, 255, 0.06), 0px 0px 0px 1px rgba(
+      255,
+      255,
+      255,
+      0.06
+    ), 0px 0px 0px 1px #27272a, 0px 1px 2px 0px rgba(0, 0, 0, 0.32), 0px 2px 4px 0px rgba(
+      0,
+      0,
+      0,
+      0.32
+    );
+  --shadow-elevation-card-hover:
+    0px 0px 0px 1px rgba(0, 0, 0, 0.08), 0px 1px 2px -1px rgba(0, 0, 0, 0.08), 0px 2px 8px 0px rgba(
+      0,
+      0,
+      0,
+      0.1
+    );
+  --shadow-elevation-card-hover-dark:
+    0px -1px 0px 0px rgba(255, 255, 255, 0.06), 0px 0px 0px 1px rgba(
+      255,
+      255,
+      255,
+      0.06
+    ), 0px 0px 0px 1px #27272a, 0px 1px 4px 0px rgba(0, 0, 0, 0.48), 0px 2px 8px 0px rgba(
+      0,
+      0,
+      0,
+      0.48
+    );
+  --shadow-elevation-tooltip:
+    0px 0px 0px 1px rgba(0, 0, 0, 0.08), 0px 2px 4px 0px rgba(0, 0, 0, 0.08), 0px 4px 8px 0px rgba(
+      0,
+      0,
+      0,
+      0.08
+    );
+  --shadow-elevation-flyout:
+    0px 0px 0px 1px rgba(0, 0, 0, 0.08), 0px 4px 8px 0px rgba(0, 0, 0, 0.08), 0px 8px 16px 0px rgba(
+      0,
+      0,
+      0,
+      0.08
+    );
+  --shadow-elevation-modal:
+    0px 0px 0px 1px #fff inset, 0px 0px 0px 1.5px rgba(228, 228, 231, 0.6) inset, 0px 0px 0px 1px rgba(
+      0,
+      0,
+      0,
+      0.08
+    ), 0px 8px 16px 0px rgba(0, 0, 0, 0.08), 0px 16px 32px 0px rgba(
+      0,
+      0,
+      0,
+      0.08
+    );
+  --shadow-elevation-modal-dark:
+    0px 0px 0px 1px #18181b inset, 0px 0px 0px 1.5px rgba(255, 255, 255, 0.06) inset, 0px -1px 0px 0px rgba(
+      255,
+      255,
+      255,
+      0.04
+    ), 0px 0px 0px 1px rgba(255, 255, 255, 0.1), 0px 4px 8px 0px rgba(
+      0,
+      0,
+      0,
+      0.32
+    ), 0px 8px 16px 0px rgba(0, 0, 0, 0.32);
+}
+
+/* ========================================================================
+   CSS Variables: Light Mode (:root)
+   ======================================================================== */
+:root,
+.light,
+[data-theme="light"] {
+  --docs-bg-base: rgba(255, 255, 255, 1);
+  --docs-bg-base-hover: rgba(244, 244, 245, 1);
+  --docs-bg-base-pressed: rgba(228, 228, 231, 1);
+  --docs-bg-subtle: rgba(250, 250, 250, 1);
+  --docs-bg-subtle-hover: rgba(244, 244, 245, 1);
+  --docs-bg-subtle-pressed: rgba(228, 228, 231, 1);
+  --docs-bg-component: rgba(250, 250, 250, 1);
+  --docs-bg-component-pressed: rgba(228, 228, 231, 1);
+  --docs-bg-component-hover: rgba(244, 244, 245, 1);
+  --docs-bg-switch-off: rgba(228, 228, 231, 1);
+  --docs-bg-switch-off-hover: rgba(212, 212, 216, 1);
+  --docs-bg-interactive: rgba(59, 130, 246, 1);
+  --docs-bg-overlay: rgba(24, 24, 27, 0.4);
+  --docs-bg-disabled: rgba(244, 244, 245, 1);
+  --docs-bg-highlight: rgba(239, 246, 255, 1);
+  --docs-bg-highlight-hover: rgba(219, 234, 254, 1);
+  --docs-bg-field: rgba(250, 250, 250, 1);
+  --docs-bg-field-hover: rgba(244, 244, 245, 1);
+  --docs-bg-field-component: rgba(255, 255, 255, 1);
+  --docs-bg-field-component-hover: rgba(250, 250, 250, 1);
+
+  --docs-fg-base: rgba(24, 24, 27, 1);
+  --docs-fg-subtle: rgba(82, 82, 91, 1);
+  --docs-fg-muted: rgba(113, 113, 122, 1);
+  --docs-fg-disabled: rgba(161, 161, 170, 1);
+  --docs-fg-on-color: rgba(255, 255, 255, 1);
+  --docs-fg-on-inverted: rgba(255, 255, 255, 1);
+  --docs-fg-interactive: rgba(37, 99, 235, 1);
+  --docs-fg-interactive-hover: rgba(59, 130, 246, 1);
+  --docs-fg-error: rgba(225, 29, 72, 1);
+
+  --docs-border-base: rgba(228, 228, 231, 1);
+  --docs-border-strong: rgba(212, 212, 216, 1);
+  --docs-border-interactive: rgba(59, 130, 246, 1);
+  --docs-border-error: rgba(225, 29, 72, 1);
+  --docs-border-danger: rgba(190, 18, 60, 1);
+  --docs-border-transparent: rgba(255, 255, 255, 0);
+  --docs-border-menu-top: rgba(228, 228, 231, 1);
+  --docs-border-menu-bot: rgba(255, 255, 255, 1);
+
+  --docs-button-inverted: rgba(39, 39, 42, 1);
+  --docs-button-inverted-hover: rgba(63, 63, 70, 1);
+  --docs-button-inverted-pressed: rgba(82, 82, 91, 1);
+  --docs-button-neutral: rgba(255, 255, 255, 1);
+  --docs-button-neutral-hover: rgba(244, 244, 245, 1);
+  --docs-button-neutral-pressed: rgba(228, 228, 231, 1);
+  --docs-button-danger: rgba(225, 29, 72, 1);
+  --docs-button-danger-hover: rgba(190, 18, 60, 1);
+  --docs-button-danger-pressed: rgba(159, 18, 57, 1);
+  --docs-button-transparent: rgba(255, 255, 255, 0);
+  --docs-button-transparent-hover: rgba(24, 24, 27, 0.06);
+  --docs-button-transparent-pressed: rgba(228, 228, 231, 1);
+
+  --docs-tags-neutral-bg: rgba(244, 244, 245, 1);
+  --docs-tags-neutral-bg-hover: rgba(228, 228, 231, 1);
+  --docs-tags-neutral-text: rgba(82, 82, 91, 1);
+  --docs-tags-neutral-icon: rgba(161, 161, 170, 1);
+  --docs-tags-neutral-border: rgba(228, 228, 231, 1);
+  --docs-tags-purple-bg: rgba(237, 233, 254, 1);
+  --docs-tags-purple-bg-hover: rgba(221, 214, 254, 1);
+  --docs-tags-purple-text: rgba(91, 33, 182, 1);
+  --docs-tags-purple-icon: rgba(167, 139, 250, 1);
+  --docs-tags-purple-border: rgba(221, 214, 254, 1);
+  --docs-tags-blue-bg: rgba(219, 234, 254, 1);
+  --docs-tags-blue-bg-hover: rgba(191, 219, 254, 1);
+  --docs-tags-blue-text: rgba(30, 64, 175, 1);
+  --docs-tags-blue-icon: rgba(96, 165, 250, 1);
+  --docs-tags-blue-border: rgba(191, 219, 254, 1);
+  --docs-tags-green-bg: rgba(209, 250, 229, 1);
+  --docs-tags-green-bg-hover: rgba(167, 243, 208, 1);
+  --docs-tags-green-text: rgba(6, 95, 70, 1);
+  --docs-tags-green-icon: rgba(16, 185, 129, 1);
+  --docs-tags-green-border: rgba(167, 243, 208, 1);
+  --docs-tags-orange-bg: rgba(255, 237, 213, 1);
+  --docs-tags-orange-bg-hover: rgba(254, 215, 170, 1);
+  --docs-tags-orange-text: rgba(154, 52, 18, 1);
+  --docs-tags-orange-icon: rgba(249, 115, 22, 1);
+  --docs-tags-orange-border: rgba(254, 215, 170, 1);
+  --docs-tags-red-bg: rgba(255, 228, 230, 1);
+  --docs-tags-red-bg-hover: rgba(254, 205, 211, 1);
+  --docs-tags-red-text: rgba(159, 18, 57, 1);
+  --docs-tags-red-icon: rgba(244, 63, 94, 1);
+  --docs-tags-red-border: rgba(254, 205, 211, 1);
+
+  --docs-code-bg-base: rgba(24, 24, 27, 1);
+  --docs-code-bg-header: rgba(31, 41, 55, 1);
+  --docs-code-border: rgba(55, 65, 81, 1);
+  --docs-code-subtle-highlight-bg: rgba(82, 82, 91, 1);
+  --docs-code-subtle-highlight-text: rgba(255, 255, 255, 1);
+
+  --docs-contrast-bg-base: rgba(24, 24, 27, 1);
+  --docs-contrast-bg-base-pressed: rgba(63, 63, 70, 1);
+  --docs-contrast-bg-base-hover: rgba(39, 39, 42, 1);
+  --docs-contrast-bg-subtle: rgba(39, 39, 42, 1);
+  --docs-contrast-bg-highlight: rgba(63, 63, 70, 1);
+  --docs-contrast-bg-alpha: rgba(9, 9, 11, 0.8);
+  --docs-contrast-fg-primary: rgba(255, 255, 255, 0.88);
+  --docs-contrast-fg-secondary: rgba(255, 255, 255, 0.56);
+  --docs-contrast-border-base: rgba(255, 255, 255, 0.16);
+  --docs-contrast-border-top: rgba(9, 9, 11, 1);
+  --docs-contrast-border-bot: rgba(255, 255, 255, 0.1);
+
+  --docs-alpha-white-alpha-6: rgba(255, 255, 255, 0.06);
+  --docs-alpha-white-alpha-12: rgba(255, 255, 255, 0.12);
+  --docs-alphas-alpha-250: rgba(24, 24, 27, 0.1);
+  --docs-alphas-alpha-6: rgba(24, 24, 27, 0.06);
+  --docs-alphas-alpha-10: rgba(24, 24, 27, 0.1);
+  --docs-alphas-alpha-16: rgba(24, 24, 27, 0.16);
+  --docs-alphas-alpha-24: rgba(24, 24, 27, 0.24);
+}
+
+/* ========================================================================
+   CSS Variables: Dark Mode (.dark, [data-theme="dark"])
+   ======================================================================== */
+.dark,
+[data-theme="dark"] {
+  --docs-bg-base: rgba(33, 33, 36, 1);
+  --docs-bg-base-hover: rgba(39, 39, 42, 1);
+  --docs-bg-base-pressed: rgba(63, 63, 70, 1);
+  --docs-bg-subtle: rgba(24, 24, 27, 1);
+  --docs-bg-subtle-hover: rgba(33, 33, 36, 1);
+  --docs-bg-subtle-pressed: rgba(39, 39, 42, 1);
+  --docs-bg-component: rgba(39, 39, 42, 1);
+  --docs-bg-component-pressed: rgba(255, 255, 255, 0.16);
+  --docs-bg-component-hover: rgba(255, 255, 255, 0.1);
+  --docs-bg-switch-off: rgba(63, 63, 70, 1);
+  --docs-bg-switch-off-hover: rgba(82, 82, 91, 1);
+  --docs-bg-interactive: rgba(96, 165, 250, 1);
+  --docs-bg-overlay: rgba(24, 24, 27, 0.72);
+  --docs-bg-disabled: rgba(39, 39, 42, 1);
+  --docs-bg-highlight: rgba(30, 58, 138, 1);
+  --docs-bg-highlight-hover: rgba(30, 64, 175, 1);
+  --docs-bg-field: rgba(39, 39, 42, 1);
+  --docs-bg-field-hover: rgba(63, 63, 70, 1);
+  --docs-bg-field-component: rgba(33, 33, 36, 1);
+  --docs-bg-field-component-hover: rgba(39, 39, 42, 1);
+
+  --docs-fg-base: rgba(255, 255, 255, 1);
+  --docs-fg-subtle: rgba(161, 161, 170, 1);
+  --docs-fg-muted: rgba(150, 150, 158, 1);
+  --docs-fg-disabled: rgba(82, 82, 91, 1);
+  --docs-fg-on-color: rgba(255, 255, 255, 1);
+  --docs-fg-on-inverted: rgba(24, 24, 27, 1);
+  --docs-fg-interactive: rgba(96, 165, 250, 1);
+  --docs-fg-interactive-hover: rgba(147, 197, 253, 1);
+  --docs-fg-error: rgba(251, 113, 133, 1);
+
+  --docs-border-base: rgba(39, 39, 42, 1);
+  --docs-border-strong: rgba(63, 63, 70, 1);
+  --docs-border-interactive: rgba(96, 165, 250, 1);
+  --docs-border-error: rgba(251, 113, 133, 1);
+  --docs-border-danger: rgba(225, 29, 72, 1);
+  --docs-border-transparent: rgba(255, 255, 255, 0);
+  --docs-border-menu-top: rgba(39, 39, 42, 1);
+  --docs-border-menu-bot: rgba(24, 24, 27, 1);
+
+  --docs-button-inverted: rgba(255, 255, 255, 1);
+  --docs-button-inverted-hover: rgba(244, 244, 245, 1);
+  --docs-button-inverted-pressed: rgba(228, 228, 231, 1);
+  --docs-button-neutral: rgba(39, 39, 42, 1);
+  --docs-button-neutral-hover: rgba(63, 63, 70, 1);
+  --docs-button-neutral-pressed: rgba(82, 82, 91, 1);
+  --docs-button-danger: rgba(225, 29, 72, 1);
+  --docs-button-danger-hover: rgba(190, 18, 60, 1);
+  --docs-button-danger-pressed: rgba(159, 18, 57, 1);
+  --docs-button-transparent: rgba(255, 255, 255, 0);
+  --docs-button-transparent-hover: rgba(255, 255, 255, 0.08);
+  --docs-button-transparent-pressed: rgba(255, 255, 255, 0.16);
+
+  --docs-tags-neutral-bg: rgba(39, 39, 42, 1);
+  --docs-tags-neutral-bg-hover: rgba(63, 63, 70, 1);
+  --docs-tags-neutral-text: rgba(161, 161, 170, 1);
+  --docs-tags-neutral-icon: rgba(113, 113, 122, 1);
+  --docs-tags-neutral-border: rgba(63, 63, 70, 1);
+  --docs-tags-purple-bg: rgba(59, 7, 100, 1);
+  --docs-tags-purple-bg-hover: rgba(76, 10, 128, 1);
+  --docs-tags-purple-text: rgba(216, 180, 254, 1);
+  --docs-tags-purple-icon: rgba(192, 132, 252, 1);
+  --docs-tags-purple-border: rgba(88, 28, 135, 1);
+  --docs-tags-blue-bg: rgba(23, 37, 84, 1);
+  --docs-tags-blue-bg-hover: rgba(30, 58, 138, 1);
+  --docs-tags-blue-text: rgba(147, 197, 253, 1);
+  --docs-tags-blue-icon: rgba(96, 165, 250, 1);
+  --docs-tags-blue-border: rgba(30, 64, 175, 1);
+  --docs-tags-green-bg: rgba(2, 44, 34, 1);
+  --docs-tags-green-bg-hover: rgba(4, 78, 59, 1);
+  --docs-tags-green-text: rgba(110, 231, 183, 1);
+  --docs-tags-green-icon: rgba(52, 211, 153, 1);
+  --docs-tags-green-border: rgba(6, 95, 70, 1);
+  --docs-tags-orange-bg: rgba(67, 20, 7, 1);
+  --docs-tags-orange-bg-hover: rgba(124, 45, 18, 1);
+  --docs-tags-orange-text: rgba(253, 186, 116, 1);
+  --docs-tags-orange-icon: rgba(251, 146, 60, 1);
+  --docs-tags-orange-border: rgba(154, 52, 18, 1);
+  --docs-tags-red-bg: rgba(76, 5, 25, 1);
+  --docs-tags-red-bg-hover: rgba(136, 19, 55, 1);
+  --docs-tags-red-text: rgba(253, 164, 175, 1);
+  --docs-tags-red-icon: rgba(251, 113, 133, 1);
+  --docs-tags-red-border: rgba(159, 18, 57, 1);
+
+  --docs-code-bg-base: rgba(24, 24, 27, 1);
+  --docs-code-bg-header: rgba(31, 41, 55, 1);
+  --docs-code-border: rgba(55, 65, 81, 1);
+  --docs-code-subtle-highlight-bg: rgba(63, 63, 70, 1);
+  --docs-code-subtle-highlight-text: rgba(255, 255, 255, 1);
+
+  --docs-contrast-bg-base: rgba(33, 33, 36, 1);
+  --docs-contrast-bg-base-pressed: rgba(63, 63, 70, 1);
+  --docs-contrast-bg-base-hover: rgba(39, 39, 42, 1);
+  --docs-contrast-bg-subtle: rgba(24, 24, 27, 1);
+  --docs-contrast-bg-highlight: rgba(63, 63, 70, 1);
+  --docs-contrast-bg-alpha: rgba(9, 9, 11, 0.85);
+  --docs-contrast-fg-primary: rgba(255, 255, 255, 0.88);
+  --docs-contrast-fg-secondary: rgba(255, 255, 255, 0.56);
+  --docs-contrast-border-base: rgba(255, 255, 255, 0.12);
+  --docs-contrast-border-top: rgba(24, 24, 27, 1);
+  --docs-contrast-border-bot: rgba(255, 255, 255, 0.08);
+
+  --docs-alpha-white-alpha-6: rgba(255, 255, 255, 0.06);
+  --docs-alpha-white-alpha-12: rgba(255, 255, 255, 0.12);
+  --docs-alphas-alpha-250: rgba(255, 255, 255, 0.1);
+  --docs-alphas-alpha-6: rgba(255, 255, 255, 0.06);
+  --docs-alphas-alpha-10: rgba(255, 255, 255, 0.1);
+  --docs-alphas-alpha-16: rgba(255, 255, 255, 0.16);
+  --docs-alphas-alpha-24: rgba(255, 255, 255, 0.24);
+}
+
+/* ========================================================================
+   Typography & Component Utilities
+   ======================================================================== */
+@layer utilities {
+  .text-compact-x-small-plus {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+  .text-compact-x-small {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+  .text-compact-small-plus {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+  .text-compact-small {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+  .text-compact-medium-plus {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+  .text-compact-medium {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+  .text-compact-large-plus {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+  .text-compact-large {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+
+  .text-small {
+    font-size: 13px;
+    line-height: 150%;
+    font-weight: 400;
+  }
+  .text-small-plus {
+    font-size: 13px;
+    line-height: 150%;
+    font-weight: 500;
+  }
+  .text-medium {
+    font-size: 14px;
+    line-height: 160%;
+    font-weight: 400;
+  }
+  .text-medium-plus {
+    font-size: 14px;
+    line-height: 160%;
+    font-weight: 500;
+  }
+  .text-large {
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 400;
+  }
+  .text-large-plus {
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 500;
+  }
+  .text-x-large {
+    font-size: 18px;
+    line-height: 150%;
+    font-weight: 400;
+  }
+  .text-x-large-plus {
+    font-size: 18px;
+    line-height: 150%;
+    font-weight: 500;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

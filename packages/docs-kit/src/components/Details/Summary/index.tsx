@@ -1,0 +1,59 @@
+import { PlusMini } from '@cms/icons';
+import clsx from 'clsx';
+import type React from 'react';
+
+export type DetailsSummaryProps = {
+  title?: React.ReactNode;
+  subtitle?: React.ReactNode;
+  badge?: React.ReactNode;
+  expandable?: boolean;
+  open?: boolean;
+  className?: string;
+  titleClassName?: string;
+  hideExpandableIcon?: boolean;
+  summaryRef?: React.LegacyRef<HTMLDivElement>;
+} & Omit<React.HTMLAttributes<HTMLElement>, 'title'>;
+
+export const DetailsSummary = ({
+  title,
+  subtitle,
+  children,
+  badge,
+  expandable = true,
+  open = false,
+  className,
+  titleClassName,
+  hideExpandableIcon = false,
+  summaryRef,
+  ...rest
+}: DetailsSummaryProps) => (
+  <summary
+    className={clsx(
+      'py-docs_0.75 flex items-center justify-between',
+      expandable && 'cursor-pointer',
+      !expandable && 'border-cms-border-base border-y border-solid border-x-0',
+      (expandable || badge !== undefined) && 'gap-0.5',
+      'no-marker',
+      className,
+    )}
+    ref={summaryRef}
+    {...rest}
+  >
+    <span className="gap-docs_0.25 flex flex-col">
+      <span className={clsx('text-compact-medium-plus text-cms-fg-base', titleClassName)} data-testid="details-summary-title">
+        {title || children}
+      </span>
+      {subtitle && (
+        <span className="text-compact-medium text-cms-fg-subtle mt-0.5" data-testid="details-summary-subtitle">
+          {subtitle}
+        </span>
+      )}
+    </span>
+    {(badge || expandable) && (
+      <span className="flex gap-docs_0.5" data-testid="details-summary-extra">
+        {badge}
+        {expandable && !hideExpandableIcon && <PlusMini className={clsx('transition-transform', open && 'rotate-45')} />}
+      </span>
+    )}
+  </summary>
+);

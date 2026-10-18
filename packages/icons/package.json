@@ -1,0 +1,36 @@
+{
+  "name": "@cms/icons",
+  "version": "0.0.0",
+  "private": true,
+  "description": "UI React icon library",
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./dist/types": "./src/types.ts",
+    "./types": "./src/types.ts"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "clean": "git clean -xdf .cache node_modules",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cms/tsconfig": "workspace:*",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "resize-observer-polyfill": "^1.5.1",
+    "typescript": "catalog:",
+    "vitest": "^5.0.3"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}

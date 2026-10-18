@@ -1,0 +1,329 @@
+# AGENTS.md — CMS Modern Documentation Platform
+
+## Project Overview
+
+CMS is a modern, fast, searchable documentation platform built with Rust and React for **internal company use**. It provides a notion-style markdown editor, project workspace management, multi-lingual search (with native Japanese support), and high-performance reader sites for company technical documentation.
+
+---
+
+## 🚫 Critical Non-Negotiable Constraints (MANDATORY)
+
+These constraints are permanent and binding. **Never violate or relax them:**
+
+### 1. No Plan, Billing, or Pricing Features
+**DO NOT attempt to re-introduce, recover, scaffold, or re-implement any Plan, Billing, or Subscription features:**
+- **No Plan / Billing Sections**: Do **NOT** add `PlanSection`, `plan` tabs, or billing management to project settings (`/app/projects/$projectId/settings`), workspace settings (`/app/settings`), or dashboard overviews.
+- **No Plan Tiers**: Do **NOT** add pricing tiers or subscription models (such as Free, Pro, Team, Enterprise, Self-Hosted vs Cloud pricing).
+- **No Payment Gateways**: Do **NOT** integrate Stripe, Polar, LemonSqueezy, Paddle, or any payment gateway.
+- **No Billing Quota Enforcement**: Do **NOT** block user features, restrict workspaces, or show upgrade/downgrade prompts based on billing plans or payment statuses.
+- **Diagnostics vs Billing**: Diagnostic usage tracking (such as page counts or storage metrics) is strictly internal operational telemetry. It must never be tied to billing cycles, invoices, payment statuses, or plan tiers.
+
+### 2. No Marketing, Landing, or Blog Pages
+**DO NOT re-create marketing pages, promotional blogs, comparison roundups, or public landing sites:**
+- **Homepage**: The root route `/` intentionally redirects directly to `/app`. The `/app` route serves as the primary application homepage for authenticated company team members.
+- **No Marketing Landing Pages**: Do **NOT** replace `/` with a promotional or marketing landing page.
+- **No Marketing Routes**: Do **NOT** add `/pricing`, `/cloud`, `/compare/*`, `/alternatives/*`, `/blog/*`, `/about`, `/contact`, `/developers`, `/guides` marketing hubs, or marketing SEO schemas.
+- **Authentication**: Auth routes (`/sign-in`, `/sign-up`) are for internal team members and must not require public SaaS terms of service or privacy policy checkboxes.
+
+---
+
+## Canonical Tech Stack
+
+### Backend
+| Layer | Technology |
+|---|---|
+| Language | Rust (edition 2024, MSRV 1.85) |
+| Web framework | Axum 0.8 + Tower 0.5 |
+| Async runtime | Tokio (full features) |
+| Serialization | serde + serde_json |
+| Error handling | `thiserror` (library crates), `cms_error::AppError` (application edges) |
+| Logging & Metrics | `tracing` + `tracing-subscriber` (structured, JSON), `metrics` |
+| Auth | In-process JWT (`jsonwebtoken`), sessions, Argon2 password hashing |
+
+### Databases & Persistence
+| Component | Technology | Purpose |
+|---|---|---|
+| PostgreSQL 14+ | Primary Relational Store | Users, workspaces, projects, pages, revisions, assets, comments |
+| SQLx | Compile-Time Checked SQL | `sqlx::query!`, `sqlx::query_as!`, `sqlx::query_scalar!` |
+| Migrations | `sqlx::migrate!()` | Embedded at compile time in `cms-db` |
+
+### Search & Infrastructure
+| Capability | Technology | Purpose |
+|---|---|---|
+| Full-text Search | Tantivy (0.26) | BM25 inverted index stored on disk |
+| Japanese Tokenizer | Lindera (6.0) with SudachiDict | In-process Japanese morphological analysis |
+| Semantic Vector Search | FastEmbed (7.1) | In-process ONNX embeddings (`multilingual-e5-small`) |
+| Object Storage | Pluggable (Local / S3) | Local disk (`C:/cms/uploads`) or AWS S3 |
+| Asynchronous Queue | In-memory / Redis | Background jobs via `cms-infra::queue` & `cms-worker` |
+| Email Delivery | Lettre + MiniJinja | Transactional notifications and invitations |
+| Agent Integration | rmcp (3.5) | Model Context Protocol server exposing CMS capabilities |
+
+### Web Frontend
+| Layer | Technology | Purpose |
+|---|---|---|
+| Framework | React 18 + TypeScript (strict) | Studio console (`apps/studio`) and Reader (`apps/site`) |
+| Bundler | Vite | Fast HMR and optimized production bundling |
+| Routing | React Router v7 | Nested data routing and loaders |
+| Server state | TanStack Query v5 | Remote server data cache, refetching, invalidation |
+| Client state | Zustand | Durable client state (auth user, active project, editor layout) |
+| Form state | React Hook Form + Zod | Schema-validated form submissions via `zodResolver` |
+| Linter / Formatter | Biome | Strict linting and formatting (`biome check`) |
+
+---
+
+## Project Structure & Architecture
+
+The backend follows a strict **3-Layer Architecture** complemented by specialized infrastructure crates:
+
+```
+cms-rs-4/
+├── Cargo.toml                    # Rust workspace root
+├── rust-toolchain.toml           # Rust 1.85 toolchain
+├── rustfmt.toml                  # Code formatting rules
+├── deny.toml                     # Cargo dependency verification
+├── config/                       # Configuration profiles (dev.env, deploy.toml)
+├── docs/                         # Documentation & ADRs
+│   └── adr/                      # Architecture Decision Records
+├── crates/
+│   ├── cms-entity/               # Pure domain types, models, DTOs (Zero internal deps)
+│   ├── cms-db/                   # PostgreSQL repositories, queries, migrations
+│   │
+│   ├── cms-auth/                 # Auth system — JWT, sessions, API keys, MFA, OAuth
+│   ├── cms-authz/                # ReBAC engine + route authorization gates
+│   ├── cms-infra/                # Consolidated infrastructure (config with validation, storage with StorageService, queue, mailer, i18n)
+│   ├── cms-worker/               # Background task processor
+│   ├── cms-mcp/                  # MCP server endpoints for AI tools
+│   ├── cms-error/                # AppError and HTTP error responses
+│   ├── cms-server-core/          # Server foundation (pagination, validation, http_trace, app_state, enterprise middleware)
+│   ├── cms-sites/                # Static documentation site generator & SPA server
+│   │
+│   ├── cms-content/              # Vertical Slice: Page hierarchy, branches, BCP-47 languages, comments
+│   ├── cms-assets/               # Vertical Slice: Project asset storage, upload presigning, metadata
+│   ├── cms-projects/             # Vertical Slice: Project workspaces, members, settings, domains, reader access, addons
+│   ├── cms-deployments/          # Vertical Slice: Deployment pipeline, site building, retry/cancel, logs
+│   ├── cms-git/                  # Vertical Slice: Git connections, GitHub/GitLab sync, conflicts, worker jobs
+│   ├── cms-integrations/         # Vertical Slice: Third-party integrations, SSRF protection, webhook testing
+│   ├── cms-themes/               # Vertical Slice: Project & global themes, CSS variables, template presets
+│   ├── cms-notifications/        # Vertical Slice: Notification models, queries, service, WebSocket live hub, router
+│   ├── cms-invitations/          # Vertical Slice: Workspace invitations models, queries, service, email outbox events, router
+│   ├── cms-onboarding/           # Vertical Slice: Setup status, initial admin creation, cryptographic email verification, router
+│   ├── cms-reports/              # Vertical Slice: Report runs lifecycle, sequence generation, background export orchestration, router
+│   ├── cms-workspaces/           # Vertical Slice: Workspace configuration, workspace-level member lifecycle, router
+│   ├── cms-admin/                # Vertical Slice: Platform-level administrative parity router and operations (including platform telemetry events)
+│   ├── cms-public/               # Vertical Slice: Unauthenticated reader-facing JSON API, SEO, RSS, sitemaps, changelog
+│   ├── cms-analytics/            # Vertical Slice: Workspace analytics, view tracking, stats API
+│   │
+│   ├── cms-outbox/               # Subsystem 1: Transactional Outbox with jittered backoff, worker, DLQ
+│   ├── cms-seed/                 # Subsystem 2: Deterministic UUID v5 dev fixtures & CLI runner
+│   ├── cms-scheduler/            # Subsystem 5: Distributed cron scheduler with SKIP LOCKED execution
+│   └── cms-search/               # Subsystem 6: Hybrid Tantivy BM25 + Lindera Japanese + FastEmbed vector search & RAG
+└── apps/
+    ├── api/                      # Composition Root binary & library (mounts all vertical slices into unified Axum HTTP router)
+    ├── studio/                   # Notion-style documentation management frontend
+    └── site/                     # Published documentation reader site
+```
+
+### Layer & Vertical Slice Dependency Rules:
+1. `cms-entity` has **zero** internal crate dependencies.
+2. `cms-db` depends only on `cms-entity` and database drivers.
+3. `cms-biz` and `cms-api` are **completely eliminated**; all business logic and routes live within cohesive vertical slices.
+4. **Vertical Slices** (e.g. `cms-content`, `cms-projects`, `cms-deployments`, `cms-admin`, `cms-public`): High-cohesion autonomous domain modules encapsulating domain queries, models, services, and Axum routers directly.
+5. `apps/api` (`cms-server`): The composition root assembling all vertical slices directly into the Axum HTTP router (`router.rs`, `lib.rs`, `main.rs`).
+
+---
+
+## Vertical Slices & Platform Subsystems (Modular Monolith)
+
+The platform adopts a Modular Monolith architecture integrating focused vertical slices and robust enterprise subsystems:
+
+### 1. Vertical Slice: `cms-notifications`
+- **Thread-safe Real-time Hub**: `NotificationHub` manages active subscribers via `tokio::sync::broadcast` channels with zero-lock per-user broadcast and idle channel cleanup.
+- **Unified Domain Package**: Encapsulates database queries (`NotificationQueries`), business service (`NotificationService`), WebSocket upgrade endpoint (`GET /ws`), and REST route handlers in a self-contained crate.
+- **Contract Tests**: 100% test coverage verifying serialization, subscriber isolation, and event multiplexing.
+
+### 2. Vertical Slice: `cms-invitations`
+- **Lifecycle Management**: Tracks invitations through `pending`, `accepted`, `revoked`, and `expired` states in `workspace_invitations` (`0022_workspace_invitations.sql`).
+- **Security & Integrity**: 64-character SHA-256 token hashing with role-based assignment (`owner`, `admin`, `member`, `viewer`).
+- **Transactional Email Dispatch**: Automatically fires `email.invitation` events via the transactional outbox (`cms_outbox::queue_in_tx`).
+- **Self-Contained Router**: Exposes `pub fn router(state: Arc<AppState>) -> Router` handling invitation creation, listing, preview, acceptance, and revocation.
+
+### 3. Vertical Slice: `cms-onboarding`
+- **Cryptographic Tokens**: 32-byte secure random tokens (`getrandom`), stored via SHA-256 hashes in `email_verification_tokens` (`0021_email_verification_tokens.sql`).
+- **Transactional Dispatch**: Enqueues `email.verification` outbox events atomically on user signup and admin onboarding.
+- **Self-Contained Router**: Exposes `pub fn router(state: Arc<AppState>) -> Router` with public endpoints (`GET /status`, `POST /complete`, `GET /verify-email`, `POST /resend-verification`).
+
+### 4. Vertical Slice: `cms-reports`
+- **Atomic Sequential Identifiers**: Uses `cms_db::next_sequence` to generate sequential codes (e.g. `RPT-2026-00001`) atomically inside transactions.
+- **Lifecycle State Machine**: Tracks status (`queued` -> `running` -> `completed` / `failed`) with artifact storage keys, sizes, and retention expiration timestamps in `report_runs` (`0024_report_runs.sql`).
+- **Background Dispatch & Downloads**: Enqueues typed `JobType::Export` envelopes to `cms_infra::queue` and resolves presigned download targets via `StorageUrlService`.
+- **Self-Contained Router**: Exposes `pub fn router(state: Arc<AppState>) -> Router` mounted at `/reports` with list, create, get, download, and delete endpoints.
+
+### 5. Vertical Slice: `cms-content`
+- **Core Content Engine**: Encapsulates pages, branches, languages, and page comments in a cohesive domain vertical slice.
+- **Materialized Paths & Hierarchies**: Unicode-aware slug generation, cyclic tree validation, and branch duplication with hierarchy preservation.
+- **BCP-47 & Translations**: Canonical BCP-47 validation, direction detection, project translations, and default-branch coverage calculation.
+- **Self-Contained Routers**: Exposes subrouters `page_router`, `branch_router`, `language_router`, `comment_router`, and composite `router` mounted at `/pages`, `/branches`, `/languages`, `/comments`.
+
+
+### 7. Subsystem 1: Transactional Outbox (`cms-outbox`)
+- **At-Least-Once Delivery**: Atomic `queue_in_tx(&mut tx, &OutboxRow)` enqueues events within the same PostgreSQL transaction as domain mutations (`0020_outbox.sql`).
+- **Concurrent Worker**: Background processor claims batches via `FOR UPDATE SKIP LOCKED`, records Prometheus metrics, and recovers abandoned locks.
+- **Exponential Jittered Backoff**: `BackoffConfig` provides mathematically validated exponential intervals with ±20% jitter and `clamp(0, 30)` overflow protection.
+- **Dead-Letter Queue (DLQ)**: Automatic permanent error classification and DLQ archiving after 10 failed retry attempts.
+
+### 8. Subsystem 2: Seed & Dev Fixtures (`cms-seed`)
+- **Deterministic Fixtures**: UUID v5 namespace derivation (`CMS_SEED_NAMESPACE`) guarantees stable, reproducible IDs across fresh environments.
+- **Production-grade Security**: Generates Argon2-hashed passwords with standard cost parameters.
+- **CLI Runner**: Standalone `cms_seed` binary supporting `--profile dev` and `--force` flags.
+
+### 9. Subsystem 5: Cron Scheduling (`cms-scheduler`)
+- **Distributed Cron Engine**: Normalizes standard 5-part and 6-part cron expressions to compute precise next execution timestamps.
+- **Lock-Free Concurrency**: Scans `cms_scheduled_jobs` with `FOR UPDATE SKIP LOCKED` to prevent duplicate concurrent runs across nodes.
+- **Maintenance Registry**: Pre-configured maintenance jobs for session purging, token cleanup, invitation expiry, and search index maintenance.
+
+### 10. Server Foundation & Middleware Suite (`cms-server-core`)
+- **Zero-Route Server Foundation**: Houses pagination (`Pagination`, `CursorPage` keyset seek), regex validation & anti-XSS (`ValidationErrors`), status-painted terminal HTTP tracing (`http_trace`), and unified `AppState`.
+- **Enterprise Middleware Suite**:
+  - `client_ip`: Trusted proxy verification (`ipnet::IpNet`) preventing `X-Forwarded-For` spoofing.
+  - `rate_limit`: Sliding-window class-scoped limiter (`check_and_record_class`) with poison-safe mutex, plus governor token bucket for high-throughput routes.
+  - `csrf`: Double-submit cookie pattern protecting state-changing mutations while allowing safe methods and Bearer auth.
+  - `ip_restrict`: Pure IPv4 & IPv6 CIDR subnet matching (`ip_in_cidr`, `ip_allowed`) with DENY precedence.
+  - `observability`, `security_headers`, `admin_origin`, and `locale`: Hardened production headers and tracing.
+- **Consolidated Server Core**: Direct consumption of `cms-server-core` across all vertical slices and composition roots (`cms-middleware` facade completely eliminated).
+
+### 11. Vertical Slice: `cms-assets`
+- **Asset Lifecycle Management**: Models, direct uploads, metadata querying, and deletion for project assets.
+- **Storage-Agnostic Presigning**: Seamless presigning with `StorageUrlService` supporting local file endpoints and S3 objects.
+- **Self-Contained Router**: Exposes subrouters `project_assets_router`, `assets_router`, and composite `router` mounted at `/assets`.
+
+### 12. Vertical Slice: `cms-projects`
+- **Project Workspace Core**: Project creation, listing with Zanzibar ReBAC viewer checks, slug sanitization, and settings management.
+- **Project Member & Invitation Lifecycle**: Role-based project membership (owner, admin, editor, viewer), ownership transfers, and invite workflows.
+- **Custom Domains & TXT Verification**: Multi-deployment custom domain association, DNS normalization, and DNS TXT verification checks.
+- **Reader Access & Audiences**: Protected reader access configurations, audiences, audience grants, and reader JWT provider configuration.
+- **Self-Contained Router**: Exposes `core_router`, `members_router`, `domains_router`, `reader_access_router`, `addons_router`, and composite `project_router` mounted at `/projects`.
+
+### 13. Vertical Slice: `cms-deployments`
+- **Deployment Pipeline**: Deployment creation, lifecycle management (pending -> building -> deployed / failed / cancelled), retry, and cancellation.
+- **Site Generation & Artifact Processing**: Encapsulates `DeploymentService`, `process_deployment_job`, and `process_publish_job` for background generation.
+- **Self-Contained Router**: Exposes `pub fn router(state: Arc<AppState>) -> Router` mounted at `/deployments`.
+
+### 14. Vertical Slice: `cms-git`
+- **Git Connection Lifecycle**: Repository connections (GitHub, GitLab), webhook secret generation, and branch association.
+- **Synchronization Engine**: Full and incremental sync operations, conflict tracking, REST sync jobs, and `process_git_job` worker execution.
+- **Self-Contained Router**: Exposes `pub fn router(state: Arc<AppState>) -> Router` mounted at `/git`.
+
+### 15. Vertical Slice: `cms-integrations`
+- **Project Integrations**: Third-party webhook providers (Slack, Discord, Teams, Webhook, Zapier, Make) with idempotency tracking and audit events.
+- **SSRF Protection Engine**: Dedicated IP restriction validator (`is_private_or_restricted_ip`) defending against private/link-local network probes during webhook test pings.
+- **Self-Contained Router**: Exposes `pub fn router(state: Arc<AppState>) -> Router` mounted at `/integrations`.
+
+### 16. Vertical Slice: `cms-themes`
+- **Theme Management**: Project-specific and global theme creation, editing, deletion, and CSS variable extraction (`ThemeCssVariables`).
+- **Template Customization**: Active project theme configuration persisted to project settings.
+- **Self-Contained Router**: Exposes `pub fn router(state: Arc<AppState>) -> Router` mounted at `/themes`.
+
+### 17. Vertical Slice: `cms-analytics`
+- **Workspace Analytics & Telemetry**: Page view tracking, unique visitor counting, search query metrics, and top-page performance breakdowns.
+- **Self-Contained Router**: Exposes `pub fn router(state: Arc<AppState>) -> Router` mounted at `/analytics`.
+
+### 18. Subsystem 6: Hybrid Search Engine (`cms-search`)
+- **Tantivy BM25 + Japanese Morphological Analysis**: Disk-persisted inverted indices tokenized using Lindera with IPADIC/SudachiDict.
+- **In-Process Semantic Vectors & RAG**: ONNX embeddings (`multilingual-e5-small`) and retrieval-augmented generation answer synthesis via `rag::generate_rag_answer`.
+- **Engine Abstraction**: Re-exports `cms_server_core::search::SearchEngine` for uniform workspace indexing and querying.
+
+---
+
+## Coding Standards
+
+### Rust
+
+- **Edition 2024**, minimum Rust version **1.85**.
+- `unsafe` code is **strictly forbidden** (`forbid(unsafe_code)`).
+- **Strict Clippy**: `clippy::all` denied, `clippy::pedantic` + `clippy::nursery` warned.
+- The following are **denied** (will fail compilation):
+  - `unwrap_used`, `expect_used`, `panic`, `todo`, `unimplemented`
+  - `dbg_macro`, `print_stdout`, `print_stderr`
+  - `wildcard_imports`, `clone_on_ref_ptr`, `inefficient_to_string`
+- Use the `?` operator for error propagation. Return `Result<T, AppError>` from fallible functions.
+- Use `thiserror` for library error definitions; use `cms_error::AppError` at HTTP boundaries.
+- Format with `cargo fmt`.
+
+### SQL & Database
+
+- **All queries must be compile-time verified** via `sqlx::query!`, `sqlx::query_as!`, or `sqlx::query_scalar!`.
+- `.sqlx/` offline metadata is committed; normal build/check/test runs with `SQLX_OFFLINE=true`.
+- Run `cargo sqlx prepare` only against migrated local/staging databases, never production.
+- Every workspace-scoped query must enforce `workspace_id = $1`.
+
+### `cms-db` Public Surface
+
+Every write handler MUST call `cms_db::set_write_context(&mut tx, workspace_id, user_id, ip)` 
+immediately after `pool.begin()`. This sets RLS context and audit attribution in one round-trip.
+
+For read-only queries without a transaction, use `cms_db::workspace_conn(pool, workspace_id)`.
+
+Key public APIs:
+- `cms_db::create_pool(url)` / `cms_db::create_pool_with_config(url, &config)`
+- `cms_db::health_check(pool)`
+- `cms_db::set_write_context(&mut tx, workspace_id, user_id, ip)`
+- `cms_db::set_read_context(&mut tx, workspace_id)`
+- `cms_db::set_extended_audit_context(&mut tx, ...)`
+- `cms_db::workspace_conn(pool, workspace_id)`
+- `cms_db::next_sequence(&mut tx, workspace_id, seq_type, prefix, pad_width)`
+- `cms_db::AuditLogger::log(&mut tx, &entry)`
+- `cms_db::AuditLogger::log_http(pool, &http_entry)`
+- `cms_db::AuditLogger::verify_chain_for_workspace(pool, workspace_id)`
+
+### TypeScript & React
+
+- **Strict TypeScript** (`strict: true`).
+- **Biome** for linting and formatting (`biome check`, `biome format`).
+- **Form State Rules**:
+  - **All user-editable form payloads must use React Hook Form** (`useForm`, `Controller`, `FormProvider`). Prohibit one `useState` per field.
+  - Form validation must use **Zod** (`zodResolver(schema)`). Schemas must match backend Rust request models.
+  - Do NOT synchronize form fields via `useEffect`. Initialize with `defaultValues`, call `reset()` on record change, derive payloads in `handleSubmit`.
+  - Modal and drawer visibility: pair toggle with form `reset()`.
+  - Avoid TypeScript `as` type assertions. Align form types directly with domain models.
+- **Data Access Rules**:
+  - All API calls through TanStack Query (`useQuery`, `useMutation`) via typed service hooks.
+  - No raw `fetch` inside UI components.
+  - Zustand is reserved for durable client state only (session, active workspace/project, editor UI state). Never store server query caches in Zustand.
+- **useEffect Policy**:
+  - **Avoid `useEffect` unless absolutely necessary.**
+  - Never use `useEffect` for data fetching or derived state.
+  - Allowed only for external browser/DOM listeners (keyboard shortcuts, resize, WebSocket events).
+- **Dead Code Rule**:
+  - Delete unused code immediately. No unused imports, variables, types, or commented-out blocks.
+
+---
+
+## Architecture Decision Records (ADRs)
+
+Foundational decisions are documented in `docs/adr/`:
+
+| ADR | Title | Key Decision |
+|---|---|---|
+| [ADR 0001](file:///d:/Workspace/Software/Cloned-Repos/cms-rs-4/docs/adr/0001-internal-company-scope.md) | Internal Scope & No Billing/Marketing | Permanent prohibition of SaaS billing and public marketing routes |
+| [ADR 0002](file:///d:/Workspace/Software/Cloned-Repos/cms-rs-4/docs/adr/0002-three-layer-crate-architecture.md) | Three-Layer Crate Architecture (Superseded) | Historical horizontal layering (superseded by ADR 0007) |
+| [ADR 0003](file:///d:/Workspace/Software/Cloned-Repos/cms-rs-4/docs/adr/0003-sqlx-compile-time-no-orm.md) | SQLx Without Heavy ORMs | Compile-time checked queries and embedded migrations |
+| [ADR 0004](file:///d:/Workspace/Software/Cloned-Repos/cms-rs-4/docs/adr/0004-hybrid-search-lindera-tantivy-fastembed.md) | Hybrid Search Architecture | In-process Tantivy BM25 + Lindera Japanese + FastEmbed vectors |
+| [ADR 0005](file:///d:/Workspace/Software/Cloned-Repos/cms-rs-4/docs/adr/0005-react-router-v7-state-and-forms.md) | Frontend State & Forms | TanStack Query + Zustand + React Hook Form + Zod |
+| [ADR 0006](file:///d:/Workspace/Software/Cloned-Repos/cms-rs-4/docs/adr/0006-zero-docker-single-machine-windows-deployment.md) | Zero-Docker Windows Deployment | Native process deployment for internal Windows/AWS servers |
+| [ADR 0007](file:///d:/Workspace/Software/Cloned-Repos/cms-rs-4/docs/adr/0007-vertical-slices-modular-monolith.md) | Modular Monolith & Vertical Slices | Elimination of biz/api layers, autonomous vertical slices, apps/api composition root |
+
+---
+
+## Verification & Checks
+
+Before submitting or completing any work, ensure all verification checks pass:
+
+```bash
+# Rust checks
+cargo clippy --all-targets --all-features
+cargo check
+
+# Frontend checks
+bun run check     # Biome linting and formatting check
+bun run typecheck # TypeScript compiler check
+```

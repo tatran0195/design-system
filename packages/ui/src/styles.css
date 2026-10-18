@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import "../layers.css";
+@import "../tokens.css";
+@import "./control-text.css";
+
+@source "./**/*.{ts,tsx}";
+
+:root {
+  background-color: var(--bg-subtle);
+  color: var(--fg-base);
+  text-rendering: optimizeLegibility;
+}

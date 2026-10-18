@@ -1,0 +1,19 @@
+{
+  "extends": "@cms/tsconfig/react.json",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "types": ["vite/client", "node"],
+    "noUncheckedIndexedAccess": false
+  },
+  "include": ["src", "vite.config.ts"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".output",
+    ".nitro",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx"
+  ]
+}

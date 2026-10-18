@@ -1,0 +1,68 @@
+@import "@cms/ui/theme.css";
+@import "@cms/editor/tiptap.css";
+@import "./site-theme.css";
+@import "tw-animate-css";
+@source "../../../../packages/ui/dist";
+@source "../../../../packages/editor/dist";
+@source "../";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--foreground);
+  --color-popover: var(--bg-base);
+  --color-popover-foreground: var(--fg-base);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--bg-subtle);
+  --color-secondary-foreground: var(--fg-base);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--bg-subtle-hover);
+  --color-accent-foreground: var(--fg-base);
+  --color-destructive: var(--fg-error);
+  --color-border: var(--border);
+  --color-input: var(--border-base);
+  --color-ring: var(--border-interactive);
+  --color-sidebar: var(--bg-subtle);
+  --color-sidebar-foreground: var(--fg-base);
+  --color-sidebar-primary: var(--fg-base);
+  --color-sidebar-primary-foreground: var(--bg-base);
+  --color-sidebar-accent: var(--bg-base-hover);
+  --color-sidebar-accent-foreground: var(--fg-base);
+  --color-sidebar-border: var(--border-base);
+  --color-sidebar-ring: var(--border-interactive);
+  --color-chart-1: var(--fg-interactive);
+  --color-chart-2: var(--tag-purple-text);
+  --color-chart-3: var(--tag-green-text);
+  --color-chart-4: var(--tag-orange-text);
+  --color-chart-5: var(--tag-red-text);
+}
+:root {
+  --background: var(--bg-base);
+  --foreground: var(--fg-base);
+  --card: var(--bg-base);
+  --primary: var(--button-inverted);
+  --primary-foreground: var(--contrast-fg-primary);
+  --muted: var(--bg-subtle);
+  --muted-foreground: var(--fg-muted);
+  --border: var(--border-base);
+  --radius: 0.5rem;
+}
+@layer base {
+  body {
+    margin: 0;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+    font-size: 14px;
+  }
+  * {
+    border-color: var(--border);
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+}

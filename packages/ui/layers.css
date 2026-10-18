@@ -1,0 +1,26 @@
+/* Shared application layers. Keep component-local painting inside an isolated root.
+ * Static theme variables are also available to portaled/imperatively mounted UI.
+ * Popovers/tooltips inherit their owning surface via UiLayer; nested surfaces
+ * advance by --ui-layer-stack-step instead of competing with global magic numbers.
+ */
+@theme static {
+  --z-index-ui-base: 0;
+  --z-index-ui-sticky: 10;
+  --z-index-ui-sidebar: 20;
+  --z-index-ui-popover: 30;
+  --z-index-ui-tooltip: 35;
+  --z-index-ui-navigation: 40;
+  --z-index-ui-skip-link: 45;
+  --z-index-ui-modal: 50;
+  --z-index-ui-prompt: 70;
+  --z-index-ui-toast: 1000;
+  --z-index-ui-navigation-backdrop: calc(var(--z-index-ui-navigation) - 1);
+  --z-index-ui-modal-backdrop: calc(var(--z-index-ui-modal) - 1);
+  --z-index-ui-prompt-backdrop: calc(var(--z-index-ui-prompt) - 1);
+}
+
+:root {
+  --ui-layer-stack-step: 20;
+  --ui-layer-popover-offset: 2;
+  --ui-layer-tooltip-offset: 3;
+}

@@ -1,0 +1,2 @@
+$ node scripts/check-architecture.mjs --report
+Architecture: 440 modules, 1470 local edges, 0 violations.

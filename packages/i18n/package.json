@@ -1,0 +1,39 @@
+{
+  "name": "@cms/i18n",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./locales": "./src/locales.ts",
+    "./react": "./src/react.ts",
+    "./standalone": "./src/standalone.ts",
+    "./email": "./src/email.ts",
+    "./site": "./src/site.ts",
+    "./messages": "./src/paraglide/messages.js",
+    "./runtime": "./src/paraglide/runtime.js"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "clean": "git clean -xdf .cache dist node_modules src/paraglide",
+    "setup": "paraglide-js compile --project ./project.inlang --outdir ./src/paraglide --strategy cookie preferredLanguage baseLocale --output-structure message-modules --emit-ts-declarations",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@inlang/paraglide-js": "2.27.0"
+  },
+  "devDependencies": {
+    "@cms/tsconfig": "workspace:*",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "react": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "^5.0.3"
+  },
+  "peerDependencies": {
+    "react": "^19.2.8"
+  }
+}

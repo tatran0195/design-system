@@ -1,0 +1,145 @@
+[
+  {
+    "path": "features/analytics/api/index.ts",
+    "lines": 2,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "features/editor/components/extensions/titled-block-view.tsx",
+    "lines": 78,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "features/exports/api.ts",
+    "lines": 11,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "features/reader/lib/blog-components.ts",
+    "lines": 19,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/shared/crypto.ts",
+    "lines": 14,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/shared/documentation-components.ts",
+    "lines": 265,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/shared/export-schedule.ts",
+    "lines": 113,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/shared/ids.ts",
+    "lines": 19,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/shared/index.ts",
+    "lines": 13,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/shared/public-markdown-content.ts",
+    "lines": 192,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/shared/theme-repository-templates/chrome.ts",
+    "lines": 313,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/shared/theme-repository-templates/index.ts",
+    "lines": 117,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/shared/theme-repository-templates/layouts.ts",
+    "lines": 318,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/shared/theme-repository-templates/markdown.ts",
+    "lines": 176,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/shared/theme-repository-templates/mdx-components.ts",
+    "lines": 420,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/shared/theme-repository-templates/messages.ts",
+    "lines": 56,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/shared/theme-repository-templates/package-json.ts",
+    "lines": 49,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/shared/theme-repository-templates/readme.ts",
+    "lines": 92,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/shared/theme-repository-templates/routes.ts",
+    "lines": 117,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/shared/theme-repository-templates/site-lib.ts",
+    "lines": 394,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/shared/theme-repository-templates/styles.ts",
+    "lines": 614,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/shared/theme-repository-templates/tooling.ts",
+    "lines": 157,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/shared/theme-repository-templates/types.ts",
+    "lines": 36,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/shared/theme-repository.ts",
+    "lines": 447,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/validators/assets-upload.ts",
+    "lines": 36,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/validators/index.ts",
+    "lines": 101,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "integrations/nibleaf/contracts/validators/reader-search.ts",
+    "lines": 16,
+    "reason": "No path from framework entry, any route, any static/dynamic/type dependency, or retained source test; unused copied integration generator/schema/facade or obsolete editor shim."
+  },
+  {
+    "path": "scripts/bundle-analysis-plugin.ts",
+    "reason": "Unreferenced copied build tool; not wired into Vite or package scripts; stale budgets/module attribution are not claimed as executed gates."
+  },
+  {
+    "path": "scripts/check-bundle-budget.mjs",
+    "reason": "Unreferenced copied build tool; not wired into Vite or package scripts; stale budgets/module attribution are not claimed as executed gates."
+  }
+]

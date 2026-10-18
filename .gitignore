@@ -1,0 +1,170 @@
+# Rust
+/target/
+crates/*/target/
+**/*.rs.bk
+Cargo.lock
+
+# Environment
+.env
+.env.production
+.env*.local
+*.local
+
+# SSO provisioning creds (client secret) — real file is local-only.
+entra-sso.json
+
+# IDE
+.idea/
+.vscode/*
+!.vscode/launch.json
+*.swp
+*.swo
+*~
+
+# Operating System
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+ehthumbs_vista.db
+Thumbs.db
+Thumbs.db:encryptable
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Node
+node_modules/
+pnpm-lock.yaml
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+out/
+.output/
+lib/
+packages/*/lib/
+apps/web/dist/
+storybook-static/
+apps/storybook/storybook-static/
+packages/ui/storybook-static/
+
+# Framework & bundler outputs
+.next/
+.nitro/
+.vinxi/
+.wrangler/
+.vercel/
+__unconfig*
+todos.json
+*.tsbuildinfo
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Caches
+.cache/
+.parcel-cache/
+.turbo/
+.tanstack/
+.vite/
+.vitest/
+.rollup.cache/
+.eslintcache/
+
+# Local development logs
+var/log/dev/
+
+# Local CLI tools downloaded during checks
+.tools/
+
+# Local development certificates
+var/local-https/
+
+# React Native — Mobile
+apps/*/.expo/
+apps/mobile-staff/android/
+apps/mobile-staff/ios/
+apps/mobile/android/app/build/
+apps/mobile/android/build/
+apps/mobile/android/.gradle/
+apps/mobile/ios/build/
+apps/mobile/ios/Pods/
+
+# React Native — TV
+apps/tv/android/
+apps/tv/ios/
+apps/tv/android/app/build/
+apps/tv/android/build/
+apps/tv/android/.gradle/
+
+# Metro
+*.hbc
+
+# Profiling
+flamegraph.svg
+perf.data
+perf.data.old
+
+# SQLx offline data is committed for compile-time query verification
+
+# Docker volumes
+pgdata/
+yottadata/
+
+
+# Playwright
+apps/web/e2e/.auth/
+apps/web/test-results/
+apps/web/playwright-report/
+apps/storybook/storybook-static/
+
+# Generated smoke tests (regenerate via: make generate-smoke)
+apps/web/e2e/smoke/*.smoke.spec.ts
+# Allure Report (generated)
+qa/allure-results/
+qa/allure-report/
+
+qa/allure-*/
+qa/kiwi-results/
+apps/web/allure-results/
+
+# Terraform local state + provider caches (~700MB per module)
+**/.terraform/
+**/.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+
+# cms-edge dev state (Loro docs + Merkle chain)
+var/
+
+# Detox run artifacts — screenshots and device logs from the last e2e run.
+apps/*/artifacts/
+
+# Temporary, upgrade & backup files
+*.tmp
+*.tmp.*
+*.tailwind-upgrade.*
+*.bak
+.env.bak.*
+infra/.env.bak.*
+
+
+# Downloaded AI model cache
+crates/cms-api/data/models/
+
+# Generated SDK artifacts (ts-rs exports)
+packages/sdk/

@@ -1,0 +1,22 @@
+{
+  "extends": "@cms/tsconfig/react.json",
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "noUncheckedIndexedAccess": false,
+    "types": ["node"],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@cms/dashboard": ["./src/index.ts"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".cache",
+    "src/**/__tests__/**",
+    "src/**/__mocks__/**",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx"
+  ]
+}

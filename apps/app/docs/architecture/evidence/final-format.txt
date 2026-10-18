@@ -1,0 +1,2 @@
+$ biome format .
+Checked 472 files in 290ms. No fixes applied.

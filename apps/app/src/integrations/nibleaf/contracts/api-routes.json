@@ -1,0 +1,370 @@
+[
+  {
+    "path": "/api/app/members",
+    "methods": ["$get"]
+  },
+  {
+    "path": "/api/app/members/:id",
+    "methods": ["$delete"]
+  },
+  {
+    "path": "/api/app/members/:id/role",
+    "methods": ["$patch"]
+  },
+  {
+    "path": "/api/app/members/invite",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/notifications",
+    "methods": ["$get"]
+  },
+  {
+    "path": "/api/app/notifications/read",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/notifications/unread-count",
+    "methods": ["$get"]
+  },
+  {
+    "path": "/api/app/projects",
+    "methods": ["$get", "$post"]
+  },
+  {
+    "path": "/api/app/projects/:id",
+    "methods": ["$delete", "$get", "$patch"]
+  },
+  {
+    "path": "/api/app/projects/:id/theme-template",
+    "methods": ["$get"]
+  },
+  {
+    "path": "/api/app/projects/:id/theme-template/import",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/addons",
+    "methods": ["$get"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/addons/:addonId",
+    "methods": ["$patch"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/addons/:addonId/activate",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/addons/:addonId/deactivate",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/ai",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/analytics",
+    "methods": ["$get"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/api-keys",
+    "methods": ["$get", "$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/api-keys/:id",
+    "methods": ["$delete"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/api-keys/:id/rotate",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/assets/confirm",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/assets/presign",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/branches",
+    "methods": ["$get", "$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/branches/:id/merge",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/comments",
+    "methods": ["$get", "$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/comments/:id",
+    "methods": ["$delete", "$patch"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/deployments",
+    "methods": ["$get", "$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/deployments/:id/rollback",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/deployments/changes",
+    "methods": ["$get"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/domains",
+    "methods": ["$get", "$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/domains/:id",
+    "methods": ["$delete"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/domains/:id/primary",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/domains/:id/verify",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/exports",
+    "methods": ["$get", "$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/exports/:id/artifacts/:artifactId/download",
+    "methods": ["$get"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/exports/:id/cancel",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/exports/schedules",
+    "methods": ["$get", "$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/exports/schedules/:scheduleId",
+    "methods": ["$patch"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/exports/schedules/:scheduleId/run",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/git",
+    "methods": ["$get"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/git/authorize",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/git/conflicts/:conflictId/resolve",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/git/connection",
+    "methods": ["$delete", "$put"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/git/operations",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/git/webhook-secret",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/integrations",
+    "methods": ["$get", "$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/integrations/:providerId",
+    "methods": ["$delete", "$patch"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/integrations/:providerId/activate",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/integrations/:providerId/deactivate",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/integrations/:providerId/delete-confirmation",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/integrations/:providerId/verify",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/languages",
+    "methods": ["$get", "$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/languages/:id",
+    "methods": ["$delete", "$patch"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/members",
+    "methods": ["$get"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/members/:id",
+    "methods": ["$delete"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/members/:id/role",
+    "methods": ["$patch"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/members/invitations/:id",
+    "methods": ["$delete"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/members/invite",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/members/transfer-ownership",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/openapi",
+    "methods": ["$delete", "$get", "$put"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/openapi/sync",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/pages",
+    "methods": ["$get", "$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/pages/:id",
+    "methods": ["$delete", "$get", "$patch"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/pages/reorder",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/reader-access",
+    "methods": ["$get"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/reader-access/audiences",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/reader-access/audiences/:audienceId",
+    "methods": ["$delete"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/reader-access/emergency-revoke",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/reader-access/jwt",
+    "methods": ["$put"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/reader-access/jwt/test",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/reader-access/mode",
+    "methods": ["$put"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/reader-access/readers/:readerId/revoke",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/reader-access/readers/invite",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/settings",
+    "methods": ["$get", "$patch"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/settings/git/import",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/settings/git/webhook-secret",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/settings/import/ghost",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/settings/import/mintlify",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/settings/search",
+    "methods": ["$get", "$patch"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/settings/search/diagnostics",
+    "methods": ["$get"]
+  },
+  {
+    "path": "/api/app/projects/:projectId/settings/search/reindex",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/app/workspace",
+    "methods": ["$get", "$patch"]
+  },
+  {
+    "path": "/api/app/workspace/analytics",
+    "methods": ["$get"]
+  },
+  {
+    "path": "/api/public/git/previews/:token",
+    "methods": ["$get"]
+  },
+  {
+    "path": "/api/public/invitations/:id",
+    "methods": ["$get"]
+  },
+  {
+    "path": "/api/public/meta",
+    "methods": ["$get"]
+  },
+  {
+    "path": "/api/public/sites/:id",
+    "methods": ["$get"]
+  },
+  {
+    "path": "/api/public/sites/:id/answer",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/public/sites/:id/changelog",
+    "methods": ["$get"]
+  },
+  {
+    "path": "/api/public/sites/:id/events",
+    "methods": ["$post"]
+  },
+  {
+    "path": "/api/public/sites/:id/page",
+    "methods": ["$get"]
+  },
+  {
+    "path": "/api/public/sites/:id/search",
+    "methods": ["$get"]
+  }
+]

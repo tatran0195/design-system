@@ -1,0 +1,64 @@
+# cms Code Owners
+# These owners will be requested for review when someone opens a PR
+# that modifies code they own.
+
+# Default owner for everything
+*                                           @cms/core-team
+
+# ═══════════════════════════════════════════════════════════════════════════
+# BACKEND (Rust)
+# ═══════════════════════════════════════════════════════════════════════════
+/crates/                                    @cms/backend
+*.rs                                        @cms/backend
+Cargo.toml                                  @cms/backend
+Cargo.lock                                  @cms/backend
+rust-toolchain.toml                         @cms/backend
+rustfmt.toml                                @cms/backend
+
+# ═══════════════════════════════════════════════════════════════════════════
+# FRONTEND (TypeScript/React)
+# ═══════════════════════════════════════════════════════════════════════════
+/apps/web/                                  @cms/frontend
+/packages/                                  @cms/frontend
+*.ts                                        @cms/frontend
+*.tsx                                       @cms/frontend
+*.scss                                      @cms/frontend
+package.json                                @cms/frontend
+pnpm-lock.yaml                              @cms/frontend
+biome.json                                  @cms/frontend
+tsconfig*.json                              @cms/frontend
+
+# ═══════════════════════════════════════════════════════════════════════════
+# MOBILE & TV
+# ═══════════════════════════════════════════════════════════════════════════
+/apps/mobile/                               @cms/mobile
+/apps/tv/                                   @cms/mobile
+
+# ═══════════════════════════════════════════════════════════════════════════
+# DATABASE
+# ═══════════════════════════════════════════════════════════════════════════
+/crates/cms-db/                       @cms/backend @cms/dba
+/crates/cms-db-migrations/src/migrations/        @cms/dba
+*.sql                                       @cms/dba
+
+# ═══════════════════════════════════════════════════════════════════════════
+# INFRASTRUCTURE & CI/CD
+# ═══════════════════════════════════════════════════════════════════════════
+/.github/                                   @cms/devops
+docker-compose.yml                          @cms/devops
+Dockerfile                                  @cms/devops
+.env.example                                @cms/devops
+
+# ═══════════════════════════════════════════════════════════════════════════
+# SECURITY-SENSITIVE FILES
+# ═══════════════════════════════════════════════════════════════════════════
+/crates/cms-server/src/routes/auth.rs @cms/security
+/crates/cms-server/src/middleware/    @cms/security
+/crates/cms-core/src/permissions.rs   @cms/security
+
+# ═══════════════════════════════════════════════════════════════════════════
+# DOCUMENTATION
+# ═══════════════════════════════════════════════════════════════════════════
+/RFCs/                                      @cms/architects
+CLAUDE.md                                   @cms/architects
+*.md                                        @cms/docs

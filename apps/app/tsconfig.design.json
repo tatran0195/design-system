@@ -1,0 +1,4 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["src/components/ui/**/*", "src/lib/use-app-form.tsx"]
+}

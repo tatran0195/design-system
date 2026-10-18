@@ -1,0 +1,246 @@
+[workspace]
+resolver = "2"
+members = [
+  "crates/*",
+  "apps/api",
+]
+
+default-members = [
+  "apps/api",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+license = "UNLICENSED"
+
+[workspace.dependencies]
+# Internal crates
+cms-infra = { path = "crates/cms-infra" }
+cms-entity = { path = "crates/cms-entity" }
+cms-db = { path = "crates/cms-db" }
+cms-error = { path = "crates/cms-error" }
+cms-auth = { path = "crates/cms-auth" }
+cms-authz = { path = "crates/cms-authz" }
+cms-worker = { path = "crates/cms-worker" }
+cms-mcp = { path = "crates/cms-mcp" }
+cms-notifications = { path = "crates/cms-notifications" }
+cms-outbox = { path = "crates/cms-outbox" }
+cms-seed = { path = "crates/cms-seed" }
+cms-scheduler = { path = "crates/cms-scheduler" }
+cms-sites = { path = "crates/cms-sites" }
+cms-server-core = { path = "crates/cms-server-core" }
+cms-invitations = { path = "crates/cms-invitations" }
+cms-onboarding = { path = "crates/cms-onboarding" }
+cms-reports = { path = "crates/cms-reports" }
+cms-content = { path = "crates/cms-content" }
+cms-assets = { path = "crates/cms-assets" }
+cms-projects = { path = "crates/cms-projects" }
+cms-deployments = { path = "crates/cms-deployments" }
+cms-git = { path = "crates/cms-git" }
+cms-integrations = { path = "crates/cms-integrations" }
+cms-themes = { path = "crates/cms-themes" }
+cms-workspaces = { path = "crates/cms-workspaces" }
+cms-admin = { path = "crates/cms-admin" }
+cms-public = { path = "crates/cms-public" }
+cms-analytics = { path = "crates/cms-analytics" }
+cms-search = { path = "crates/cms-search" }
+
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+
+# Web framework
+axum = { version = "0.8", features = ["macros", "ws"] }
+axum-extra = { version = "0.12.6", features = ["typed-header", "cookie"] }
+tower = { version = "0.5" }
+tower-http = { version = "0.6", features = ["cors", "trace", "request-id", "util", "set-header", "fs", "compression-br", "compression-gzip", "compression-zstd", "compression-deflate", "limit", "sensitive-headers", "catch-panic", "timeout"] }
+hyper = "1.11.1"
+http = "1.5.0"
+
+# Database
+sqlx = { version = "0.9.0", default-features = false, features = ["runtime-tokio", "tls-rustls", "postgres", "uuid", "chrono", "json", "migrate", "macros", "rust_decimal"] }
+rusqlite = { version = "0.33.0", features = ["bundled"] }
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+ts-rs = { version = "12.0", features = ["chrono-impl", "uuid-impl", "serde-json-impl"] }
+
+# Time & UUID
+chrono = { version = "0.4.45", features = ["serde"] }
+uuid = { version = "1.26.0", features = ["v4", "v5", "serde"] }
+
+# Configuration
+config = { version = "0.14", features = ["toml"] }
+
+# Auth & Crypto
+jsonwebtoken = { version = "11.1.0", features = ["rust_crypto"] }
+argon2 = "0.6.0"
+getrandom = { version = "0.4.3", features = ["std"] }
+sha2 = "0.11.0"
+hex = "0.4"
+base64 = "0.23.1"
+serde_urlencoded = "0.7.1"
+urlencoding = "2.1.3"
+idna = "1.1.0"
+rand = "0.10.3"
+hmac = "0.13.0"
+subtle = "2.6"
+totp-rs = { version = "5.6", features = ["gen_secret", "qr"] }
+
+# CLI
+clap = { version = "4.5", features = ["derive"] }
+
+# MCP
+rmcp = { version = "3.5", features = ["server", "macros", "transport-streamable-http-server", "transport-io"] }
+
+# Utilities
+log = "0.4"
+cron = "0.17.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt", "json"] }
+dotenvy = "0.15"
+bytes = "1.12.1"
+pulldown-cmark = "0.13.4"
+ammonia = "4.1.4"
+syntect = { version = "5.3.0", default-features = false, features = ["default-syntaxes", "default-themes", "html", "regex-onig"] }
+validator = { version = "0.21.0", features = ["derive"] }
+utoipa = { version = "5.5.0", features = ["axum_extras", "chrono", "uuid", "yaml"] }
+parking_lot = "0.12.5"
+mockall = "0.15.0"
+tempfile = "3"
+rust-embed = "8.6"
+mime_guess = "2.0"
+ipnet = "2.12"
+schemars = "1"
+
+# Error handling
+anyhow = "1.0.104"
+thiserror = "2.0.20"
+async-trait = "0.1"
+
+# Decimal
+rust_decimal = { version = "1", features = ["serde-with-str"] }
+
+# Compression (cold-tier ObjectStore)
+flate2 = "1"
+
+# Validation
+regex = "1"
+url = "2"
+
+# Async streams (WebSocket)
+futures = "0.3"
+async-stream = "0.3"
+
+# Hybrid deploy mode — local Ed25519 JWT signer + tests
+ed25519-dalek = "3.0.0"
+
+# HTTP client
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls-native-roots"] }
+
+# AI / LLM
+rig-core = { version = "0.44.0", features = ["derive"] }
+
+# Email
+lettre = { version = "0.11", features = ["tokio1", "tokio1-native-tls"] }
+minijinja = { version = "3.0.0", features = ["json"] }
+
+# Production-ready infrastructure
+governor = "0.10.4"
+moka = { version = "0.12", features = ["future"] }
+metrics = "0.24.6"
+metrics-exporter-prometheus = "0.18.3"
+
+# Export generation
+printpdf = { version = "0.7" }
+epub-builder = { version = "0.8.3" }
+
+# Optional & feature dependencies
+aws-sdk-s3 = { version = "1.152", features = ["rt-tokio"] }
+aws-config = { version = "1.12" }
+aws-credential-types = { version = "1.3" }
+
+# Full-text search (Japanese)
+# SudachiDict is compiled into the binary so no dictionary files need to be
+# shipped to the server. Override with `search.lindera_dict_path` if desired.
+lindera = { version = "6.0.0", features = ["embed-sudachidict"] }
+tantivy = { version = "0.26.2" }
+unicode-normalization = "0.1.25"
+
+# Vector / AI search
+fastembed = "7.1.1"
+
+# Code execution (pipeline custom code)
+mlua = { version = "0.10", features = ["lua54", "serialize", "send", "vendored"] }
+
+# CRDT (Loro) — offline-first replication. Sprint C foundation.
+loro = "1.4"
+
+# LAN service discovery for the edge sync hub
+mdns-sd = "0.21.5"
+
+# ── Build profiles ──────────────────────────────────────────
+
+# Dev builds are optimized for fast iteration (`make dev`), not debugger fidelity.
+# `line-tables-only` keeps backtraces with file:line but skips the heavy DWARF that
+# dominates link time; `unpacked` split-debuginfo skips the slow macOS dsymutil step.
+# Together these cut relink time on every incremental rebuild of the server binary.
+[profile.dev]
+debug = "line-tables-only"
+split-debuginfo = "unpacked"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true
+
+[profile.profiling]
+inherits = "release"
+debug = true
+strip = false
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+missing_debug_implementations = "warn"
+
+# Unused = error. Future dead code, unused imports, unused variables, and
+# unreachable patterns must be fixed (or explicitly allowed at the site)
+# instead of silently compiling.
+unused = { level = "deny", priority = -1 }
+dead_code = "deny"
+unused_must_use = "deny"
+unreachable_pub = "deny"
+unused_qualifications = "deny"
+
+[workspace.lints.clippy]
+# Groups
+all = { level = "deny", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+nursery = { level = "warn", priority = -1 }
+
+# Specific denials
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+todo = "deny"
+unimplemented = "deny"
+dbg_macro = "deny"
+print_stdout = "deny"
+print_stderr = "deny"
+clone_on_ref_ptr = "deny"
+inefficient_to_string = "deny"
+manual_let_else = "deny"
+needless_pass_by_value = "deny"
+semicolon_if_nothing_returned = "deny"
+wildcard_imports = "deny"
+
+# Relax some pedantic lints
+module_name_repetitions = "allow"
+must_use_candidate = "allow"
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+cast_possible_truncation = "allow"
+cast_sign_loss = "allow"
+cast_precision_loss = "allow"

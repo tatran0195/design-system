@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-16",
+  "unitTests": {
+    "passed": 416,
+    "failed": 0,
+    "files": 67
+  },
+  "browserJourneys": 8,
+  "accessibilityRoutes": 4,
+  "typescript": "passed",
+  "productionEnvironments": ["client", "Start SSR", "Nitro"],
+  "architectureViolations": 0,
+  "newWorkspacePackages": 0,
+  "scope": "apps/app; backend contracts and Studio source preserved",
+  "limitations": [
+    "Live Nibleaf integrations not exercised without configuration",
+    "Dashboard SVG/gradient contrast requires manual review",
+    "Success DTO runtime decode is not universal",
+    "Large retained optional/vendor chunks remain advisory"
+  ]
+}

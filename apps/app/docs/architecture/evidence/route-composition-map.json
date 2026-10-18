@@ -1,0 +1,128 @@
+[
+  {
+    "route": "routes/(auth)/sign-in.tsx",
+    "page": "features/auth/pages/sign-in.tsx",
+    "routeId": "/(auth)/sign-in",
+    "exports": ["SignInPage"]
+  },
+  {
+    "route": "routes/(auth)/sign-up.tsx",
+    "page": "features/auth/pages/sign-up.tsx",
+    "routeId": "/(auth)/sign-up",
+    "exports": ["SignUpPage"]
+  },
+  {
+    "route": "routes/(auth)/verify-email.tsx",
+    "page": "features/auth/pages/verify-email.tsx",
+    "routeId": "/(auth)/verify-email",
+    "exports": ["VerifyEmailPage"]
+  },
+  {
+    "route": "routes/(auth)/forgot-password.tsx",
+    "page": "features/auth/pages/forgot-password.tsx",
+    "routeId": "/(auth)/forgot-password",
+    "exports": ["ForgotPasswordPage"]
+  },
+  {
+    "route": "routes/(auth)/reset-password.tsx",
+    "page": "features/auth/pages/reset-password.tsx",
+    "routeId": "/(auth)/reset-password",
+    "exports": ["ResetPasswordPage"]
+  },
+  {
+    "route": "routes/accept-invite.$invitationId.tsx",
+    "page": "features/auth/pages/invitation.tsx",
+    "routeId": "/accept-invite/$invitationId",
+    "exports": ["AcceptInvitePage"]
+  },
+  {
+    "route": "routes/app/(dashboard)/index.tsx",
+    "page": "features/projects/pages/workspace-overview.tsx",
+    "routeId": "/app/(dashboard)/",
+    "exports": ["ProjectsPage"]
+  },
+  {
+    "route": "routes/app/(dashboard)/sites.tsx",
+    "page": "features/projects/pages/sites.tsx",
+    "routeId": "/app/(dashboard)/sites",
+    "exports": ["SitesPage"]
+  },
+  {
+    "route": "routes/app/(dashboard)/members.tsx",
+    "page": "features/membership/pages/workspace-members.tsx",
+    "routeId": "/app/(dashboard)/members",
+    "exports": ["MembersPage"]
+  },
+  {
+    "route": "routes/app/(dashboard)/settings.tsx",
+    "page": "features/account/pages/settings.tsx",
+    "routeId": "/app/(dashboard)/settings",
+    "exports": ["TabValue", "isTabValue", "WorkspaceSettingsPage"]
+  },
+  {
+    "route": "routes/app/(dashboard)/analytics.tsx",
+    "page": "features/analytics/pages/workspace-analytics.tsx",
+    "routeId": "/app/(dashboard)/analytics",
+    "exports": ["WorkspaceAnalyticsRoute"]
+  },
+  {
+    "route": "routes/app/projects/$projectId/index.tsx",
+    "page": "features/projects/pages/project-overview.tsx",
+    "routeId": "/app/projects/$projectId/",
+    "exports": ["SiteOverviewPage"]
+  },
+  {
+    "route": "routes/app/projects/$projectId/editor.tsx",
+    "page": "features/editor/pages/editor.tsx",
+    "routeId": "/app/projects/$projectId/editor",
+    "exports": ["EditorPage"]
+  },
+  {
+    "route": "routes/app/projects/$projectId/settings.tsx",
+    "page": "features/project-settings/pages/settings.tsx",
+    "routeId": "/app/projects/$projectId/settings",
+    "exports": ["SectionId", "isSectionId", "ProjectSettingsPage"]
+  },
+  {
+    "route": "routes/app/projects/$projectId/preview.tsx",
+    "page": "features/reader/pages/draft-preview.tsx",
+    "routeId": "/app/projects/$projectId/preview",
+    "exports": ["ProjectPreview"]
+  },
+  {
+    "route": "routes/app/projects/$projectId/analytics.tsx",
+    "page": "features/analytics/pages/project-analytics.tsx",
+    "routeId": "/app/projects/$projectId/analytics",
+    "exports": ["ProjectAnalyticsRoute"]
+  },
+  {
+    "route": "routes/sites/$projectId/route.tsx",
+    "page": "features/reader/pages/reader-layout.tsx",
+    "routeId": "/sites/$projectId",
+    "exports": ["SiteRoute"]
+  },
+  {
+    "route": "routes/sites/$projectId/index.tsx",
+    "page": "features/reader/pages/reader-index.tsx",
+    "routeId": "/sites/$projectId/",
+    "exports": ["SiteHome"]
+  },
+  {
+    "route": "routes/sites/$projectId/$.tsx",
+    "page": "features/reader/pages/reader-page.tsx",
+    "routeId": "/sites/$projectId/$",
+    "exports": ["SitePath"]
+  },
+  {
+    "route": "routes/sites/$projectId/changelog.tsx",
+    "page": "features/reader/pages/changelog.tsx",
+    "routeId": "/sites/$projectId/changelog",
+    "exports": ["SiteChangelog"]
+  },
+  {
+    "route": "routes/git-preview.$token.tsx",
+    "page": "features/git/pages/review.tsx",
+    "routeId": "/git-preview/$token",
+    "exports": ["GitPreviewPage"]
+  }
+]

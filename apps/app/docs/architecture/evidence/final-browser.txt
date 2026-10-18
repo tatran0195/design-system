@@ -1,0 +1,14 @@
+$ playwright test
+
+Running 8 tests using 1 worker
+
+  ✓  1 tests/browser/app.spec.ts:20:1 › dashboard hydrates cleanly and command search navigates with the keyboard (2.6s)
+  ✓  2 tests/browser/app.spec.ts:36:1 › editor uses shared document typography and modal focus stays above its sidebar (1.5s)
+  ✓  3 tests/browser/app.spec.ts:56:1 › RHF document edits keep the original autosave request contract (2.7s)
+  ✓  4 tests/browser/app.spec.ts:77:1 › theme and Arabic interface work through native account/menu/dialog controls (2.8s)
+  ✓  5 tests/browser/app.spec.ts:97:1 › published documentation retains reader rendering and typography (897ms)
+  ✓  6 tests/browser/app.spec.ts:113:1 › mobile sidebar is a native dismissible modal without horizontal overflow (1.1s)
+  ✓  7 tests/browser/app.spec.ts:126:1 › internal signup has no SaaS marketing or mandatory public legal consent (773ms)
+  ✓  8 tests/browser/app.spec.ts:137:1 › demo email/OTP uses the ordinary auth contract and latest complete code (1.7s)
+
+  8 passed (15.9s)
